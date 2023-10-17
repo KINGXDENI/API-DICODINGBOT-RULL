@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <div class="modal is-open">
+        <div class="modal-container">
+            <div class="modal-left">
+                <h1 class="modal-title">Registrasi</h1>
+                <p class="modal-desc">Silakan isi data Anda di bawah ini:</p>
+                <form name="registration">
+                    <div class="input-block">
+                        <label for="email" class="input-label">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email Anda">
+                    </div>
+                    <div class="input-block">
+                        <label for="username" class="input-label">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Username Anda">
+                    </div>
+                    <div class="input-block">
+                        <label for="password" class="input-label">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password Anda">
+                    </div>
+                    <div class="modal-buttons">
+                        <button class="input-button" type="button" onClick="Register()">Daftar</button>
+                    </div>
+                </form>
+                <p class="sign-up">Sudah punya akun? <a href="/">Masuk Sekarang</a></p>
+            </div>
+            <div class="modal-right">
+                <img src="https://www.techomoro.com/wp-content/uploads/2019/11/artificial-intelligence-2228610_1920.jpg"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Registrasi System Logic
+        function Register() {
+            // Ambil nilai input dari formulir
+            var email = document.getElementById("email").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Validasi data input (Anda dapat menambahkan validasi tambahan di sini)
+            if (!email || !username || !password) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Silakan isi semua kolom registrasi.'
+                });
+                return;
+            }
+
+            // Data registrasi yang akan disimpan ke database
+            var registrationData = {
+                email: email,
+                username: username,
+                password: password
+            };
+
+            // Kirim data registrasi ke server (disimpan di database)
+            fetch('/user/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(registrationData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Registrasi Berhasil!',
+                            text: 'Anda dapat masuk sekarang.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+                        // Redirect ke halaman utama setelah 1,5 detik
+                        setTimeout(function () {
+                            window.location.href = '/';
+                        }, 1500);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Registrasi gagal. Email atau username sudah digunakan.'
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Terjadi Kesalahan!',
+                        text: 'Terjadi kesalahan saat melakukan registrasi.'
+                    });
+                    console.error(error);
+                });
+        }
+    </script>
+</body>
+
+</html>
