@@ -4399,7 +4399,8 @@ router.get('/fun/simisimi-jp2', async (req, res, next) => {
       message: "masukan parameter text"
     })
 
-    fetch(encodeURI(`https://simsumi.herokuapp.com/api?text=${text}&lang=jp`))
+    fetch(encodeURI(`
+    https://simsumi.herokuapp.com/api?text=${text}&lang=jp`))
       .then(response => response.json())
       .then(data => {
         var result = data;
@@ -4430,6 +4431,37 @@ router.get('/fun/simisimi-ind2', async (req, res, next) => {
     })
 
     fetch(encodeURI(`https://api.simsimi.net/v2/?text=${text}&lc=id`))
+      .then(response => response.json())
+      .then(data => {
+        var result = data;
+        res.json({
+          status: true,
+          creator: `${creator}`,
+          result
+        })
+      })
+      .catch(e => {
+        res.json(loghandler.error)
+      })
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
+router.get('/fun/simisimiall', async (req, res, next) => {
+  var Apikey = req.query.apikey
+  text = req.query.text
+  lang = req.query.lang
+
+  if (!Apikey) return res.json(loghandler.notparam)
+  if (listkey.includes(Apikey)) {
+    if (!text) return res.json({
+      status: false,
+      creator: `${creator}`,
+      message: "masukan parameter text"
+    })
+
+    fetch(encodeURI(`https://api.simsimi.net/v2/?text=${text}&lc=${lang}`))
       .then(response => response.json())
       .then(data => {
         var result = data;
@@ -4549,7 +4581,7 @@ router.get('/fun/simisimi', async (req, res, next) => {
       message: "masukan parameter text"
     })
 
-    fetch(encodeURI(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`))
+    fetch(encodeURI(`https://api.simsimi.net/v2/?text=${text}&lc=id`))
       .then(response => response.json())
       .then(data => {
         var result = data;
@@ -5050,8 +5082,6 @@ router.get('/kuis/tebakGambar', async (req, res, next) => {
 /**
  * @Maker
  **/
-
-
 
 router.get("/photooxy/shadow", async (req, res, next) => {
   const text1 = req.query.text;
@@ -7569,6 +7599,8 @@ router.get('/web2plain-text', async (req, res, next) => {
   }
 });
 
+
+//AI MENU
 const configuration = new Configuration({
   apiKey: process.env['OPENAI_API_KEY'],
 });
@@ -7696,7 +7728,7 @@ router.get('/ai/chatai2', async (req, res, next) => {
         // Kirim respons JSON dengan konten tergabung
         res.status(200).json({
           response: mergedContent,
-          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://api.dicodingbot.site/api/clear?apikey=6QUJWgub5P&userId=`
+          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://api.dicodingbot.site/api/clear?apikey=&userId=`
         })
       });
     } catch (error) {
@@ -7804,8 +7836,7 @@ router.get('/ai/chatai3', async (req, res, next) => {
         // Kirim respons JSON dengan konten tergabung
         res.status(200).json({
           response: mergedContent,
-          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://api.dicodingbot.site/api/clear?apikey=6QUJWgub5P&userId=`,
-          listchat: userChats[userId],
+          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://api.dicodingbot.site/api/clear?apikey=&userId=`,
         })
       });
     } catch (error) {
@@ -7839,6 +7870,35 @@ router.get('/ai/clear', async (req, res, next) => {
     } else {
       res.status(404).json({
         error: 'User not found'
+      });
+    }
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+
+});
+
+
+router.get('/ai/remini', async (req, res, next) => {
+  var apikey = req.query.apikey
+  var url = req.query.url
+  if (!apikey) return res.json(loghandler.notparam)
+  if (!url) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "masukan parameter url"
+  })
+  if (listkey.includes(apikey)) {
+    try {
+      let proses = await remini(url, "enhance");
+
+      res.status(200).json({
+        message: 'Chat history deleted successfully'
+      });
+    } catch (error) {
+      console.error('Error:', error.message);
+      res.status(500).json({
+        error: 'Internal Server Error'
       });
     }
   } else {

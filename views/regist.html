@@ -83,9 +83,8 @@
                         Swal.fire({
                             icon: 'success',
                             title: 'Registrasi Berhasil!',
-                            text: 'Anda dapat masuk sekarang.',
-                            showConfirmButton: false,
-                            timer: 1500
+                            text: 'Silahkan Cek Email Anda Untuk Verifikasi',
+                            showConfirmButton: true
                         });
 
                         // Redirect ke halaman utama setelah 1,5 detik
@@ -96,7 +95,8 @@
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Registrasi gagal. Email atau username sudah digunakan.'
+                            text: 'Registrasi gagal. Email atau username sudah digunakan.',
+                            timer: 2500
                         });
                     }
                 })
@@ -104,7 +104,8 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Terjadi Kesalahan!',
-                        text: 'Terjadi kesalahan saat melakukan registrasi.'
+                        text: 'Terjadi kesalahan saat melakukan registrasi.',
+                        timer: 2500
                     });
                     console.error(error);
                 });

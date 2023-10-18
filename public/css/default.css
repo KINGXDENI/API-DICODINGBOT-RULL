@@ -1917,6 +1917,7 @@ body.sidebar-toggled footer.sticky-footer {
     background-color: #3f51b5;
     border-color: #3f51b5
 }
+
 body.dark-mode {
     --bg-opacity: 1;
     background-color: #55311c;
@@ -1940,11 +1941,12 @@ body.dark-mode {
 .text-coklat {
     color: #21130b !important;
 }
+
 .bg-coklat {
     color: #21130b !important;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #21130b !important;
     border-color: #21130b !important;
     color: white !important;

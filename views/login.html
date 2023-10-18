@@ -29,8 +29,8 @@
                 <p class="modal-desc">Silahkan Isi Data Ini Yah...</p>
                 <form name="login">
                     <div class="input-block">
-                        <label for="username" class="input-label">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username Kamu">
+                        <label for="email" class="input-label">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email Kamu">
                     </div>
                     <div class="input-block">
                         <label for="password" class="input-label">Password</label>
@@ -61,22 +61,22 @@
     <script>
         // Login System Logic
         function Login() {
-            var username = document.login.username.value;
+            var email = document.login.email.value; // Menggunakan 'email' bukan 'username'
             var password = document.login.password.value;
 
             // Validasi input
-            if (!username || !password) {
+            if (!email || !password) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Mohon isi username dan password.'
+                    text: 'Mohon isi email dan password.'
                 });
                 return;
             }
 
             // Data yang akan dikirim ke server
             var data = {
-                username: username,
+                email: email, // Menggunakan 'email' bukan 'username'
                 password: password
             };
 
@@ -90,25 +90,38 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                     const APIKEY = data.users.apiKey
-                     localStorage.setItem('APIKEY', APIKEY);
-                    if (data.success) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Login Berhasil!',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
+                    const success = data.success;
+                    const isActive = data.isActive;
 
-                        // Redirect ke halaman dokumen (/docs) setelah 1,5 detik
-                        setTimeout(function () {
-                            window.location.href = "/docs"; // Ganti URL tujuan sesuai kebutuhan Anda
-                        }, 1500);
+                    if (success) {
+                        if (isActive) {
+                            const APIKEY = data.users.apiKey;
+                            localStorage.setItem('APIKEY', APIKEY);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Login Berhasil!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                            // Redirect ke halaman dokumen (/docs) setelah 1,5 detik
+                            setTimeout(function () {
+                                window.location.href = "/docs"; // Ganti URL tujuan sesuai kebutuhan Anda
+                            }, 1500);
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Login gagal. Akun Anda belum diaktifkan. Silakan verifikasi email Anda.',
+                                timer: 1500
+                            });
+                        }
                     } else {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Login gagal. Mohon periksa username dan password Anda.'
+                            text: 'Login gagal. Mohon periksa email dan password Anda.',
+                            timer: 1500
                         });
                     }
                 })
@@ -117,10 +130,13 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Terjadi Kesalahan!',
-                        text: 'Terjadi kesalahan saat melakukan login.'
+                        text: 'Terjadi kesalahan saat melakukan login.',
+                        timer: 1500
                     });
                 });
         }
+
+
 
         // Javascript Template 
         const body = document.querySelector("body");
@@ -155,6 +171,30 @@
             evt = evt || window.event;
             evt.keyCode === 27 ? closeModal() : false;
         };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fungsi untuk menampilkan SweetAlert 2
+            function showAlert(icon, title, text) {
+                Swal.fire({
+                    icon: icon,
+                    title: title,
+                    text: text,
+                    timer: 1500
+                });
+            }
+
+            // Dapatkan informasi pesan dari query string atau dari data JSON yang diterima dari server
+            const urlParams = new URLSearchParams(window.location.search);
+            const success = urlParams.get('success');
+
+            if (success !== null) {
+                if (success === 'true') {
+                    showAlert('success', 'Sukses', 'Akun berhasil diaktifkan');
+                } else {
+                    showAlert('error', 'Gagal', 'Gagal mengaktifkan akun');
+                }
+            }
+        });
     </script>
 </body>
 
