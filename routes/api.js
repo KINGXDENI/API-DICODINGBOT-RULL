@@ -672,8 +672,7 @@ router.get('/download/ig', async (req, res, next) => {
         });
       })
       .catch(err => {
-        console.error(err); // Menangani kesalahan dengan mencetaknya ke konsol
-        res.json(loghandler.error); // Anda dapat mengganti 'loghandler.error' sesuai dengan pesan kesalahan yang sesuai
+        res.json(loghandler.error)
       });
   } else {
     res.json(loghandler.invalidKey);
@@ -969,23 +968,42 @@ router.get('/stalk/ig', async (req, res, next) => {
   const apikey = req.query.apikey;
   const username = req.query.username;
 
-  if (!username) return res.json(loghandler.notusername)
-  if (!apikey) return res.json(loghandler.notparam)
+  try {
+    if (!username) {
+      return res.status(400).json({
+        error: 'Username is required'
+      });
+    }
+    if (!apikey) {
+      return res.status(400).json({
+        error: 'API key is required'
+      });
+    }
 
-  if (listkey.includes(apikey)) {
-    igStalk(username).then(data => {
-      var result = data;
-      res.json({
-        status: true,
-        code: 200,
-        creator: `${creator}`,
-        result
-      })
-    })
-  } else {
-    res.json(loghandler.invalidKey)
+    if (listkey.includes(apikey)) {
+      igStalk(username)
+        .then(data => {
+          res.status(200).json({
+            status: true,
+            code: 200,
+            creator: creator,
+            result: data,
+          });
+        })
+        .catch(error => {
+           res.json(loghandler.error)
+        });
+    } else {
+       res.json(loghandler.invalidKey)
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: 'Internal server error'
+    });
   }
-})
+});
+
 
 router.get('/downloader/wallpaperflare', async (req, res, next) => {
   const apikey = req.query.apikey;
