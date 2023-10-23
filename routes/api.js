@@ -1,6 +1,11 @@
 __path = process.cwd()
 //var favicon = require('serve-favicon');
 const express = require('express');
+const {
+  youtubedl,
+  instagramdl,
+  instagramStory
+} = require('@bochilteam/scraper')
 const axios = require('axios');
 require('dotenv').config();
 const {
@@ -71,11 +76,10 @@ var {
   igstory,
   igdl,
   linkwa,
-  igDownloader
+  igdl
 } = require("./../lib/anjay");
 
 var {
-  igStalk,
   igDownloader
 } = require("./../lib/utils/igdown");
 
@@ -111,6 +115,10 @@ var {
 //var TiktokDownloader = require('./../lib/tiktokdl');
 
 var tebakGambar = require('./../lib/utils/tebakGambar');
+const {
+  igStalk,
+  igDownload
+} = require('../lib/utils/ig.js');
 
 var cookie = process.env.COOCKIE
 /*
@@ -650,25 +658,52 @@ router.get('/download/tiktok', async (req, res, next) => {
 router.get('/download/ig', async (req, res, next) => {
   const url = req.query.url;
   const apikey = req.query.apikey;
-  if (!url) return res.json(loghandler.noturl)
-  if (!apikey) return res.json(loghandler.notparam)
+  if (!url) return res.json(loghandler.noturl);
+  if (!apikey) return res.json(loghandler.notparam);
   if (listkey.includes(apikey)) {
-    igDownloader(url)
-      .then((result) => {
+    igDownload(url)
+      .then(data => {
+        var result = data;
         res.json({
           status: true,
           code: 200,
           creator: `${creator}`,
           result
-        })
+        });
       })
-      .catch((error) => {
-        res.json(error)
+      .catch(err => {
+        console.error(err); // Menangani kesalahan dengan mencetaknya ke konsol
+        res.json(loghandler.error); // Anda dapat mengganti 'loghandler.error' sesuai dengan pesan kesalahan yang sesuai
       });
   } else {
-    res.json(loghandler.invalidKey)
+    res.json(loghandler.invalidKey);
   }
 });
+router.get('/download/igstory', async (req, res, next) => {
+  const username = req.query.username;
+  const apikey = req.query.apikey;
+  if (!username) return res.json(loghandler.notusername);
+  if (!apikey) return res.json(loghandler.notparam);
+  if (listkey.includes(apikey)) {
+    instagramStory(username)
+      .then(data => {
+        var result = data;
+        res.json({
+          status: true,
+          code: 200,
+          creator: `${creator}`,
+          result
+        });
+      })
+      .catch(err => {
+        console.error(err); // Menangani kesalahan dengan mencetaknya ke konsol
+        res.json(loghandler.error); // Anda dapat mengganti 'loghandler.error' sesuai dengan pesan kesalahan yang sesuai
+      });
+  } else {
+    res.json(loghandler.invalidKey);
+  }
+});
+
 
 router.get('/download/ig2', async (req, res, next) => {
   const url = req.query.url;
@@ -676,8 +711,7 @@ router.get('/download/ig2', async (req, res, next) => {
   if (!url) return res.json(loghandler.noturl)
   if (!apikey) return res.json(loghandler.notparam)
   if (listkey.includes(apikey)) {
-    igdl(url)
-      .then((result) => {
+    igDownload(url).then((result) => {
         res.json({
           status: true,
           code: 200,
@@ -939,20 +973,15 @@ router.get('/stalk/ig', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://aqulzz.herokuapp.com/igstalk?username=${username}`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.result;
-        res.json({
-          status: true,
-          creator: `${creator}`,
-          result
-        })
+    igStalk(username).then(data => {
+      var result = data;
+      res.json({
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+    })
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1588,8 +1617,8 @@ router.get('/stalk/ig2', async (req, res, next) => {
   if (!username) return res.json(loghandler.notusername)
   if (!apikey) return res.json(loghandler.notparam)
   if (listkey.includes(apikey)) {
-    igStalk(username)
-      .then((result) => {
+    igstalk(username).then((result) => {
+        console.log(result);
         res.json({
           status: true,
           code: 200,
