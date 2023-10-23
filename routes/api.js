@@ -4,7 +4,10 @@ const express = require('express');
 const {
   youtubedl,
   instagramdl,
-  instagramStory
+  instagramStory,
+  facebookdl,
+  facebookdlv2,
+  snapsave
 } = require('@bochilteam/scraper')
 const axios = require('axios');
 require('dotenv').config();
@@ -991,10 +994,10 @@ router.get('/stalk/ig', async (req, res, next) => {
           });
         })
         .catch(error => {
-           res.json(loghandler.error)
+          res.json(loghandler.error)
         });
     } else {
-       res.json(loghandler.invalidKey)
+      res.json(loghandler.invalidKey)
     }
   } catch (error) {
     console.error(error);
@@ -1391,20 +1394,17 @@ router.get('/downloader/pinterest', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://aqulzz.herokuapp.com/pinterest?q=${q}`))
-      .then(response => response.json())
-      .then(hasil => {
+    pinterest(q).then(hasil => {
 
-        var result = hasil.result;
-        res.json({
-          status: true,
-          creator: `${creator}`,
-          result
-        })
+      var result = hasil;
+      res.json({
+        status: true,
+        creator: `${creator}`,
+        result
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+    }).catch(err => {
+      res.json(loghandler.error)
+    });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1524,22 +1524,19 @@ router.get('/downloader/facebook', async (req, res, next) => {
 
   if (!url) return res.json(loghandler.noturl)
   if (!apikey) return res.json(loghandler.notparam)
-
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://api-xcoders.xyz/api/download/fb?url=${url}&apikey=UW8wc3KPy0`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.data.url;
+    facebookdlv2(url).then(data => {
+        var result = data;
         res.json({
           status: true,
+          code: 200,
           creator: `${creator}`,
           result
-        })
+        });
       })
-      .catch(e => {
+      .catch(err => {
         res.json(loghandler.error)
-      })
+      });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1583,7 +1580,7 @@ router.get('/downloader/fb', async (req, res, next) => {
   if (!url) return res.json(loghandler.noturl)
   if (!apikey) return res.json(loghandler.notparam)
   if (listkey.includes(apikey)) {
-    fbDownloader(`${url}`)
+    snapsave(url)
       .then((result) => {
         res.json({
           status: true,
