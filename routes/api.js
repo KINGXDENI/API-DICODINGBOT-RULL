@@ -661,13 +661,17 @@ router.get('/download/tiktok', async (req, res, next) => {
 router.get('/download/ig', async (req, res, next) => {
   const url = req.query.url;
   const apikey = req.query.apikey;
-  if (!url) return res.json(loghandler.noturl);
-  if (!apikey) return res.json(loghandler.notparam);
+  if (!url) {
+    return res.status(400).json(loghandler.noturl);
+  }
+  if (!apikey) {
+    return res.status(400).json(loghandler.notparam);
+  }
   if (listkey.includes(apikey)) {
     igDownload(url)
       .then(data => {
         var result = data;
-        res.json({
+        res.status(200).json({
           status: true,
           code: 200,
           creator: `${creator}`,
@@ -675,12 +679,14 @@ router.get('/download/ig', async (req, res, next) => {
         });
       })
       .catch(err => {
-        res.json(loghandler.error)
+        console.error(err); // Menangani unhandled rejection dengan mencetak kesalahan ke konsol
+        res.status(500).json(loghandler.invalidLink);
       });
   } else {
-    res.json(loghandler.invalidKey);
+    res.status(401).json(loghandler.invalidKey);
   }
 });
+
 router.get('/download/igstory', async (req, res, next) => {
   const username = req.query.username;
   const apikey = req.query.apikey;
