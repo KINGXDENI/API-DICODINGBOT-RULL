@@ -96,7 +96,10 @@
                     if (success) {
                         if (isActive) {
                             const APIKEY = data.users.apiKey;
+                            const LIMIT = data.users.limit;
                             localStorage.setItem('APIKEY', APIKEY);
+                            localStorage.setItem('LIMIT', LIMIT);
+
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Login Berhasil!',

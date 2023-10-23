@@ -29,16 +29,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-router.get('/', (req, res) => {
-    if (req.session.loggedIn) {
-        // Pengguna sudah login, tampilkan halaman /docs
-        res.redirect('/docs');
-    } else {
-        // Pengguna belum login, alihkan ke halaman login atau tampilkan pesan kesalahan
-        res.sendFile(__path + '/views/login.html') // Ganti '/login' dengan URL halaman login Anda
-    }
-
-})
 app.use('/', mainrouter);
 app.use('/api', apirouter);
 app.use('/user', userrouter);

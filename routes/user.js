@@ -260,7 +260,8 @@ router.post('/login', (req, res) => {
             const users = {
                 username: user.username,
                 email: user.email,
-                apiKey: user.apiKey
+                apiKey: user.apiKey,
+                limit: user.limit
             };
             req.session.loggedIn = true;
 

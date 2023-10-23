@@ -917,20 +917,15 @@ router.get('/stalk/github', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://free-restapii.herokuapp.com/docs/githubstalk?username=${username}&apikey=LoliKillers`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.data.result;
-        res.json({
-          status: true,
-          creator: `${creator}`,
-          result
-        })
+    require(__path + '/lib/githubstalk').githubstalk(username).then(data => {
+      var result = data;
+      res.json({
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+    })
   } else {
     res.json(loghandler.invalidKey)
   }

@@ -18,6 +18,16 @@ router.get('/docs', (req, res) => {
     }
 
 })
+router.get('/', (req, res) => {
+    if (req.session.loggedIn) {
+        // Pengguna sudah login, tampilkan halaman /docs
+        res.redirect('/docs');
+    } else {
+        // Pengguna belum login, alihkan ke halaman login atau tampilkan pesan kesalahan
+        res.sendFile(__path + '/views/login.html') // Ganti '/login' dengan URL halaman login Anda
+    }
+
+})
 router.get('/api/game', (req, res) => {
     res.sendFile(__path + '/views/game.html')
 })

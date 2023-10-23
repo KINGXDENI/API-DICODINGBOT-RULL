@@ -836,6 +836,36 @@
                                 </div>
                             </div>
                         </div>
+                         <div class="col-xl-3 col-md-6 mb-4">
+                             <div class="card h-50">
+                                 <div class="card-body">
+                                     <div class="row no-gutters align-items-center">
+                                         <div class="col mr-2">
+                                             <div class="text-xs font-weight-bold text-uppercase mb-1">APIKEY</div>
+                                             <div class="h5 mb-0 font-weight-bold API"></div>
+                                         </div>
+                                         <div class="col-auto">
+                                             <i class="fas fa-calendar faa-wrench animated fa-2x text-coklat"></i>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                          <div class="col-xl-3 col-md-6 mb-4">
+                              <div class="card h-50">
+                                  <div class="card-body">
+                                      <div class="row no-gutters align-items-center">
+                                          <div class="col mr-2">
+                                              <div class="text-xs font-weight-bold text-uppercase mb-1">LIMIT</div>
+                                              <div class="h5 mb-0 font-weight-bold LIMIT"></div>
+                                          </div>
+                                          <div class="col-auto">
+                                              <i class="fas fa-calendar faa-wrench animated fa-2x text-coklat"></i>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                     </div>
                     <!--Row-->
                     <div class="row">
@@ -874,13 +904,19 @@
                 <script>
                     function updateLinks() {
                         const APIKEY = localStorage.getItem('APIKEY'); // Dapatkan APIKEY dari localStorage
-
+                        const LIMIT = localStorage.getItem('LIMIT');
                         const links = document.querySelectorAll('.collapse-inner a');
 
                         links.forEach(link => {
                             link.href = link.href.replace('APIKEY', APIKEY);
                         });
+                        const API = document.querySelector('.API')
+                        const LIM = document.querySelector('.LIMIT')
+                        API.innerHTML = APIKEY
+                        LIM.innerHTML = LIMIT
                     }
+
+
 
                     // Pada saat halaman dimuat
                     document.addEventListener('DOMContentLoaded', function () {
