@@ -7773,7 +7773,7 @@ router.get('/ai/chatai2', async (req, res, next) => {
         // Kirim respons JSON dengan konten tergabung
         res.status(200).json({
           response: mergedContent,
-          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://api.dicodingbot.site/api/clear?apikey=&userId=`
+          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://rull.dicodingbot.site/api/ai/clear?apikey=&userId=`
         })
       });
     } catch (error) {
@@ -7881,7 +7881,7 @@ router.get('/ai/chatai3', async (req, res, next) => {
         // Kirim respons JSON dengan konten tergabung
         res.status(200).json({
           response: mergedContent,
-          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://api.dicodingbot.site/api/clear?apikey=&userId=`,
+          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://rull.dicodingbot.site/api/ai/clear?apikey=&userId=`,
         })
       });
     } catch (error) {
