@@ -58,8 +58,11 @@
     "openai": "^3.2.1",
     "path": "^0.12.7",
     "request": "^2.88.2",
+    "serve-favicon": "^2.5.0",
     "skh-api": "^1.0.0",
     "ssl-express-www": "^3.0.7",
+    "tiktok-scraper": "^1.4.12",
+    "tiktok-scraper-without-watermark": "^1.1.2",
     "urlencode": "^1.1.0",
     "zrapi": "0.0.6"
   },
