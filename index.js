@@ -1,6 +1,6 @@
 //yy
 __path = process.cwd();
-//var favicon = require('serve-favicon');
+var favicon = require('serve-favicon');
 var express = require('express'),
     cors = require('cors'),
     secure = require('ssl-express-www');
@@ -12,10 +12,10 @@ var {
 } = require('./lib/color.js')
 
 
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api'),
-    userrouter = require('./routes/user')
-const router = express.Router();
+const mainrouter = require('./routes/main')
+const apirouter = require('./routes/api')
+const userrouter = require('./routes/user')
+
 var app = express()
 app.enable('trust proxy');
 app.set("json spaces", 2)
