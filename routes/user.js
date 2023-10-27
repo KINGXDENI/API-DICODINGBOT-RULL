@@ -9,8 +9,7 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 
-const websiteUrl = 'http://localhost:8080/user';
-async function sendVerificationEmail(email, userId) {
+async function sendVerificationEmail(email, userId, url) {
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -20,7 +19,7 @@ async function sendVerificationEmail(email, userId) {
     });
 
     // Generate link aktivasi
-    const activationLink = `${websiteUrl}/activate?userId=${userId}`;
+    const activationLink = `${url}/activate?userId=${userId}`;
 
     const mailOptions = {
         from: 'DIBO <' + 'dicodingbot@gmail.com' + '>',
@@ -179,7 +178,7 @@ router.post('/register', (req, res) => {
 
         // Jika data valid dan tidak ada konflik, tambahkan ke database
         const apiKey = generateApiKey();
-
+        const websiteUrl = `${req.protocol}://${req.get('host')}/user`;
         // Menambahkan field limit dan isActive dengan nilai default
         const newUser = {
             email,
@@ -199,7 +198,7 @@ router.post('/register', (req, res) => {
             } else {
                 // Kirim email verifikasi
                 const userId = doc._id;
-                await sendVerificationEmail(email, userId);
+                await sendVerificationEmail(email, userId, websiteUrl);
 
                 res.status(200).json({
                     success: true,
