@@ -2467,7 +2467,7 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
       .then(response => response.json())
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
+        var buffer = result;
         data = await fetch(buffer).then(v => v.buffer())
         await fs.writeFileSync(__path + '/tmp/hestia.jpg', data)
         res.sendFile(__path + '/tmp/hestia.jpg')
@@ -2489,7 +2489,7 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
       .then(response => response.json())
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
+        var buffer = result;
         data = await fetch(buffer).then(v => v.buffer())
         await fs.writeFileSync(__path + '/tmp/mihye.jpg', data)
         res.sendFile(__path + '/tmp/mihye.jpg')
@@ -2511,7 +2511,7 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
       .then(response => response.json())
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
+        var buffer = result;
         data = await fetch(buffer).then(v => v.buffer())
         await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data)
         res.sendFile(__path + '/tmp/nguyen.jpg')
