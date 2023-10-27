@@ -2525,27 +2525,52 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
 })
 
 router.get('/onlyfans/vid', async (req, res, next) => {
-  var Apikey = req.query.apikey
-  if (!Apikey) return res.json(loghandler.notparam)
+  var Apikey = req.query.apikey;
+  if (!Apikey) return res.json(loghandler.notparam);
   if (listkey.includes(Apikey)) {
-
     fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/nsfwvid.json`))
       .then(response => response.json())
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result.url;
-        console.log(buffer);
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/onlyvid.mp4', data)
-        res.sendFile(__path + '/tmp/onlyvid.mp4')
+        res.status(200).json({
+          status: true,
+          code: 200,
+          creator: `${creator}`,
+          result: buffer
+        });
       })
       .catch(e => {
         console.log(e);
-      })
+      });
   } else {
-    res.json(loghandler.invalidKey)
+    res.json(loghandler.invalidKey);
   }
-})
+});
+router.get('/onlyfans/vid2', async (req, res, next) => {
+  var Apikey = req.query.apikey;
+  if (!Apikey) return res.json(loghandler.notparam);
+  if (listkey.includes(Apikey)) {
+    fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/nsfwvid2.json`))
+      .then(response => response.json())
+      .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+        res.status(200).json({
+          status: true,
+          code: 200,
+          creator: `${creator}`,
+          result: buffer
+        });
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  } else {
+    res.json(loghandler.invalidKey);
+  }
+});
+
 
 router.get('/nsfw/ahegao', async (req, res, next) => {
   var Apikey = req.query.apikey
