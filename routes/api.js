@@ -2437,29 +2437,57 @@ router.get('/search/image', async (req, res, next) => {
 })
 
 router.get('/onlyfans/noname', async (req, res, next) => {
-  var Apikey = req.query.apikey
-  if (!Apikey) return res.json(loghandler.notparam)
-  if (listkey.includes(Apikey)) {
+  var Apikey = req.query.apikey;
+  var isJson = req.query.isjson; // Mengambil dan konversi query parameter isjson menjadi boolean
 
+  if (!Apikey) return res.json(loghandler.notparam);
+  if (listkey.includes(Apikey)) {
     fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/onlyfans/Noname.json`))
       .then(response => response.json())
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/noname.jpg', data)
-        res.sendFile(__path + '/tmp/noname.jpg')
+
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/noname.jpg', data);
+          res.sendFile(__path + '/tmp/noname.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/noname.jpg', data);
+          res.sendFile(__path + '/tmp/noname.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
-      })
+        if (isJson) {
+          res.status(500).json({
+            status: false,
+            code: 500,
+            isjson: true,
+            error: e.message
+          });
+        } else {
+          res.status(500).send('Internal Server Error');
+        }
+      });
   } else {
-    res.json(loghandler.invalidKey)
+    res.json(loghandler.invalidKey);
   }
-})
+});
+
 
 router.get('/onlyfans/Hestia', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2468,9 +2496,23 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/hestia.jpg', data)
-        res.sendFile(__path + '/tmp/hestia.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/Hestia.jpg', data);
+          res.sendFile(__path + '/tmp/Hestia.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/Hestia.jpg', data);
+          res.sendFile(__path + '/tmp/Hestia.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2482,6 +2524,7 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
 
 router.get('/onlyfans/Mihye', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2490,9 +2533,23 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/mihye.jpg', data)
-        res.sendFile(__path + '/tmp/mihye.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/mihye.jpg', data);
+          res.sendFile(__path + '/tmp/mihye.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/mihye.jpg', data);
+          res.sendFile(__path + '/tmp/mihye.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2504,6 +2561,7 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
 
 router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2512,9 +2570,23 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data)
-        res.sendFile(__path + '/tmp/nguyen.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data);
+          res.sendFile(__path + '/tmp/nguyen.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data);
+          res.sendFile(__path + '/tmp/nguyen.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2526,6 +2598,7 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
 
 router.get('/onlyfans/UmekoJ', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2534,9 +2607,23 @@ router.get('/onlyfans/UmekoJ', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/UmekoJ.jpg', data)
-        res.sendFile(__path + '/tmp/UmekoJ.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/UmekoJ.jpg', data);
+          res.sendFile(__path + '/tmp/UmekoJ.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/UmekoJ.jpg', data);
+          res.sendFile(__path + '/tmp/UmekoJ.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2548,6 +2635,7 @@ router.get('/onlyfans/UmekoJ', async (req, res, next) => {
 
 router.get('/onlyfans/merial', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2556,9 +2644,23 @@ router.get('/onlyfans/merial', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/merial.jpg', data)
-        res.sendFile(__path + '/tmp/merial.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/merial.jpg', data);
+          res.sendFile(__path + '/tmp/merial.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/merial.jpg', data);
+          res.sendFile(__path + '/tmp/merial.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2570,6 +2672,7 @@ router.get('/onlyfans/merial', async (req, res, next) => {
 
 router.get('/onlyfans/nanaqi', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2578,9 +2681,23 @@ router.get('/onlyfans/nanaqi', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/nanaqi.jpg', data)
-        res.sendFile(__path + '/tmp/nanaqi.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/nanaqi.jpg', data);
+          res.sendFile(__path + '/tmp/nanaqi.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/nanaqi.jpg', data);
+          res.sendFile(__path + '/tmp/nanaqi.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2592,6 +2709,7 @@ router.get('/onlyfans/nanaqi', async (req, res, next) => {
 
 router.get('/onlyfans/okita', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2600,9 +2718,23 @@ router.get('/onlyfans/okita', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/okita.jpg', data)
-        res.sendFile(__path + '/tmp/okita.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/okita.jpg', data);
+          res.sendFile(__path + '/tmp/okita.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/okita.jpg', data);
+          res.sendFile(__path + '/tmp/okita.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2614,6 +2746,7 @@ router.get('/onlyfans/okita', async (req, res, next) => {
 
 router.get('/onlyfans/onlyfans', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2622,9 +2755,23 @@ router.get('/onlyfans/onlyfans', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/onlyfans.jpg', data)
-        res.sendFile(__path + '/tmp/onlyfans.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/onlyfans.jpg', data);
+          res.sendFile(__path + '/tmp/onlyfans.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/onlyfans.jpg', data);
+          res.sendFile(__path + '/tmp/onlyfans.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2636,6 +2783,7 @@ router.get('/onlyfans/onlyfans', async (req, res, next) => {
 
 router.get('/onlyfans/quan', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2644,9 +2792,23 @@ router.get('/onlyfans/quan', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/quan.jpg', data)
-        res.sendFile(__path + '/tmp/quan.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/quan.jpg', data);
+          res.sendFile(__path + '/tmp/quan.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/quan.jpg', data);
+          res.sendFile(__path + '/tmp/quan.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
@@ -2658,6 +2820,7 @@ router.get('/onlyfans/quan', async (req, res, next) => {
 
 router.get('/onlyfans/yoshinobi', async (req, res, next) => {
   var Apikey = req.query.apikey
+  var isJson = req.query.isjson;
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
@@ -2666,9 +2829,23 @@ router.get('/onlyfans/yoshinobi', async (req, res, next) => {
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result;
-        data = await fetch(buffer).then(v => v.buffer())
-        await fs.writeFileSync(__path + '/tmp/yoshinobi.jpg', data)
-        res.sendFile(__path + '/tmp/yoshinobi.jpg')
+        if (isJson == "true") {
+          // Jika isJson adalah true, kirim respons dalam format JSON
+          res.status(200).json({
+            status: true,
+            code: 200,
+            isjson: true,
+            data: buffer
+          });
+        } else if (isJson == "false") {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/yoshinobi.jpg', data);
+          res.sendFile(__path + '/tmp/yoshinobi.jpg');
+        } else {
+          data = await fetch(buffer).then(v => v.buffer());
+          await fs.writeFileSync(__path + '/tmp/yoshinobi.jpg', data);
+          res.sendFile(__path + '/tmp/yoshinobi.jpg');
+        }
       })
       .catch(e => {
         console.log(e);
