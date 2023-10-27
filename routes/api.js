@@ -2555,7 +2555,7 @@ router.get('/onlyfans/vid2', async (req, res, next) => {
       .then(response => response.json())
       .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
+        var buffer = result;
         res.status(200).json({
           status: true,
           code: 200,
