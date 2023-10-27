@@ -2436,7 +2436,116 @@ router.get('/search/image', async (req, res, next) => {
   }
 })
 
+router.get('/onlyfans/noname', async (req, res, next) => {
+  var Apikey = req.query.apikey
+  if (!Apikey) return res.json(loghandler.notparam)
+  if (listkey.includes(Apikey)) {
 
+    fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/onlyfans/Noname.json`))
+      .then(response => response.json())
+      .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result;
+        data = await fetch(buffer).then(v => v.buffer())
+        await fs.writeFileSync(__path + '/tmp/noname.jpg', data)
+        res.sendFile(__path + '/tmp/noname.jpg')
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
+router.get('/onlyfans/Hestia', async (req, res, next) => {
+  var Apikey = req.query.apikey
+  if (!Apikey) return res.json(loghandler.notparam)
+  if (listkey.includes(Apikey)) {
+
+    fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/onlyfans/Hestia.json`))
+      .then(response => response.json())
+      .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+        data = await fetch(buffer).then(v => v.buffer())
+        await fs.writeFileSync(__path + '/tmp/hestia.jpg', data)
+        res.sendFile(__path + '/tmp/hestia.jpg')
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
+router.get('/onlyfans/Mihye', async (req, res, next) => {
+  var Apikey = req.query.apikey
+  if (!Apikey) return res.json(loghandler.notparam)
+  if (listkey.includes(Apikey)) {
+
+    fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/onlyfans/Mihye.json`))
+      .then(response => response.json())
+      .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+        data = await fetch(buffer).then(v => v.buffer())
+        await fs.writeFileSync(__path + '/tmp/mihye.jpg', data)
+        res.sendFile(__path + '/tmp/mihye.jpg')
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
+router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
+  var Apikey = req.query.apikey
+  if (!Apikey) return res.json(loghandler.notparam)
+  if (listkey.includes(Apikey)) {
+
+    fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/onlyfans/NguyenXHuang.json`))
+      .then(response => response.json())
+      .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+        data = await fetch(buffer).then(v => v.buffer())
+        await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data)
+        res.sendFile(__path + '/tmp/nguyen.jpg')
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
+router.get('/onlyfans/vid', async (req, res, next) => {
+  var Apikey = req.query.apikey
+  if (!Apikey) return res.json(loghandler.notparam)
+  if (listkey.includes(Apikey)) {
+
+    fetch(encodeURI(`https://raw.githubusercontent.com/KINGXDENI/Database-Onlyfans/main/nsfwvid.json`))
+      .then(response => response.json())
+      .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+        console.log(buffer);
+        data = await fetch(buffer).then(v => v.buffer())
+        await fs.writeFileSync(__path + '/tmp/onlyvid.mp4', data)
+        res.sendFile(__path + '/tmp/onlyvid.mp4')
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
 
 router.get('/nsfw/ahegao', async (req, res, next) => {
   var Apikey = req.query.apikey
@@ -7237,19 +7346,29 @@ router.get("/maker/nulis", async (req, res, next) => {
 })
 
 router.get('/maker/ttp', async (req, res, next) => {
-
+  const dy = require('api-dylux');
   const text = req.query.text;
+  const color = req.query.color;
   const apikey = req.query.apikey;
-  if (!text) return res.json(loghandler.nottext)
-  if (!apikey) return res.json(loghandler.notparam)
+
+  if (!text) return res.json(loghandler.nottext);
+  if (!apikey) return res.json(loghandler.notparam);
 
   if (listkey.includes(apikey)) {
-    let hasil = 'https://h4ck3rs404-api.herokuapp.com/api/ttp?text=' + text + '&apikey=404Api'
-    data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ttp.png', data)
-    res.sendFile(__path + '/tmp/ttp.png')
+
+    try {
+      data = await dy.ttp(text, color)
+      const response = await axios.get(data.result, {
+        responseType: 'arraybuffer'
+      });
+      await fs.promises.writeFile(__path + '/tmp/ttp.png', response.data);
+      res.sendFile(__path + '/tmp/ttp.png');
+    } catch (error) {
+      console.error(error);
+      res.json(loghandler.errorMessage); // Ganti dengan pesan kesalahan yang sesuai
+    }
   } else {
-    res.json(loghandler.invalidKey)
+    res.json(loghandler.invalidKey);
   }
 })
 

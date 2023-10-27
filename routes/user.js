@@ -9,17 +9,6 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 
-function generateApiKey() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const apiKeyLength = 5;
-    let apiKey = '';
-    for (let i = 0; i < apiKeyLength; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        apiKey += characters.charAt(randomIndex);
-    }
-    return apiKey;
-}
-
 const websiteUrl = 'http://localhost:8080/user';
 async function sendVerificationEmail(email, userId) {
     const transporter = nodemailer.createTransport({
@@ -34,7 +23,7 @@ async function sendVerificationEmail(email, userId) {
     const activationLink = `${websiteUrl}/activate?userId=${userId}`;
 
     const mailOptions = {
-        from: 'DIBO <' + 'premiumboss4@gmail.com' + '>',
+        from: 'DIBO <' + 'dicodingbot@gmail.com' + '>',
         to: email,
         subject: 'Email Verification',
         html: `
@@ -97,6 +86,17 @@ async function sendVerificationEmail(email, userId) {
             console.log('Email sent:', info.response);
         }
     });
+}
+
+function generateApiKey() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const apiKeyLength = 5;
+    let apiKey = '';
+    for (let i = 0; i < apiKeyLength; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        apiKey += characters.charAt(randomIndex);
+    }
+    return apiKey;
 }
 
 router.get('/activate', (req, res) => {

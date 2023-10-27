@@ -5,7 +5,7 @@
   "main": "node index.js",
   "scripts": {
     "start": "node index.js",
-     "dev": "nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@bochilteam/scraper": "^4.2.4",
+    "api-dylux": "^1.7.2",
     "api-rey": "1.1.0",
     "axios": "^0.21.1",
     "base-64": "^1.0.0",
