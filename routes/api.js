@@ -1,20 +1,31 @@
 __path = process.cwd()
 //var favicon = require('serve-favicon');
+const bodyParser = require('body-parser');
 const express = require('express');
+const dy = require('api-dylux');
+const CharacterAI = require("node_characterai");
 const {
-  youtubedl,
-  instagramdl,
   instagramStory,
-  facebookdl,
-  facebookdlv2,
-  snapsave
+  facebookdlv2
 } = require('@bochilteam/scraper')
+const {
+  TelegraPh
+} = require('../lib/uploader')
+const {
+  igdl,
+  fbdown,
+  twitter
+} = require('btch-downloader')
+
 const axios = require('axios');
 require('dotenv').config();
 const {
   Configuration,
   OpenAIApi
 } = require('openai');
+const {
+  remini
+} = require('../lib/remini')
 var db = require(__path + '/database/db');
 try {
   var zahirr = db.get("zahirr");
@@ -34,15 +45,12 @@ var request = require('request');
 var zrapi = require("zrapi");
 var dotenv = require("dotenv").config()
 var fs = require('fs');
-var TikTokScraper = require('tiktok-scraper');
 var {
   EmojiAPI
 } = require("emoji-api");
 var emoji = new EmojiAPI();
 var router = express.Router();
-var {
-  TiktokDownloader
-} = require('../lib/tiktokdl.js')
+
 var {
   color,
   bgcolor
@@ -74,17 +82,10 @@ var {
 var {
   ttdownloader,
   pinterest,
-  fbdown,
   igstalk,
   igstory,
-  igdl,
-  linkwa,
-  igdl
+  linkwa
 } = require("./../lib/anjay");
-
-var {
-  igDownloader
-} = require("./../lib/utils/igdown");
 
 var {
   ytDonlodMp3,
@@ -122,6 +123,37 @@ const {
   igStalk,
   igDownload
 } = require('../lib/utils/ig.js');
+const {
+  TiktokDL,
+  TiktokStalk
+} = require('@tobyg74/tiktok-api-dl');
+const {
+  BardAPI
+} = require('bard-api-node');
+router.use(bodyParser.urlencoded({
+  extended: true
+}));
+router.use(bodyParser.json());
+const multer = require('multer');
+const path = require('path');
+const {
+  Aki
+} = require('aki-api');
+
+// Define storage configuration for multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadDir = path.join(__path, 'tmp', 'upload'); // Sesuaikan dengan path yang diinginkan
+    cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({
+  storage: storage
+})
 
 var cookie = process.env.COOCKIE
 /*
@@ -298,6 +330,58 @@ router.delete("/apikey", async (req, res, next) => {
     });
   }
 });
+
+router.get('/game/akinator', async (req, res, next) => {
+  var Apikey = req.query.apikey
+  var jawaban = req.query.jawaban
+  if (!Apikey) return res.json(loghandler.notparam)
+  if (listkey.includes(Apikey)) {
+    const run = async () => {
+      const region = 'id';
+      const aki = new Aki({
+        region
+      });
+
+      await aki.start();
+
+      const myAnswer = jawaban; // yes = 0
+
+      await aki.step(myAnswer);
+
+      if (aki.progress >= 70 || aki.currentStep >= 78) {
+        await aki.win();
+        res
+          .status(200)
+          .json({
+            code: 200,
+            success: true,
+            result: {
+              firstGuess: aki.answers,
+              guessCount: aki.guessCount
+            }
+          })
+      } else {
+        res
+          .status(200)
+          .json({
+            code: 200,
+            success: true,
+            result: {
+              question: aki.question,
+              answers: aki.answers,
+              progress: aki.progress
+            }
+          })
+      }
+    }
+
+    run().catch(console.error);
+
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+})
+
 
 router.get('/game/family100', async (req, res, next) => {
   var Apikey = req.query.apikey
@@ -719,16 +803,19 @@ router.get('/download/ig2', async (req, res, next) => {
   if (!url) return res.json(loghandler.noturl)
   if (!apikey) return res.json(loghandler.notparam)
   if (listkey.includes(apikey)) {
-    igDownload(url).then((result) => {
+    igdl(url).then((result) => {
         res.json({
           status: true,
           code: 200,
           creator: `${creator}`,
-          result
+          result: {
+            thumbnail: result[0].thumbnail,
+            url: result[0].url
+          }
         })
       })
       .catch((error) => {
-        res.json(error)
+        res.json(loghandler.errorMessage)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -905,20 +992,17 @@ router.get('/download/googleimg', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`http://nzcha-apii.herokuapp.com/googleimage?q=${query}`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.result;
+    dy.googleImage(query).then((result) => {
         res.json({
           status: true,
+          code: 200,
           creator: `${creator}`,
           result
         })
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+      .catch((error) => {
+        res.json(loghandler.errorMessage)
+      });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -932,20 +1016,17 @@ router.get('/download/mediafire', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://api-json-reysekha.herokuapp.com/api/mediafire/?url=${url}&apikey=Yuzzu`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.result;
+    dy.mediafireDl(url).then((result) => {
         res.json({
           status: true,
+          code: 200,
           creator: `${creator}`,
           result
         })
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+      .catch((error) => {
+        res.json(loghandler.errorMessage)
+      });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1022,20 +1103,17 @@ router.get('/downloader/wallpaperflare', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://hadi-api.herokuapp.com/api/wallpaperflare?query=${query}`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.result;
+    dy.wallpaper(query).then((result) => {
         res.json({
           status: true,
+          code: 200,
           creator: `${creator}`,
           result
         })
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+      .catch((error) => {
+        res.json(loghandler.errorMessage)
+      });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1238,20 +1316,20 @@ router.get('/download/sticker', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://api.zeks.me/api/searchsticker?apikey=reyterganz&q=${q}`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.sticker;
+    dy.StickerSearch(q).then((result) => {
         res.json({
           status: true,
+          code: 200,
           creator: `${creator}`,
-          result
+          result: {
+            title: result.title,
+            sticker_url: result.sticker_url
+          }
         })
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+      .catch((error) => {
+        res.json(loghandler.errorMessage)
+      });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1265,20 +1343,17 @@ router.get('/downloader/xnxx', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`http://kocakz.herokuapp.com/api/media/xnxx/search?query=${query}`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.result;
+    dy.xnxxdl(query).then((result) => {
         res.json({
           status: true,
+          code: 200,
           creator: `${creator}`,
           result
         })
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+      .catch((error) => {
+        res.json(loghandler.errorMessage)
+      });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1292,20 +1367,17 @@ router.get('/downloader/twittervid', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`http://kocakz.herokuapp.com/api/media/twvid?url=${url}`))
-      .then(response => response.json())
-      .then(hasil => {
-
-        var result = hasil.getVideo;
+    dy.twitter(url).then((result) => {
         res.json({
           status: true,
+          code: 200,
           creator: `${creator}`,
           result
         })
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+      .catch((error) => {
+        res.json(loghandler.errorMessage)
+      });
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1478,20 +1550,20 @@ router.get('/download/tiktok2', async (req, res, next) => {
   if (!apikey) return res.json(loghandler.notparam)
 
   if (listkey.includes(apikey)) {
-    fetch(encodeURI(`https://aqulzz.herokuapp.com/tiktok?url=${url}`))
-      .then(response => response.json())
-      .then(hasil => {
+    const tiktok_url = url
 
-        var result = hasil.result;
-        res.json({
-          status: true,
-          creator: `${creator}`,
-          result
-        })
+    TiktokDL(tiktok_url, {
+      version: "v3" //  version: "v1" | "v2" | "v3"
+    }).then((result) => {
+      data = result.result
+      res.json({
+        status: true,
+        creator: `${creator}`,
+        result: data
       })
-      .catch(e => {
-        res.json(loghandler.error)
-      })
+    }).catch(e => {
+      res.json(loghandler.error)
+    })
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -1586,7 +1658,7 @@ router.get('/downloader/fb', async (req, res, next) => {
   if (!url) return res.json(loghandler.noturl)
   if (!apikey) return res.json(loghandler.notparam)
   if (listkey.includes(apikey)) {
-    snapsave(url)
+    fbdown(url)
       .then((result) => {
         res.json({
           status: true,
@@ -1610,23 +1682,20 @@ router.get('/stalk/tiktok', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     if (!username) return res.json(loghandler.notusername)
-
-
-    TikTokScraper.getUserProfileInfo(username)
-      .then(user => {
-        res.json({
-          status: true,
-          creator: `${creator}`,
-          result: user
-        })
+    TiktokStalk(username).then((result) => {
+      let data = result.result.users
+      res.json({
+        status: true,
+        creator: `${creator}`,
+        result: data
       })
-      .catch(e => {
-        res.json({
-          status: false,
-          creator: `${creator}`,
-          message: "error, mungkin username anda tidak valid"
-        })
+    }).catch(e => {
+      res.json({
+        status: false,
+        creator: `${creator}`,
+        message: "error, mungkin username anda tidak valid"
       })
+    })
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -2925,7 +2994,27 @@ router.get('/nsfw/vid', async (req, res, next) => {
     res.json(loghandler.invalidKey);
   }
 });
-
+router.get('/nsfw/xnxxsearch', async (req, res, next) => {
+  var Apikey = req.query.apikey;
+  var query = req.query.query;
+  if (!query) return res.json(loghandler.notquery)
+  if (!Apikey) return res.json(loghandler.notparam);
+  if (listkey.includes(Apikey)) {
+    dy.xnxxSearch(query).then((result) => {
+        res.json({
+          status: true,
+          code: 200,
+          creator: `${creator}`,
+          result
+        })
+      })
+      .catch((error) => {
+        res.json(loghandler.errorMessage)
+      });
+  } else {
+    res.json(loghandler.invalidKey);
+  }
+});
 
 router.get('/nsfw/ahegao', async (req, res, next) => {
   var Apikey = req.query.apikey
@@ -7726,7 +7815,6 @@ router.get("/maker/nulis", async (req, res, next) => {
 })
 
 router.get('/maker/ttp', async (req, res, next) => {
-  const dy = require('api-dylux');
   const text = req.query.text;
   const color = req.query.color;
   const apikey = req.query.apikey;
@@ -8173,6 +8261,9 @@ router.get('/ai/chatai', async (req, res, next) => {
         presence_penalty: 0,
       });
       res.status(200).json({
+        status: true,
+        code: 200,
+        creator: `${creator}`,
         result: response.data.choices[0].text.trim()
       })
     } catch (error) {
@@ -8271,6 +8362,9 @@ router.get('/ai/chatai2', async (req, res, next) => {
         console.log(userChats);
         // Kirim respons JSON dengan konten tergabung
         res.status(200).json({
+          status: true,
+          code: 200,
+          creator: `${creator}`,
           response: mergedContent,
           note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://rull.dicodingbot.site/api/ai/clear?apikey=&userId=`
         })
@@ -8379,6 +8473,9 @@ router.get('/ai/chatai3', async (req, res, next) => {
         console.log(userChats);
         // Kirim respons JSON dengan konten tergabung
         res.status(200).json({
+          status: true,
+          code: 200,
+          creator: `${creator}`,
           response: mergedContent,
           note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://rull.dicodingbot.site/api/ai/clear?apikey=&userId=`,
         })
@@ -8409,6 +8506,9 @@ router.get('/ai/clear', async (req, res, next) => {
       // Hapus riwayat obrolan pengguna berdasarkan userId
       delete userChats[userId];
       res.status(200).json({
+        status: true,
+        code: 200,
+        creator: `${creator}`,
         message: 'Chat history deleted successfully'
       });
     } else {
@@ -8422,23 +8522,115 @@ router.get('/ai/clear', async (req, res, next) => {
 
 });
 
+router.get('/ai/bard', async (req, res, next) => {
+  var apikey = req.query.apikey
+  var text = req.query.query
+  if (!apikey) return res.json(loghandler.notparam)
+  if (!text) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "masukan parameter query"
+  })
+  if (listkey.includes(apikey)) {
+    try {
+      const assistant = new BardAPI();
+
+      // Set session information for authentication
+      await assistant.setSession('__Secure-1PSID', 'cAgzzXE3ONTl5msR8iL3pAZgN-xRpAGEff3YSOQo4anRDJhizKE2NB07eb7SL20C7i5PaQ.'); // or '__Secure-3PSID'
+
+      const response = await assistant.getBardResponse(text);
+      res.status(200).json({
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result: response.content
+      })
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        error
+      });
+    }
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+
+});
+
+
+router.get('/ai/cai', async (req, res) => {
+  var apikey = req.query.apikey;
+  var text = req.query.query;
+  var charid = req.query.charid; // Tambahkan parameter charid
+  if (!apikey) return res.json(loghandler.notparam);
+  if (!text) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "Masukkan parameter query"
+  });
+  if (!charid) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "Masukkan parameter charid"
+  });
+
+  if (listkey.includes(apikey)) {
+    try {
+      const characterAI = new CharacterAI();
+      await characterAI.authenticateWithToken('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVqYmxXUlVCWERJX0dDOTJCa2N1YyJ9.eyJpc3MiOiJodHRwczovL2NoYXJhY3Rlci1haS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDg5ODE5MzIwODQyNTY5MTg1MjEiLCJhdWQiOlsiaHR0cHM6Ly9hdXRoMC5jaGFyYWN0ZXIuYWkvIiwiaHR0cHM6Ly9jaGFyYWN0ZXItYWkudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY5ODU5NjY5MSwiZXhwIjoxNzAxMTg4NjkxLCJhenAiOiJkeUQzZ0UyODFNcWdJU0c3RnVJWFloTDJXRWtucVp6diIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ'); // Gantilah dengan token otentikasi yang sesuai
+
+      // Place your character's id here (menggunakan charid dari query parameter)
+      const characterId = charid;
+
+      const chat = await characterAI.createOrContinueChat(characterId);
+
+      // Send a message
+      const response = await chat.sendAndAwaitResponse(text, true);
+      res.status(200).json({
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result: response
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        error
+      });
+    }
+  } else {
+    res.json(loghandler.invalidKey);
+  }
+});
+
+
 
 router.get('/ai/remini', async (req, res, next) => {
-  var apikey = req.query.apikey
-  var url = req.query.url
-  if (!apikey) return res.json(loghandler.notparam)
+  var apikey = req.query.apikey;
+  var url = req.query.url;
+
+  if (!apikey) return res.json(loghandler.notparam);
   if (!url) return res.json({
     status: false,
     creator: `${creator}`,
     message: "masukan parameter url"
-  })
+  });
+
   if (listkey.includes(apikey)) {
     try {
-      let proses = await remini(url, "enhance");
+      let urls = url;
+      const response = await fetch(urls);
+      const buffer = await response.buffer();
 
-      res.status(200).json({
-        message: 'Chat history deleted successfully'
-      });
+      let proses = await remini(buffer, "enhance");
+      await fs.writeFileSync(__path + '/tmp/remini.jpg', proses);
+      res.sendFile(__path + '/tmp/remini.jpg');
+      // res.status(200).json({
+      //   status: true,
+      //   code: 200,
+      //   creator: `${creator}`,
+      //   result: proses
+      // });
     } catch (error) {
       console.error('Error:', error.message);
       res.status(500).json({
@@ -8446,9 +8638,88 @@ router.get('/ai/remini', async (req, res, next) => {
       });
     }
   } else {
-    res.json(loghandler.invalidKey)
+    res.json(loghandler.invalidKey);
   }
+});
 
+router.get('/ai/removebg', async (req, res, next) => {
+  var apikey = req.query.apikey;
+  var url = req.query.url;
+
+  if (!apikey) return res.json(loghandler.notparam);
+  if (!url) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "masukan parameter url"
+  });
+
+  if (listkey.includes(apikey)) {
+    const FormData = require('form-data');
+    const formData = new FormData();
+    formData.append('size', 'auto');
+    formData.append('image_url', url);
+    axios({
+        method: 'post',
+        url: 'https://api.remove.bg/v1.0/removebg',
+        data: formData,
+        responseType: 'arraybuffer',
+        headers: {
+          ...formData.getHeaders(),
+          'X-Api-Key': 'AT9CuiR9Hkf4SP54FfxYHgmD',
+        },
+        encoding: null
+      })
+      .then((response) => {
+        data = response.data
+        if (response.status != 200) return console.error('Error:', response.status, response.statusText);
+        fs.writeFileSync(__path + '/tmp/nobg.png', data);
+        res.sendFile(__path + '/tmp/nobg.png');
+      })
+      .catch((error) => {
+        return console.error('Request failed:', error);
+      });
+  } else {
+    res.json(loghandler.invalidKey);
+  }
+});
+
+
+router.post('/uploadfile', upload.single('media'), async (req, res) => {
+  try {
+    const apiKey = req.query.apikey;
+    if (!apiKey) {
+      return res.json(loghandler.notparam);
+    }
+
+    if (!listkey.includes(apiKey)) {
+      return res.json(loghandler.invalidKey);
+    }
+
+    // Periksa apakah file media ada di req.file
+    if (!req.file) {
+      return res.json({
+        status: 'failed',
+        message: 'Media not found'
+      });
+    }
+
+    // Lakukan sesuatu dengan req.file (file media yang disimpan)
+    const mediaPath = req.file.path; // Path ke file media yang disimpan
+
+    const anu = await TelegraPh(mediaPath);
+    console.log(anu);
+    res.json({
+      status: true,
+      creator: creator,
+      link: anu
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      status: false,
+      message: 'Internal server error.'
+    });
+  }
 });
 
 router.get('/cekapikey', async (req, res, next) => {
