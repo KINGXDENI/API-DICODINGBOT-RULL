@@ -2529,7 +2529,7 @@ router.get('/onlyfans/noname', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/noname.jpg', data);
           res.sendFile(__path + '/tmp/noname.jpg');
-          fs.unlink(__path + '/tmp/noname.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/noname.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2540,7 +2540,7 @@ router.get('/onlyfans/noname', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/noname.jpg', data);
           res.sendFile(__path + '/tmp/noname.jpg');
-          fs.unlink(__path + '/tmp/noname.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/noname.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2591,7 +2591,7 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/Hestia.jpg', data);
           res.sendFile(__path + '/tmp/Hestia.jpg');
-          fs.unlink(__path + '/tmp/Hestia.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/Hestia.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2602,7 +2602,7 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/Hestia.jpg', data);
           res.sendFile(__path + '/tmp/Hestia.jpg');
-          fs.unlink(__path + '/tmp/Hestia.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/Hestia.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2642,7 +2642,7 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/mihye.jpg', data);
           res.sendFile(__path + '/tmp/mihye.jpg');
-          fs.unlink(__path + '/tmp/mihye.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/mihye.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2653,7 +2653,7 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/mihye.jpg', data);
           res.sendFile(__path + '/tmp/mihye.jpg');
-          fs.unlink(__path + '/tmp/mihye.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/mihye.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2693,7 +2693,7 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data);
           res.sendFile(__path + '/tmp/nguyen.jpg');
-          fs.unlink(__path + '/tmp/nguyen.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/nguyen.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2704,7 +2704,7 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data);
           res.sendFile(__path + '/tmp/nguyen.jpg');
-          fs.unlink(__path + '/tmp/nguyen.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/nguyen.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2744,7 +2744,7 @@ router.get('/onlyfans/UmekoJ', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/UmekoJ.jpg', data);
           res.sendFile(__path + '/tmp/UmekoJ.jpg');
-          fs.unlink(__path + '/tmp/UmekoJ.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/UmekoJ.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2755,7 +2755,7 @@ router.get('/onlyfans/UmekoJ', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/UmekoJ.jpg', data);
           res.sendFile(__path + '/tmp/UmekoJ.jpg');
-          fs.unlink(__path + '/tmp/UmekoJ.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/UmekoJ.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2795,7 +2795,7 @@ router.get('/onlyfans/merial', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/merial.jpg', data);
           res.sendFile(__path + '/tmp/merial.jpg');
-          fs.unlink(__path + '/tmp/merial.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/merial.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2812,7 +2812,7 @@ router.get('/onlyfans/merial', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/merial.jpg', data);
           res.sendFile(__path + '/tmp/merial.jpg');
-          fs.unlink(__path + '/tmp/merial.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/merial.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2858,7 +2858,7 @@ router.get('/onlyfans/nanaqi', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/nanaqi.jpg', data);
           res.sendFile(__path + '/tmp/nanaqi.jpg');
-          fs.unlink(__path + '/tmp/nanaqi.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/nanaqi.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2869,7 +2869,7 @@ router.get('/onlyfans/nanaqi', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/nanaqi.jpg', data);
           res.sendFile(__path + '/tmp/nanaqi.jpg');
-          fs.unlink(__path + '/tmp/nanaqi.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/nanaqi.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2909,7 +2909,7 @@ router.get('/onlyfans/okita', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/okita.jpg', data);
           res.sendFile(__path + '/tmp/okita.jpg');
-          fs.unlink(__path + '/tmp/okita.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/okita.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2920,7 +2920,7 @@ router.get('/onlyfans/okita', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/okita.jpg', data);
           res.sendFile(__path + '/tmp/okita.jpg');
-          fs.unlink(__path + '/tmp/okita.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/okita.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2960,7 +2960,7 @@ router.get('/onlyfans/onlyfans', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/onlyfans.jpg', data);
           res.sendFile(__path + '/tmp/onlyfans.jpg');
-          fs.unlink(__path + '/tmp/onlyfans.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/onlyfans.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -2971,7 +2971,7 @@ router.get('/onlyfans/onlyfans', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/onlyfans.jpg', data);
           res.sendFile(__path + '/tmp/onlyfans.jpg');
-          fs.unlink(__path + '/tmp/onlyfans.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/onlyfans.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -3011,7 +3011,7 @@ router.get('/onlyfans/quan', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/quan.jpg', data);
           res.sendFile(__path + '/tmp/quan.jpg');
-          fs.unlink(__path + '/tmp/quan.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/quan.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -3022,7 +3022,7 @@ router.get('/onlyfans/quan', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await (__path + '/tmp/quan.jpg', data);
           res.sendFile(__path + '/tmp/quan.jpg');
-          fs.unlink(__path + '/tmp/quan.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/quan.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -3062,7 +3062,7 @@ router.get('/onlyfans/yoshinobi', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/yoshinobi.jpg', data);
           res.sendFile(__path + '/tmp/yoshinobi.jpg');
-          fs.unlink(__path + '/tmp/yoshinobi.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/yoshinobi.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -3073,7 +3073,7 @@ router.get('/onlyfans/yoshinobi', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.writeFileSync(__path + '/tmp/yoshinobi.jpg', data);
           res.sendFile(__path + '/tmp/yoshinobi.jpg');
-          fs.unlink(__path + '/tmp/yoshinobi.jpg', (err) => {
+          await fs.unlink(__path + '/tmp/yoshinobi.jpg', (err) => {
             if (err) {
               console.error('Error saat menghapus file:', err);
             } else {
@@ -3193,7 +3193,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
     data = await fetch(randahegao).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ahegao.jpeg', data)
     res.sendFile(__path + '/tmp/ahegao.jpeg')
-    fs.unlink(__path + '/tmp/ahegao.jpeg');
+    await fs.unlink(__path + '/tmp/ahegao.jpeg');
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3210,7 +3210,7 @@ router.get('/nsfw/ass', async (req, res, next) => {
     data = await fetch(randass).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ass.jpeg', data)
     res.sendFile(__path + '/tmp/ass.jpeg')
-    fs.unlink(__path + '/tmp/ass.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ass.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3233,7 +3233,7 @@ router.get('/nsfw/bdsm', async (req, res, next) => {
     data = await fetch(randbdsm).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/bdsm.jpeg', data)
     res.sendFile(__path + '/tmp/bdsm.jpeg')
-    fs.unlink(__path + '/tmp/bdsm.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/bdsm.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3256,7 +3256,7 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
     data = await fetch(randblowjob).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/blowjob.jpeg', data)
     res.sendFile(__path + '/tmp/blowjob.jpeg')
-    fs.unlink(__path + '/tmp/blowjob.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/blowjob.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3279,7 +3279,7 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
     data = await fetch(randcuckold).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/cuckold.jpeg', data)
     res.sendFile(__path + '/tmp/cuckold.jpeg')
-    fs.unlink(__path + '/tmp/cuckold.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cuckold.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3302,7 +3302,7 @@ router.get('/nsfw/cum', async (req, res, next) => {
     data = await fetch(randcum).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/cum.jpeg', data)
     res.sendFile(__path + '/tmp/cum.jpeg')
-    fs.unlink(__path + '/tmp/cum.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cum.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3325,7 +3325,7 @@ router.get('/nsfw/ero', async (req, res, next) => {
     data = await fetch(randero).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ero.jpeg', data)
     res.sendFile(__path + '/tmp/ero.jpeg')
-    fs.unlink(__path + '/tmp/ero.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ero.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3348,7 +3348,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
     data = await fetch(randfemdom).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/femdom.jpeg', data)
     res.sendFile(__path + '/tmp/femdom.jpeg')
-    fs.unlink(__path + '/tmp/femdom.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/femdom.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3371,7 +3371,7 @@ router.get('/nsfw/foot', async (req, res, next) => {
     data = await fetch(randfoot).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/foot.jpeg', data)
     res.sendFile(__path + '/tmp/foot.jpeg')
-    fs.unlink(__path + '/tmp/foot.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/foot.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3394,7 +3394,7 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
     data = await fetch(randgangbang).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/gangbang.jpeg', data)
     res.sendFile(__path + '/tmp/gangbang.jpeg')
-    fs.unlink(__path + '/tmp/gangbang.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/gangbang.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3417,7 +3417,7 @@ router.get('/nsfw/glasses', async (req, res, next) => {
     data = await fetch(randglasses).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/glasses.jpeg', data)
     res.sendFile(__path + '/tmp/glasses.jpeg')
-    fs.unlink(__path + '/tmp/glasses.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/glasses.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3440,7 +3440,7 @@ router.get('/nsfw/hentai', async (req, res, next) => {
     data = await fetch(randhentai).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/hentai.jpeg', data)
     res.sendFile(__path + '/tmp/hentai.jpeg')
-    fs.unlink(__path + '/tmp/hentai.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/hentai.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3463,7 +3463,7 @@ router.get('/nsfw/gifs', async (req, res, next) => {
     data = await fetch(randgifs).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/gifs.jpeg', data)
     res.sendFile(__path + '/tmp/gifs.jpeg')
-    fs.unlink(__path + '/tmp/gifs.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/gifs.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3486,7 +3486,7 @@ router.get('/nsfw/jahy', async (req, res, next) => {
     data = await fetch(randjahy).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/jahy.jpeg', data)
     res.sendFile(__path + '/tmp/jahy.jpeg')
-    fs.unlink(__path + '/tmp/jahy.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/jahy.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3509,7 +3509,7 @@ router.get('/nsfw/manga', async (req, res, next) => {
     data = await fetch(randmanga).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/manga.jpeg', data)
     res.sendFile(__path + '/tmp/manga.jpeg')
-    fs.unlink(__path + '/tmp/manga.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/manga.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3532,7 +3532,7 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
     data = await fetch(randmasturbation).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/masturbation.jpeg', data)
     res.sendFile(__path + '/tmp/masturbation.jpeg')
-    fs.unlink(__path + '/tmp/masturbation.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/masturbation.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3555,7 +3555,7 @@ router.get('/nsfw/neko', async (req, res, next) => {
     data = await fetch(randneko).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/neko.jpeg', data)
     res.sendFile(__path + '/tmp/neko.jpeg')
-    fs.unlink(__path + '/tmp/neko.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/neko.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3578,7 +3578,7 @@ router.get('/nsfw/orgy', async (req, res, next) => {
     data = await fetch(randorgy).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/orgy.jpeg', data)
     res.sendFile(__path + '/tmp/orgy.jpeg')
-    fs.unlink(__path + '/tmp/orgy.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/orgy.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3601,7 +3601,7 @@ router.get('/nsfw/panties', async (req, res, next) => {
     data = await fetch(randpanties).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/panties.jpeg', data)
     res.sendFile(__path + '/tmp/panties.jpeg')
-    fs.unlink(__path + '/tmp/panties.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/panties.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3624,7 +3624,7 @@ router.get('/nsfw/pussy', async (req, res, next) => {
     data = await fetch(randpussy).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/pussy.jpeg', data)
     res.sendFile(__path + '/tmp/pussy.jpeg')
-    fs.unlink(__path + '/tmp/pussy.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/pussy.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3647,7 +3647,7 @@ router.get('/nsfw/neko2', async (req, res, next) => {
     data = await fetch(randneko2).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/neko2.jpeg', data)
     res.sendFile(__path + '/tmp/neko2.jpeg')
-    fs.unlink(__path + '/tmp/neko2.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/neko2.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3670,7 +3670,7 @@ router.get('/nsfw/tentacles', async (req, res, next) => {
     data = await fetch(randtentacles).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/tentacles.jpeg', data)
     res.sendFile(__path + '/tmp/tentacles.jpeg')
-    fs.unlink(__path + '/tmp/tentacles.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/tentacles.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3693,7 +3693,7 @@ router.get('/nsfw/thighs', async (req, res, next) => {
     data = await fetch(randthighs).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/thighs.jpeg', data)
     res.sendFile(__path + '/tmp/thighs.jpeg')
-    fs.unlink(__path + '/tmp/thighs.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/thighs.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3716,7 +3716,7 @@ router.get('/nsfw/yuri', async (req, res, next) => {
     data = await fetch(randyuri).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/yuri.jpeg', data)
     res.sendFile(__path + '/tmp/yuri.jpeg')
-    fs.unlink(__path + '/tmp/yuri.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/yuri.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3739,7 +3739,7 @@ router.get('/nsfw/zettai', async (req, res, next) => {
     data = await fetch(randzettai).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/zettai.jpeg', data)
     res.sendFile(__path + '/tmp/zettai.jpeg')
-    fs.unlink(__path + '/tmp/zettai.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/zettai.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3762,7 +3762,7 @@ router.get('/wallpaper/keneki', async (req, res, next) => {
     data = await fetch(randkeneki).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/keneki.jpeg', data)
     res.sendFile(__path + '/tmp/keneki.jpeg')
-    fs.unlink(__path + '/tmp/keneki.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/keneki.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3785,7 +3785,7 @@ router.get('/wallpaper/megumin', async (req, res, next) => {
     data = await fetch(randmegumin).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/megumin.jpeg', data)
     res.sendFile(__path + '/tmp/megumin.jpeg')
-    fs.unlink(__path + '/tmp/megumin.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/megumin.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3808,7 +3808,7 @@ router.get('/wallpaper/yotsuba', async (req, res, next) => {
     data = await fetch(randyotsuba).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/yotsuba.jpeg', data)
     res.sendFile(__path + '/tmp/yotsuba.jpeg')
-    fs.unlink(__path + '/tmp/yotsuba.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/yotsuba.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3831,7 +3831,7 @@ router.get('/wallpaper/shinomiya', async (req, res, next) => {
     data = await fetch(randshinomiya).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/shinomiya.jpeg', data)
     res.sendFile(__path + '/tmp/shinomiya.jpeg')
-    fs.unlink(__path + '/tmp/shinomiya.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/shinomiya.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3854,7 +3854,7 @@ router.get('/wallpaper/yumeko', async (req, res, next) => {
     data = await fetch(randyumeko).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/yumeko.jpeg', data)
     res.sendFile(__path + '/tmp/yumeko.jpeg')
-    fs.unlink(__path + '/tmp/yumeko.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/yumeko.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3877,7 +3877,7 @@ router.get('/wallpaper/tejina', async (req, res, next) => {
     data = await fetch(randtejina).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/tejina.jpeg', data)
     res.sendFile(__path + '/tmp/tejina.jpeg')
-    fs.unlink(__path + '/tmp/tejina.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/tejina.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3900,7 +3900,7 @@ router.get('/wallpaper/chiho', async (req, res, next) => {
     data = await fetch(randchiho).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/chiho.jpeg', data)
     res.sendFile(__path + '/tmp/chiho.jpeg')
-    fs.unlink(__path + '/tmp/chiho.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/chiho.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3923,7 +3923,7 @@ router.get('/wallpaper/cyberspace', async (req, res, next) => {
     data = await fetch(randcyberspace).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/cyberspace.jpeg', data)
     res.sendFile(__path + '/tmp/cyberspace.jpeg')
-    fs.unlink(__path + '/tmp/cyberspace.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cyberspace.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3946,7 +3946,7 @@ router.get('/wallpaper/gaming', async (req, res, next) => {
     data = await fetch(randgaming).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/gaming.jpeg', data)
     res.sendFile(__path + '/tmp/gaming.jpeg')
-    fs.unlink(__path + '/tmp/gaming.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/gaming.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3969,7 +3969,7 @@ router.get('/wallpaper/islami', async (req, res, next) => {
     data = await fetch(randislami).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/islami.jpeg', data)
     res.sendFile(__path + '/tmp/islami.jpeg')
-    fs.unlink(__path + '/tmp/islami.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/islami.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -3992,7 +3992,7 @@ router.get('/wallpaper/programing', async (req, res, next) => {
     data = await fetch(randprograming).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/programing.jpeg', data)
     res.sendFile(__path + '/tmp/programing.jpeg')
-    fs.unlink(__path + '/tmp/programing.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/programing.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4015,7 +4015,7 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
     data = await fetch(randteknologi).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/teknologi.jpeg', data)
     res.sendFile(__path + '/tmp/teknologi.jpeg')
-    fs.unlink(__path + '/tmp/teknologi.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/teknologi.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4038,7 +4038,7 @@ router.get('/wallpaper/mountain', async (req, res, next) => {
     data = await fetch(randmountain).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/mountain.jpeg', data)
     res.sendFile(__path + '/tmp/mountain.jpeg')
-    fs.unlink(__path + '/tmp/mountain.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/mountain.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4061,7 +4061,7 @@ router.get('/wallpaper/tatasurya', async (req, res, next) => {
     data = await fetch(randtatasurya).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/tatasurya.jpeg', data)
     res.sendFile(__path + '/tmp/tatasurya.jpeg')
-    fs.unlink(__path + '/tmp/tatasurya.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/tatasurya.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4084,7 +4084,7 @@ router.get('/wallpaper/kartun', async (req, res, next) => {
     data = await fetch(randkartun).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kartun.jpeg', data)
     res.sendFile(__path + '/tmp/kartun.jpeg')
-    fs.unlink(__path + '/tmp/kartun.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kartun.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4107,7 +4107,7 @@ router.get('/random/yuli', async (req, res, next) => {
     data = await fetch(randyuli).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/yuli.jpeg', data)
     res.sendFile(__path + '/tmp/yuli.jpeg')
-    fs.unlink(__path + '/tmp/yuli.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/yuli.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4130,7 +4130,7 @@ router.get('/wallpaper/pentol', async (req, res, next) => {
     data = await fetch(randpentol).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/pentol.jpeg', data)
     res.sendFile(__path + '/tmp/pentol.jpeg')
-    fs.unlink(__path + '/tmp/pentol.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/pentol.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4153,7 +4153,7 @@ router.get('/wallpaper/katakata', async (req, res, next) => {
     data = await fetch(randkatakata).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/katakata.jpeg', data)
     res.sendFile(__path + '/tmp/katakata.jpeg')
-    fs.unlink(__path + '/tmp/katakata.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/katakata.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4176,7 +4176,7 @@ router.get('/wallpaper/toukachan', async (req, res, next) => {
     data = await fetch(randtoukachan).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/toukachan.jpeg', data)
     res.sendFile(__path + '/tmp/toukachan.jpeg')
-    fs.unlink(__path + '/tmp/toukachan.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/toukachan.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4199,7 +4199,7 @@ router.get('/wallpaper/akira', async (req, res, next) => {
     data = await fetch(randakira).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/akira.jpeg', data)
     res.sendFile(__path + '/tmp/akira.jpeg')
-    fs.unlink(__path + '/tmp/akira.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/akira.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4222,7 +4222,7 @@ router.get('/wallpaper/itori', async (req, res, next) => {
     data = await fetch(randitori).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/itori.jpeg', data)
     res.sendFile(__path + '/tmp/itori.jpeg')
-    fs.unlink(__path + '/tmp/itori.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/itori.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4245,7 +4245,7 @@ router.get('/wallpaper/kurumi', async (req, res, next) => {
     data = await fetch(randkurumi).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kurumi.jpeg', data)
     res.sendFile(__path + '/tmp/kurumi.jpeg')
-    fs.unlink(__path + '/tmp/kurumi.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kurumi.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4268,7 +4268,7 @@ router.get('/wallpaper/miku', async (req, res, next) => {
     data = await fetch(randmiku).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/miku.jpeg', data)
     res.sendFile(__path + '/tmp/miku.jpeg')
-    fs.unlink(__path + '/tmp/miku.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/miku.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4291,7 +4291,7 @@ router.get('/wallpaper/pokemon', async (req, res, next) => {
     data = await fetch(randpokemon).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/pokemon.jpeg', data)
     res.sendFile(__path + '/tmp/pokemon.jpeg')
-    fs.unlink(__path + '/tmp/pokemon.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/pokemon.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4314,7 +4314,7 @@ router.get('/wallpaper/ryujin', async (req, res, next) => {
     data = await fetch(randryujin).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ryujin.jpeg', data)
     res.sendFile(__path + '/tmp/ryujin.jpeg')
-    fs.unlink(__path + '/tmp/ryujin.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ryujin.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4337,7 +4337,7 @@ router.get('/wallpaper/rose', async (req, res, next) => {
     data = await fetch(randrose).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/rose.jpeg', data)
     res.sendFile(__path + '/tmp/rose.jpeg')
-    fs.unlink(__path + '/tmp/rose.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/rose.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4360,7 +4360,7 @@ router.get('/wallpaper/kaori', async (req, res, next) => {
     data = await fetch(randkaori).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kaori.jpeg', data)
     res.sendFile(__path + '/tmp/kaori.jpeg')
-    fs.unlink(__path + '/tmp/kaori.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kaori.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4383,7 +4383,7 @@ router.get('/wallpaper/shizuka', async (req, res, next) => {
     data = await fetch(randshizuka).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/shizuka.jpeg', data)
     res.sendFile(__path + '/tmp/shizuka.jpeg')
-    fs.unlink(__path + '/tmp/shizuka.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/shizuka.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4406,7 +4406,7 @@ router.get('/wallpaper/kaga', async (req, res, next) => {
     data = await fetch(randkaga).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kaga.jpeg', data)
     res.sendFile(__path + '/tmp/kaga.jpeg')
-    fs.unlink(__path + '/tmp/kaga.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kaga.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4429,7 +4429,7 @@ router.get('/wallpaper/kotori', async (req, res, next) => {
     data = await fetch(randkotori).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kotori.jpeg', data)
     res.sendFile(__path + '/tmp/kotori.jpeg')
-    fs.unlink(__path + '/tmp/kotori.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kotori.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4452,7 +4452,7 @@ router.get('/wallpaper/mikasa', async (req, res, next) => {
     data = await fetch(randmikasa).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/mikasa.jpeg', data)
     res.sendFile(__path + '/tmp/mikasa.jpeg')
-    fs.unlink(__path + '/tmp/mikasa.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/mikasa.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4475,7 +4475,7 @@ router.get('/wallpaper/akiyama', async (req, res, next) => {
     data = await fetch(randakiyama).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/akiyama.jpeg', data)
     res.sendFile(__path + '/tmp/akiyama.jpeg')
-    fs.unlink(__path + '/tmp/akiyama.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/akiyama.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4498,7 +4498,7 @@ router.get('/wallpaper/gremory', async (req, res, next) => {
     data = await fetch(randgremory).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/gremory.jpeg', data)
     res.sendFile(__path + '/tmp/gremory.jpeg')
-    fs.unlink(__path + '/tmp/gremory.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/gremory.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4521,7 +4521,7 @@ router.get('/wallpaper/isuzu', async (req, res, next) => {
     data = await fetch(randisuzu).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/isuzu.jpeg', data)
     res.sendFile(__path + '/tmp/isuzu.jpeg')
-    fs.unlink(__path + '/tmp/isuzu.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/isuzu.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4544,7 +4544,7 @@ router.get('/random/cosplay', async (req, res, next) => {
     data = await fetch(randcosplay).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/cosplay.jpeg', data)
     res.sendFile(__path + '/tmp/cosplay.jpeg')
-    fs.unlink(__path + '/tmp/cosplay.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cosplay.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4567,7 +4567,7 @@ router.get('/wallpaper/shina', async (req, res, next) => {
     data = await fetch(randshina).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/shina.jpeg', data)
     res.sendFile(__path + '/tmp/shina.jpeg')
-    fs.unlink(__path + '/tmp/shina.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/shina.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4590,7 +4590,7 @@ router.get('/wallpaper/kagura', async (req, res, next) => {
     data = await fetch(randkagura).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kagura.jpeg', data)
     res.sendFile(__path + '/tmp/kagura.jpeg')
-    fs.unlink(__path + '/tmp/kagura.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kagura.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4613,7 +4613,7 @@ router.get('/wallpaper/shinka', async (req, res, next) => {
     data = await fetch(randshinka).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/shinka.jpeg', data)
     res.sendFile(__path + '/tmp/shinka.jpeg')
-    fs.unlink(__path + '/tmp/shinka.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/shinka.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4636,7 +4636,7 @@ router.get('/wallpaper/eba', async (req, res, next) => {
     data = await fetch(randeba).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/eba.jpeg', data)
     res.sendFile(__path + '/tmp/eba.jpeg')
-    fs.unlink(__path + '/tmp/eba.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/eba.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4659,7 +4659,7 @@ router.get('/wallpaper/deidara', async (req, res, next) => {
     data = await fetch(randDeidara).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/deidara.jpeg', data)
     res.sendFile(__path + '/tmp/deidara.jpeg')
-    fs.unlink(__path + '/tmp/deidara.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/deidara.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4682,7 +4682,7 @@ router.get('/wallpaper/trans', async (req, res, next) => {
     data = await fetch(randtrans).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/trans.jpeg', data)
     res.sendFile(__path + '/tmp/trans.jpeg')
-    fs.unlink(__path + '/tmp/trans.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/trans.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4705,7 +4705,7 @@ router.get('/wallpaper/jeni', async (req, res, next) => {
     data = await fetch(randjeni).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/jeni.jpeg', data)
     res.sendFile(__path + '/tmp/jeni.jpeg')
-    fs.unlink(__path + '/tmp/jeni.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/jeni.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4728,7 +4728,7 @@ router.get('/wallpaper/jiso', async (req, res, next) => {
     data = await fetch(randjiso).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/jiso.jpeg', data)
     res.sendFile(__path + '/tmp/jiso.jpeg')
-    fs.unlink(__path + '/tmp/jiso.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/jiso.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4751,7 +4751,7 @@ router.get('/wallpaper/satanic', async (req, res, next) => {
     data = await fetch(randsatanic).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/satanic.jpeg', data)
     res.sendFile(__path + '/tmp/satanic.jpeg')
-    fs.unlink(__path + '/tmp/satanic.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/satanic.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4774,7 +4774,7 @@ router.get('/wallpaper/cecan2', async (req, res, next) => {
     data = await fetch(randcecan2).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/cecan2.jpeg', data)
     res.sendFile(__path + '/tmp/cecan2.jpeg')
-    fs.unlink(__path + '/tmp/cecan2.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cecan2.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4797,7 +4797,7 @@ router.get('/wallpaper/cogan2', async (req, res, next) => {
     data = await fetch(randcogan2).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/cogan2.jpeg', data)
     res.sendFile(__path + '/tmp/cogan2.jpeg')
-    fs.unlink(__path + '/tmp/cogan2.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cogan2.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4820,7 +4820,7 @@ router.get('/wallpaper/itachi', async (req, res, next) => {
     data = await fetch(randItachi).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ita.jpeg', data)
     res.sendFile(__path + '/tmp/ita.jpeg')
-    fs.unlink(__path + '/tmp/ita.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ita.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4843,7 +4843,7 @@ router.get('/wallpaper/madara', async (req, res, next) => {
     data = await fetch(randMadara).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/madara.jpeg', data)
     res.sendFile(__path + '/tmp/madara.jpeg')
-    fs.unlink(__path + '/tmp/madara.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/madara.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4866,7 +4866,7 @@ router.get('/wallpaper/yuki', async (req, res, next) => {
     data = await fetch(randYuki).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/yuki.jpeg', data)
     res.sendFile(__path + '/tmp/yuki.jpeg')
-    fs.unlink(__path + '/tmp/yuki.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/yuki.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4889,7 +4889,7 @@ router.get('/wallpaper/asuna', async (req, res, next) => {
     data = await fetch(randasuna).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/asuna.jpeg', data)
     res.sendFile(__path + '/tmp/asuna.jpeg')
-    fs.unlink(__path + '/tmp/asuna.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/asuna.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4912,7 +4912,7 @@ router.get('/wallpaper/ayuzawa', async (req, res, next) => {
     data = await fetch(randayuzawa).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ayuzawa.jpeg', data)
     res.sendFile(__path + '/tmp/ayuzawa.jpeg')
-    fs.unlink(__path + '/tmp/ayuzawa.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ayuzawa.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4935,7 +4935,7 @@ router.get('/wallpaper/chitoge', async (req, res, next) => {
     data = await fetch(randchitoge).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/chitoge.jpeg', data)
     res.sendFile(__path + '/tmp/chitoge.jpeg')
-    fs.unlink(__path + '/tmp/chitoge.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/chitoge.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4958,7 +4958,7 @@ router.get('/wallpaper/emilia', async (req, res, next) => {
     data = await fetch(randemilia).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/emilia.jpeg', data)
     res.sendFile(__path + '/tmp/emilia.jpeg')
-    fs.unlink(__path + '/tmp/emilia.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/emilia.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -4981,7 +4981,7 @@ router.get('/wallpaper/hestia', async (req, res, next) => {
     data = await fetch(randhestia).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/hestia.jpeg', data)
     res.sendFile(__path + '/tmp/hestia.jpeg')
-    fs.unlink(__path + '/tmp/hestia.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/hestia.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5004,7 +5004,7 @@ router.get('/wallpaper/inori', async (req, res, next) => {
     data = await fetch(randinori).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/inori.jpeg', data)
     res.sendFile(__path + '/tmp/inori.jpeg')
-    fs.unlink(__path + '/tmp/inori.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/inori.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5027,7 +5027,7 @@ router.get('/wallpaper/ana', async (req, res, next) => {
     data = await fetch(randana).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ana.jpeg', data)
     res.sendFile(__path + '/tmp/ana.jpeg')
-    fs.unlink(__path + '/tmp/ana.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ana.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5050,7 +5050,7 @@ router.get('/wallpaper/boruto', async (req, res, next) => {
     data = await fetch(randBoruto).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/bor.jpeg', data)
     res.sendFile(__path + '/tmp/bor.jpeg')
-    fs.unlink(__path + '/tmp/bor.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/bor.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5073,7 +5073,7 @@ router.get('/wallpaper/erza', async (req, res, next) => {
     data = await fetch(randErza).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/erza.jpeg', data)
     res.sendFile(__path + '/tmp/erza.jpeg')
-    fs.unlink(__path + '/tmp/erza.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/erza.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5096,7 +5096,7 @@ router.get('/wallpaper/kakasih', async (req, res, next) => {
     data = await fetch(randKakasih).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ka.jpeg', data)
     res.sendFile(__path + '/tmp/ka.jpeg')
-    fs.unlink(__path + '/tmp/ka.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ka.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5119,7 +5119,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
     data = await fetch(randSagiri).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/sagiri.jpeg', data)
     res.sendFile(__path + '/tmp/sagiri.jpeg')
-    fs.unlink(__path + '/tmp/sagiri.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/sagiri.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5142,7 +5142,7 @@ router.get('/wallpaper/minato', async (req, res, next) => {
     data = await fetch(randMinato).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/minato.jpeg', data)
     res.sendFile(__path + '/tmp/minato.jpeg')
-    fs.unlink(__path + '/tmp/minato.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/minato.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5165,7 +5165,7 @@ router.get('/wallpaper/naruto', async (req, res, next) => {
     data = await fetch(randNaruto).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/naruto.jpeg', data)
     res.sendFile(__path + '/tmp/naruto.jpeg')
-    fs.unlink(__path + '/tmp/naruto.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/naruto.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5188,7 +5188,7 @@ router.get('/wallpaper/nezuko', async (req, res, next) => {
     data = await fetch(randNezuko).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/nezu.jpeg', data)
     res.sendFile(__path + '/tmp/nezu.jpeg')
-    fs.unlink(__path + '/tmp/nezu.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/nezu.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5211,7 +5211,7 @@ router.get('/wallpaper/onepiece', async (req, res, next) => {
     data = await fetch(randPic).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/pic.jpeg', data)
     res.sendFile(__path + '/tmp/pic.jpeg')
-    fs.unlink(__path + '/tmp/pic.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/pic.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5234,7 +5234,7 @@ router.get('/wallpaper/rize', async (req, res, next) => {
     data = await fetch(randRize).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/rize.jpeg', data)
     res.sendFile(__path + '/tmp/rize.jpeg')
-    fs.unlink(__path + '/tmp/rize.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/rize.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5257,7 +5257,7 @@ router.get('/wallpaper/sakura', async (req, res, next) => {
     data = await fetch(randSakura).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/sakura.jpeg', data)
     res.sendFile(__path + '/tmp/sakura.jpeg')
-    fs.unlink(__path + '/tmp/sakura.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/sakura.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5280,7 +5280,7 @@ router.get('/wallpaper/sasuke', async (req, res, next) => {
     data = await fetch(randSasuke).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/sasuke.jpeg', data)
     res.sendFile(__path + '/tmp/sasuke.jpeg')
-    fs.unlink(__path + '/tmp/sasuke.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/sasuke.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5303,7 +5303,7 @@ router.get('/wallpaper/tsunade', async (req, res, next) => {
     data = await fetch(randSu).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/su.jpeg', data)
     res.sendFile(__path + '/tmp/su.jpeg')
-    fs.unlink(__path + '/tmp/su.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/su.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5326,7 +5326,7 @@ router.get('/wallpaper/montor', async (req, res, next) => {
     data = await fetch(randMon).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/montor.jpeg', data)
     res.sendFile(__path + '/tmp/montor.jpeg');
-    fs.unlink(__path + '/tmp/montor.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/montor.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5349,7 +5349,7 @@ router.get('/wallpaper/mobil', async (req, res, next) => {
     data = await fetch(randMob).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/mobil.jpeg', data)
     res.sendFile(__path + '/tmp/mobil.jpeg');
-    fs.unlink(__path + '/tmp/mobil.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/mobil.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5372,7 +5372,7 @@ router.get('/wallpaper/boneka-chucky', async (req, res, next) => {
     data = await fetch(randBon).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/chucky.jpeg', data)
     res.sendFile(__path + '/tmp/chucky.jpeg');
-    fs.unlink(__path + '/tmp/chucky.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/chucky.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5395,7 +5395,7 @@ router.get('/wallpaper/anime', async (req, res, next) => {
     data = await fetch(randWai23).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/wallhp2.jpeg', data)
     res.sendFile(__path + '/tmp/wallhp2.jpeg');
-    fs.unlink(__path + '/tmp/wallhp2.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/wallhp2.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5418,7 +5418,7 @@ router.get('/wallpaper/random/blackpink', async (req, res, next) => {
     data = await fetch(randBlack).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/blak.jpeg', data)
     res.sendFile(__path + '/tmp/blak.jpeg')
-    fs.unlink(__path + '/tmp/blak.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/blak.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5441,7 +5441,7 @@ router.get('/wallpaper/wallhp', async (req, res, next) => {
     data = await fetch(randWai22).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/wallhp.jpeg', data)
     res.sendFile(__path + '/tmp/wallhp.jpeg');
-    fs.unlink(__path + '/tmp/wallhp.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/wallhp.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5464,7 +5464,7 @@ router.get('/wallpaper/waifu2', async (req, res, next) => {
     data = await fetch(randWai2).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/wibu2.jpeg', data)
     res.sendFile(__path + '/tmp/wibu2.jpeg')
-    fs.unlink(__path + '/tmp/wibu2.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/wibu2.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5487,7 +5487,7 @@ router.get('/wallpaper/waifu', async (req, res, next) => {
     data = await fetch(randWai).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/wibu.jpeg', data)
     res.sendFile(__path + '/tmp/wibu.jpeg');
-    fs.unlink(__path + '/tmp/wibu.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/wibu.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5510,7 +5510,7 @@ router.get('/wallpaper/kpop', async (req, res, next) => {
     data = await fetch(randKpop).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kpop.jpeg', data)
     res.sendFile(__path + '/tmp/kpop.jpeg')
-    fs.unlink(__path + '/tmp/kpop.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kpop.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5533,7 +5533,7 @@ router.get('/wallpaper/hekel', async (req, res, next) => {
     data = await fetch(randHekel).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/hek.jpeg', data)
     res.sendFile(__path + '/tmp/hek.jpeg')
-    fs.unlink(__path + '/tmp/hek.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/hek.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5556,7 +5556,7 @@ router.get('/wallpaper/kucing', async (req, res, next) => {
     data = await fetch(randKucing).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/kucing.jpeg', data)
     res.sendFile(__path + '/tmp/kucing.jpeg')
-    fs.unlink(__path + '/tmp/kucing.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/kucing.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5579,7 +5579,7 @@ router.get('/wallpaper/pubg', async (req, res, next) => {
     data = await fetch(randPubg).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/pubg.jpeg', data)
     res.sendFile(__path + '/tmp/pubg.jpeg')
-    fs.unlink(__path + '/tmp/pubg.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/pubg.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5602,7 +5602,7 @@ router.get('/wallpaper/ppcouple', async (req, res, next) => {
     data = await fetch(randPp).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/pp.jpeg', data)
     res.sendFile(__path + '/tmp/pp.jpeg')
-    fs.unlink(__path + '/tmp/pp.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/pp.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5625,7 +5625,7 @@ router.get('/wallpaper/anjing', async (req, res, next) => {
     data = await fetch(randAnjing).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/ajg.jpeg', data)
     res.sendFile(__path + '/tmp/ajg.jpeg')
-    fs.unlink(__path + '/tmp/ajg.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/ajg.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5648,7 +5648,7 @@ router.get('/wallpaper/doraemon', async (req, res, next) => {
     data = await fetch(randDora).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/dora.jpeg', data)
     res.sendFile(__path + '/tmp/dora.jpeg')
-    fs.unlink(__path + '/tmp/dora.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/dora.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5671,7 +5671,7 @@ router.get('/wallpaper/cogan', async (req, res, next) => {
     data = await fetch(randCogan).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/cogan.jpeg', data)
     res.sendFile(__path + '/tmp/cogan.jpeg')
-    fs.unlink(__path + '/tmp/cogan.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cogan.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5695,7 +5695,7 @@ router.get('/wallpaper/elaina', async (req, res, next) => {
     data = await fetch(randElaina).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/elaina.jpeg', data)
     res.sendFile(__path + '/tmp/elaina.jpeg')
-    fs.unlink(__path + '/tmp/elaina.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/elaina.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5719,7 +5719,7 @@ router.get('/wallpaper/loli', async (req, res, next) => {
     data = await fetch(randLoli).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/loli.jpeg', data)
     res.sendFile(__path + '/tmp/loli.jpeg')
-    fs.unlink(__path + '/tmp/loli.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/loli.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5743,7 +5743,7 @@ router.get('/wallpaper/yuri', async (req, res, next) => {
     data = await fetch(randYuri).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/Yuri.jpeg', data)
     res.sendFile(__path + '/tmp/Yuri.jpeg')
-    fs.unlink(__path + '/tmp/Yuri.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/Yuri.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5767,7 +5767,7 @@ router.get('/wallpaper/cecan', async (req, res, next) => {
     data = await fetch(randCecan).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/cecan.jpeg', data)
     res.sendFile(__path + '/tmp/cecan.jpeg');
-    fs.unlink(__path + '/tmp/cecan.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/cecan.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5791,7 +5791,7 @@ router.get('/wallpaper/aesthetic', async (req, res, next) => {
     data = await fetch(randAesthetic).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/aesthetic.jpeg', data)
     res.sendFile(__path + '/tmp/aesthetic.jpeg');
-    fs.unlink(__path + '/tmp/aesthetic.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/aesthetic.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5815,7 +5815,7 @@ router.get('/wallpaper/justina', async (req, res, next) => {
     data = await fetch(randJus).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/justina.jpeg', data)
     res.sendFile(__path + '/tmp/justina.jpeg')
-    fs.unlink(__path + '/tmp/justina.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/justina.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5839,7 +5839,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
     data = await fetch(randSagiri).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/sagiri.jpeg', data)
     res.sendFile(__path + '/tmp/sagiri.jpeg')
-    fs.unlink(__path + '/tmp/sagiri.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/sagiri.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5862,7 +5862,7 @@ router.get('/wallpaper/shota', async (req, res, next) => {
     data = await fetch(randShota).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/shota.jpeg', data)
     res.sendFile(__path + '/tmp/shota.jpeg');
-    fs.unlink(__path + '/tmp/shota.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/shota.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5885,7 +5885,7 @@ router.get('/wallpaper/nsfwloli', async (req, res, next) => {
     data = await fetch(randLol).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/lol.jpeg', data)
     res.sendFile(__path + '/tmp/lol.jpeg');
-    fs.unlink(__path + '/tmp/lol.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/lol.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -5908,7 +5908,7 @@ router.get('/wallpaper/hinata', async (req, res, next) => {
     data = await fetch(randHin).then(v => v.buffer());
     await fs.writeFileSync(__path + '/tmp/Hinata.jpeg', data)
     res.sendFile(__path + '/tmp/Hinata.jpeg');
-    fs.unlink(__path + '/tmp/Hinata.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/Hinata.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -8753,7 +8753,7 @@ router.get('/maker/dadu', async (req, res, next) => {
     data = await fetch(hasil).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/dadu.png', data)
     res.sendFile(__path + '/tmp/dadu.png')
-    fs.unlink(__path + '/tmp/dadu.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/dadu.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -8776,7 +8776,7 @@ router.get('/blackpink', async (req, res, next) => {
     data = await fetch(hasil).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/pink.jpeg', data)
     res.sendFile(__path + '/tmp/pink.jpeg')
-    fs.unlink(__path + '/tmp/pink.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/pink.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -8798,7 +8798,7 @@ router.get('/asupan', async (req, res, next) => {
     data = await fetch(randAsupan).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/asupan.mp4', data)
     res.sendFile(__path + '/tmp/asupan.mp4')
-    fs.unlink(__path + '/tmp/asupan.mp4');
+    await fs.unlink(__path + '/tmp/asupan.mp4');
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -8817,7 +8817,7 @@ router.get("/maker/nulis", async (req, res, next) => {
     data = await fetch(hasil).then(v => v.buffer())
     await fs.writeFileSync(__path + '/tmp/nulis.jpeg', data)
     res.sendFile(__path + '/tmp/nulis.jpeg')
-    fs.unlink(__path + '/tmp/nulis.jpeg', (err) => {
+    await fs.unlink(__path + '/tmp/nulis.jpeg', (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
@@ -9640,7 +9640,7 @@ router.get('/ai/remini', async (req, res, next) => {
       let proses = await remini(buffer, "enhance");
       await fs.writeFileSync(__path + '/tmp/remini.jpg', proses);
       res.sendFile(__path + '/tmp/remini.jpg');
-      fs.unlink(__path + '/tmp/remini.jpg', (err) => {
+      await fs.unlink(__path + '/tmp/remini.jpg', (err) => {
         if (err) {
           console.error('Error saat menghapus file:', err);
         } else {
@@ -9691,16 +9691,16 @@ router.get('/ai/removebg', async (req, res, next) => {
         },
         encoding: null
       })
-      .then((response) => {
-        data = response.data
+      .then(async (response) => {
+        data = response.data;
         if (response.status != 200) return console.error('Error:', response.status, response.statusText);
-        fs.writeFileSync(__path + '/tmp/nobg.png', data);
+        await fs.writeFileSync(__path + '/tmp/nobg.png', data);
         res.sendFile(__path + '/tmp/nobg.png');
-        fs.unlink(__path + '/tmp/nobg.png', (err) => {
+        await fs.unlink(__path + '/tmp/nobg.png', (err) => {
           if (err) {
             console.error('Error saat menghapus file:', err);
           } else {
-            console.log('File berhasil dihapus:');
+            console.log('File berhasil dihapus');
           }
         });
       })
@@ -9711,6 +9711,7 @@ router.get('/ai/removebg', async (req, res, next) => {
     res.json(loghandler.invalidKey);
   }
 });
+
 
 
 router.post('/uploadfile', upload.single('media'), async (req, res) => {
@@ -9734,7 +9735,7 @@ router.post('/uploadfile', upload.single('media'), async (req, res) => {
       link: anu
     });
 
-    fs.unlink(mediaPath, (err) => {
+    await fs.unlink(mediaPath, (err) => {
       if (err) {
         console.error('Error saat menghapus file:', err);
       } else {
