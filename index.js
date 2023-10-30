@@ -4,7 +4,6 @@ var express = require('express'),
     cors = require('cors'),
     secure = require('ssl-express-www');
 var db = require(__path + '/database/db');
-const session = require('express-session');
 const PORT = process.env.PORT || 8080 || 5000 || 3000
 var {
     color
@@ -21,12 +20,8 @@ app.set("json spaces", 2)
 app.use(cors())
 app.use(secure)
 app.use(express.static("public"))
-
-app.use(session({
-    secret: 'secret-key', // Ganti dengan kunci rahasia yang aman
-    resave: false,
-    saveUninitialized: true
-}));
+app.set('view engine', 'ejs');
+app.set('views', (__path, 'views'));
 
 app.use('/', mainrouter);
 app.use('/api', apirouter);

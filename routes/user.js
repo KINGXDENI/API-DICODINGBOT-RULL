@@ -1,3 +1,5 @@
+__path = process.cwd()
+
 const express = require('express');
 const router = express.Router();
 const db = require(__path + '/database/db');
@@ -256,18 +258,11 @@ router.post('/login', (req, res) => {
 
             // Jika login berhasil, Anda dapat mengatur sesi untuk menandai bahwa pengguna sudah login
 
-            const users = {
-                username: user.username,
-                email: user.email,
-                apiKey: user.apiKey,
-                limit: user.limit
-            };
+            req.session.user = user._id;
             req.session.loggedIn = true;
-
             res.status(200).json({
                 success: true,
                 message: 'Login berhasil.',
-                users,
                 isActive: user.isActive
             });
         }

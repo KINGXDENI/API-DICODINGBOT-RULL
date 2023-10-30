@@ -47,107 +47,125 @@
                     data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Downloader & Media</h6>
-                        <a class="collapse-item" target="_blank" href="/api/music/joox?query=akad&apikey=APIKEY"
-                            target="_blank">Joox search</a>
-                        <a class="collapse-item" target="_blank" href="/api/download/joox3?query=akad&apikey=APIKEY"
-                            target="_blank">Joox search2</a>
-                        <a class="collapse-item" target="_blank" href="/api/download/joox2?query=akad&apikey=APIKEY"
-                            target="_blank">Joox Media</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/smule?url=https://www.smule.com/recording/lewis-capaldi-someone-you-loved-slower-piano/1112691877_3200708124&apikey=APIKEY"
+                            href="/api/music/joox?query=akad&apikey=<%= user.apiKey%>" target="_blank">Joox search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/download/joox3?query=akad&apikey=<%= user.apiKey%>" target="_blank">Joox
+                            search2</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/download/joox2?query=akad&apikey=<%= user.apiKey%>" target="_blank">Joox
+                            Media</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/download/smule?url=https://www.smule.com/recording/lewis-capaldi-someone-you-loved-slower-piano/1112691877_3200708124&apikey=<%= user.apiKey%>"
                             target="_blank">Smule Download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/ytmp4?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY"
+                            href="/api/download/ytmp4?url=https://youtu.be/6l5V3BWDcMw&apikey=<%= user.apiKey%>"
                             target="_blank">Youtube Video</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/ytmp42?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY"
+                            href="/api/download/ytmp42?url=https://youtu.be/6l5V3BWDcMw&apikey=<%= user.apiKey%>"
                             target="_blank">Youtube Video2</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/ytmp3?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY"
+                            href="/api/download/ytmp3?url=https://youtu.be/6l5V3BWDcMw&apikey=<%= user.apiKey%>"
                             target="_blank">Youtube Audio</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/ytmp32?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY"
+                            href="/api/download/ytmp32?url=https://youtu.be/6l5V3BWDcMw&apikey=<%= user.apiKey%>"
                             target="_blank">Youtube Audio2</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/facebook?url=https://www.facebook.com/botikaonline/videos/837084093818982&apikey=APIKEY"
+                            href="/api/downloader/facebook?url=https://www.facebook.com/botikaonline/videos/837084093818982&apikey=<%= user.apiKey%>"
                             target="_blank">FB download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/fb?url=https://www.facebook.com/100044139564343/posts/375127390635243&apikey=APIKEY"
+                            href="/api/downloader/fb?url=https://www.facebook.com/100044139564343/posts/375127390635243&apikey=<%= user.apiKey%>"
                             target="_blank">FB download2</a>
-                        <a class="collapse-item" target="_blank" href="/api/music/spotify?query=akad&apikey=APIKEY"
-                            target="_blank">Spotify search</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/pinterest?q=aeshestic&apikey=APIKEY" target="_blank">pinterest
+                            href="/api/music/spotify?query=akad&apikey=<%= user.apiKey%>" target="_blank">Spotify
                             search</a>
-                        <a class="collapse-item" target="_blank" href="/api/download/unplash?q=good night&apikey=APIKEY"
-                            target="_blank">unplash search</a>
-                        <a class="collapse-item" target="_blank" href="/api/download/sticker?q=patrick&apikey=APIKEY"
-                            target="_blank">stickerWA search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/downloader/pinterest?q=aeshestic&apikey=<%= user.apiKey%>"
+                            target="_blank">pinterest
+                            search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/download/unplash?q=good night&apikey=<%= user.apiKey%>" target="_blank">unplash
+                            search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/download/sticker?q=patrick&apikey=<%= user.apiKey%>" target="_blank">stickerWA
+                            search</a>
                         <a class="collapse-item" target="_blank"
                             href="/api/download/stickerline?url=https://store.line.me/stickershop/product/9409/id=APIKEY"
                             target="_blank">stickerLINE search</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/shoppe?q=jaket gunung&apikey=APIKEY" target="_blank">shoppe search</a>
+                            href="/api/download/shoppe?q=jaket gunung&apikey=<%= user.apiKey%>" target="_blank">shoppe
+                            search</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/wallpaperflare?query=anime&apikey=APIKEY"
+                            href="/api/downloader/wallpaperflare?query=anime&apikey=<%= user.apiKey%>"
                             target="_blank">wallpaperflare search</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/googleimg?query=kucing&apikey=APIKEY" target="_blank">google img
+                            href="/api/download/googleimg?query=kucing&apikey=<%= user.apiKey%>" target="_blank">google
+                            img
                             search</a>
-                        <a class="collapse-item" target="_blank" href="/api/download/apk?query=whatsapp&apikey=APIKEY"
-                            target="_blank">Apk search</a>
-                        <a class="collapse-item" target="_blank" href="/api/download/apkdl?url=URL_NYA&apikey=APIKEY"
-                            target="_blank">Apk download</a>
-                        <a class="collapse-item" target="_blank" href="/api/yt/playmp3?query=surender&apikey=APIKEY"
-                            target="_blank">play mp3</a>
-                        <a class="collapse-item" target="_blank" href="/api/yt/playmp4?query=surender&apikey=APIKEY"
-                            target="_blank">play mp4</a>
-                        <a class="collapse-item" target="_blank" href="/api/yt/search?query=surender&apikey=APIKEY"
-                            target="_blank">yt search</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/tiktok?url=https://vt.tiktok.com/ZSeJ7P56G&apikey=APIKEY"
+                            href="/api/download/apk?query=whatsapp&apikey=<%= user.apiKey%>" target="_blank">Apk
+                            search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/download/apkdl?url=URL_NYA&apikey=<%= user.apiKey%>" target="_blank">Apk
+                            download</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/yt/playmp3?query=surender&apikey=<%= user.apiKey%>" target="_blank">play mp3</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/yt/playmp4?query=surender&apikey=<%= user.apiKey%>" target="_blank">play mp4</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/yt/search?query=surender&apikey=<%= user.apiKey%>" target="_blank">yt search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/download/tiktok?url=https://vt.tiktok.com/ZSeJ7P56G&apikey=<%= user.apiKey%>"
                             target="_blank">Tiktok download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/tiktok2?url=https://vt.tiktok.com/ZSeJ7P56G&apikey=APIKEY"
+                            href="/api/download/tiktok2?url=https://vt.tiktok.com/ZSeJ7P56G&apikey=<%= user.apiKey%>"
                             target="_blank">Tiktok download2</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/ig2?url=https://www.instagram.com/reel/CypfEyHB4q3/?igshid=MzRlODBiNWFlZA==&apikey=APIKEY"
+                            href="/api/download/ig2?url=https://www.instagram.com/reel/CypfEyHB4q3/?igshid=MzRlODBiNWFlZA==&apikey=<%= user.apiKey%>"
                             target="_blank">IG download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/ig?url=https://www.instagram.com/reel/CypfEyHB4q3/?igshid=MzRlODBiNWFlZA==&apikey=APIKEY"
+                            href="/api/download/ig?url=https://www.instagram.com/reel/CypfEyHB4q3/?igshid=MzRlODBiNWFlZA==&apikey=<%= user.apiKey%>"
                             target="_blank">IG POST download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/igtv?url=https://www.instagram.com/tv/CSW1PMohXDm&apikey=APIKEY"
+                            href="/api/downloader/igtv?url=https://www.instagram.com/tv/CSW1PMohXDm&apikey=<%= user.apiKey%>"
                             target="_blank">IG TV download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/igstory?username=attahalilintar&apikey=APIKEY" target="_blank">IG
+                            href="/api/download/igstory?username=attahalilintar&apikey=<%= user.apiKey%>"
+                            target="_blank">IG
                             STORY</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/download/mediafire?url=https://www.mediafire.com/file/v035jsup2d2wp1n/textprome.js/file&apikey=APIKEY"
+                            href="/api/download/mediafire?url=https://www.mediafire.com/file/v035jsup2d2wp1n/textprome.js/file&apikey=<%= user.apiKey%>"
                             target="_blank">Mediafire download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/twitterimg?url=https://twitter.com/renaldypjs/status/1343516524934438912&apikey=APIKEY"
+                            href="/api/downloader/twitterimg?url=https://twitter.com/renaldypjs/status/1343516524934438912&apikey=<%= user.apiKey%>"
                             target="_blank">Twitter img download</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/twittervid?url=https://twitter.com/weareoneEXO/status/1344811074864914433&apikey=APIKEY"
+                            href="/api/downloader/twittervid?url=https://twitter.com/weareoneEXO/status/1344811074864914433&apikey=<%= user.apiKey%>"
                             target="_blank">Twitter vid download</a>
-                        <a class="collapse-item" target="_blank" href="/api/stalk/ig?username=_sekhaa&apikey=APIKEY"
-                            target="_blank">Stalk Instagram</a>
-                        <a class="collapse-item" target="_blank" href="/api/stalk/ig2?username=_sekhaa&apikey=APIKEY"
-                            target="_blank">Stalk Instagram2</a>
-                        <a class="collapse-item" target="_blank" href="/api/stalk/github?username=inirey&apikey=APIKEY"
-                            target="_blank">Stalk Github</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/stalk/tiktok?username=attahalilintar&apikey=APIKEY" target="_blank">stalk
+                            href="/api/stalk/ig?username=_sekhaa&apikey=<%= user.apiKey%>" target="_blank">Stalk
+                            Instagram</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/stalk/ig2?username=_sekhaa&apikey=<%= user.apiKey%>" target="_blank">Stalk
+                            Instagram2</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/stalk/github?username=inirey&apikey=<%= user.apiKey%>" target="_blank">Stalk
+                            Github</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/stalk/tiktok?username=attahalilintar&apikey=<%= user.apiKey%>"
+                            target="_blank">stalk
                             tiktok</a>
-                        <a class="collapse-item" target="_blank" href="/api/stalk/npm?query=hx&apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/stalk/npm?query=hx&apikey=<%= user.apiKey%>"
                             target="_blank">stalk npm</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/downloader/pornhub?query=japan&apikey=APIKEY" target="_blank">Pornhub search</a>
-                        <a class="collapse-item" target="_blank" href="/api/downloader/xnxx?query=japan&apikey=APIKEY"
-                            target="_blank">Xnxx search</a>
-                        <a class="collapse-item" target="_blank" href="/api/downloader/xvideo?query=japan&apikey=APIKEY"
-                            target="_blank">Xvideos search</a>
+                            href="/api/downloader/pornhub?query=japan&apikey=<%= user.apiKey%>" target="_blank">Pornhub
+                            search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/downloader/xnxx?query=japan&apikey=<%= user.apiKey%>" target="_blank">Xnxx
+                            search</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/downloader/xvideo?query=japan&apikey=<%= user.apiKey%>" target="_blank">Xvideos
+                            search</a>
                     </div>
                 </div>
             </li>
@@ -161,149 +179,164 @@
                     data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Image maker</h6>
-                        <a class="collapse-item" href="/api/maker/harta-tahta?text=reyganz&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/maker/harta-tahta?text=reyganz&apikey=<%= user.apiKey%>"
                             target="_blank">harta tahta</a>
-                        <a class="collapse-item" href="/api/maker/silverbutton?text=reyganz&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/maker/silverbutton?text=reyganz&apikey=<%= user.apiKey%>"
                             target="_blank">silver button</a>
-                        <a class="collapse-item" href="/api/maker/goldbutton?text=reyganz&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/maker/goldbutton?text=reyganz&apikey=<%= user.apiKey%>"
                             target="_blank">gold button</a>
-                        <a class="collapse-item" href="/api/maker/nulis?text=reyganz&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/maker/nulis?text=reyganz&apikey=<%= user.apiKey%>"
                             target="_blank">nulis</a>
-                        <a class="collapse-item" href="/api/maker/emoji2png?text=%F0%9F%98%85&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/maker/emoji2png?text=%F0%9F%98%85&apikey=<%= user.apiKey%>"
                             target="_blank">emoji to png</a>
                         <h6 class="collapse-header">Textprome Features</h6>
-                        <a class="collapse-item" href="/api/textpro/magma?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/magma?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">magma</a>
-                        <a class="collapse-item" href="/api/textpro/hallowen-text?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/hallowen-text?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">hallowen effect</a>
-                        <a class="collapse-item" href="/api/textpro/neon-light?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/neon-light?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Neon light</a>
-                        <a class="collapse-item" href="/api/textpro/broken-glass?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/broken-glass?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">broken glass</a>
-                        <a class="collapse-item" href="/api/textpro/art-papper?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/art-papper?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Art papper</a>
-                        <a class="collapse-item" href="/api/textpro/glossy?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/glossy?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">glossy</a>
-                        <a class="collapse-item" href="/api/textpro/water-color?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/water-color?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">water color</a>
-                        <a class="collapse-item" href="/api/textpro/multi-color?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/multi-color?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">multi color</a>
-                        <a class="collapse-item" href="/api/textpro/neon-devil?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/neon-devil?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Neon devil</a>
-                        <a class="collapse-item" href="/api/textpro/sky-text?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/sky-text?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">sky text</a>
-                        <a class="collapse-item" href="/api/textpro/luxury?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/luxury?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">luxury</a>
-                        <a class="collapse-item" href="/api/textpro/vintage?text=Revita&text2=canszz&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/vintage?text=Revita&text2=canszz&apikey=<%= user.apiKey%>"
                             target="_blank">vintage</a>
-                        <a class="collapse-item" href="/api/textpro/writing?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/writing?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Writing</a>
-                        <a class="collapse-item" href="/api/textpro/engraved?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/engraved?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Engraved</a>
-                        <a class="collapse-item" href="/api/textpro/glue-text?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/glue-text?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Glue text</a>
-                        <a class="collapse-item" href="/api/textpro/pornhub?text=Revita&text2=cans&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/pornhub?text=Revita&text2=cans&apikey=<%= user.apiKey%>"
                             target="_blank">porn HUB</a>
-                        <a class="collapse-item" href="/api/textpro/holograpic?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/holograpic?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">holograpic</a>
-                        <a class="collapse-item" href="/api/textpro/deluxe-silver?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/deluxe-silver?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">deluxe silver</a>
-                        <a class="collapse-item" href="/api/textpro/fabric?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/fabric?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Fabric</a>
-                        <a class="collapse-item" href="/api/textpro/wicker?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/wicker?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">wicker</a>
-                        <a class="collapse-item" href="/api/textpro/larva?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/larva?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Larva</a>
-                        <a class="collapse-item" href="/api/textpro/toxic-bokeh?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/toxic-bokeh?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Toxic</a>
-                        <a class="collapse-item" href="/api/textpro/stroberi?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/stroberi?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">strobery</a>
-                        <a class="collapse-item" href="/api/textpro/koi?text=Revita&apikey=APIKEY" target="_blank">koi
+                        <a class="collapse-item" href="/api/textpro/koi?text=Revita&apikey=<%= user.apiKey%>"
+                            target="_blank">koi
                             pish</a>
-                        <a class="collapse-item" href="/api/textpro/bread?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/bread?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Bread</a>
-                        <a class="collapse-item" href="/api/textpro/horor-blood?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/horor-blood?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">horor blood</a>
-                        <a class="collapse-item" href="/api/textpro/honey?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/honey?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">honey</a>
-                        <a class="collapse-item" href="/api/textpro/ice?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/ice?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Ice</a>
-                        <a class="collapse-item" href="/api/textpro/rusty?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/rusty?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Rusty effect</a>
-                        <a class="collapse-item" href="/api/textpro/captain?text=Revita&text2=cans&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/captain?text=Revita&text2=cans&apikey=<%= user.apiKey%>"
                             target="_blank">captain Amerika</a>
-                        <a class="collapse-item" href="/api/textpro/3d-gradient?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/3d-gradient?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">gradien</a>
-                        <a class="collapse-item" href="/api/textpro/christmas?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/christmas?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">christmas</a>
-                        <a class="collapse-item" href="/api/textpro/drop-water?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/drop-water?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">drop water</a>
-                        <a class="collapse-item" href="/api/textpro/black-pink?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/black-pink?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">blackpink</a>
-                        <a class="collapse-item" href="/api/textpro/logo-wolf?text=Revita&text2&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/logo-wolf?text=Revita&text2&apikey=<%= user.apiKey%>"
                             target="_blank">Logo Wolf</a>
-                        <a class="collapse-item" href="/api/textpro/natural-leavest?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/natural-leavest?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Natural leavest</a>
-                        <a class="collapse-item" href="/api/textpro/logo-wolf2?text=Revita&text2&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/logo-wolf2?text=Revita&text2&apikey=<%= user.apiKey%>"
                             target="_blank">Logo Wolf 2</a>
-                        <a class="collapse-item" href="/api/textpro/harry-potter?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/harry-potter?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Harry Potter</a>
-                        <a class="collapse-item" href="/api/textpro/3dstone?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/3dstone?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">3D stone</a>
-                        <a class="collapse-item" href="/api/textpro/1917?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/1917?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">1917</a>
-                        <a class="collapse-item" href="/api/textpro/thunder2?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/thunder2?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Thunder 2</a>
-                        <a class="collapse-item" href="/api/textpro/space?text=Revita&text2=cans&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/space?text=Revita&text2=cans&apikey=<%= user.apiKey%>"
                             target="_blank">Space</a>
-                        <a class="collapse-item" href="/api/textpro/joker-logo?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/joker-logo?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Joker logo</a>
-                        <a class="collapse-item" href="/api/textpro/hallowen?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/hallowen?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">hallowen</a>
-                        <a class="collapse-item" href="/api/textpro/blood?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/blood?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Blood text</a>
-                        <a class="collapse-item" href="/api/textpro/astone?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/astone?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Astone</a>
-                        <a class="collapse-item" href="/api/textpro/grafity-text?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/textpro/grafity-text?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Grafity text</a>
-                        <a class="collapse-item" href="/api/textpro/grafity-text2?text=Revita&text2=cans&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/grafity-text2?text=Revita&text2=cans&apikey=<%= user.apiKey%>"
                             target="_blank">Grafity text2</a>
-                        <a class="collapse-item" href="/api/textpro/ninja-logo?text=Revita&text2=canszz&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/ninja-logo?text=Revita&text2=canszz&apikey=<%= user.apiKey%>"
                             target="_blank">Ninja logo</a>
-                        <a class="collapse-item" href="/api/textpro/lion-logo?text=Revita&text2=cansz&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/lion-logo?text=Revita&text2=cansz&apikey=<%= user.apiKey%>"
                             target="_blank">lion logo</a>
-                        <a class="collapse-item" href="/api/textpro/avengers-logo?text=Revita&text2=cans&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/textpro/avengers-logo?text=Revita&text2=cans&apikey=<%= user.apiKey%>"
                             target="_blank">Avengers</a>
                         <a class="collapse-item" href="/api/textpro/marvel-logo2?text=Revita&text2=cans"
                             target="_blank">Marvel studio</a>
                         <h6 class="collapse-header">Photoxry Features</h6>
-                        <a class="collapse-item" href="/api/photooxy/army?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/army?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">Army text</a>
-                        <a class="collapse-item" href="/api/maker/matrix?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/maker/matrix?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">matrix</a>
-                        <a class="collapse-item" href="/api/maker/pubglogo?text1=Revita&text2=cans&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/maker/pubglogo?text1=Revita&text2=cans&apikey=<%= user.apiKey%>"
                             target="_blank">PUBG</a>
-                        <a class="collapse-item" href="/api/maker/breakwall?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/maker/breakwall?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">breakwall</a>
-                        <a class="collapse-item" href="/api/photooxy/butterfly?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/butterfly?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">butterfly</a>
-                        <a class="collapse-item" href="/api/photooxy/naruto?text1=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/naruto?text1=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">naruto</a>
-                        <a class="collapse-item" href="/api/photooxy/smoke?text1=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/smoke?text1=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">smoke text</a>
-                        <a class="collapse-item" href="/api/photooxy/burn-papper?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/burn-papper?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">burn papper</a>
-                        <a class="collapse-item" href="/api/photooxy/love-message?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/love-message?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">love message</a>
-                        <a class="collapse-item" href="/api/photooxy/love-text?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/love-text?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">love text</a>
-                        <a class="collapse-item" href="/api/photooxy/coffe-cup?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/coffe-cup?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">coffe cup</a>
-                        <a class="collapse-item" href="/api/photooxy/double-heart?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item" href="/api/photooxy/double-heart?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">double heart</a>
-                        <a class="collapse-item" href="/api/photooxy/glitch?text=Revita&text2=cans&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/photooxy/glitch?text=Revita&text2=cans&apikey=<%= user.apiKey%>"
                             target="_blank">glitch effect</a>
-                        <a class="collapse-item" href="/api/photooxy/message-under-grass?text=Revita&apikey=APIKEY"
+                        <a class="collapse-item"
+                            href="/api/photooxy/message-under-grass?text=Revita&apikey=<%= user.apiKey%>"
                             target="_blank">message under grass</a>
                     </div>
                 </div>
@@ -317,30 +350,30 @@
                 <div id="collapseGame" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Game API</h6>
-                        <a class="collapse-item" target="_blank" href="/api/kuis/tebakGambar?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/kuis/tebakGambar?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak gambar</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebaklirik?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebaklirik?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak lirik</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebakkata?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebakkata?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak kata</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebakkalimat?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebakkalimat?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak kalimat</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebaktebakan?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebaktebakan?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak tebakan</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebakjenaka?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebakjenaka?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak jenaka</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebakbendera?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebakbendera?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak bendera</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebakkimia?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebakkimia?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak kimia</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/tebakchara?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/tebakchara?apikey=<%= user.apiKey%>"
                             target="_blank">Tebak chara</a>
-                        <a class="collapse-item" target="_blank" href="/api/kuis/caklontong?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/kuis/caklontong?apikey=<%= user.apiKey%>"
                             target="_blank">Cak lontong</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/family100?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/game/family100?apikey=<%= user.apiKey%>"
                             target="_blank">Family 100</a>
-                        <a class="collapse-item" target="_blank" href="/api/game/akinator?jawaban=&apikey=APIKEY"
-                            target="_blank">Akinator</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/game/akinator?jawaban=&apikey=<%= user.apiKey%>" target="_blank">Akinator</a>
                     </div>
                 </div>
             </li>
@@ -354,18 +387,22 @@
                     data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Islamic Api</h6>
-                        <a class="collapse-item" target="_blank" href="/api/muslim/asmaulhusna?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/muslim/asmaulhusna?apikey=<%= user.apiKey%>"
                             target="_blank">Asmaul Husna</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/muslim/jadwalshalat?kota=banyuwangi&apikey=APIKEY" target="_blank">jadwal shalat
+                            href="/api/muslim/jadwalshalat?kota=banyuwangi&apikey=<%= user.apiKey%>"
+                            target="_blank">jadwal shalat
                         </a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/muslim/hadits?kitab=bukhari&nomor=52&apikey=APIKEY" target="_blank">Hadist
+                            href="/api/muslim/hadits?kitab=bukhari&nomor=52&apikey=<%= user.apiKey%>"
+                            target="_blank">Hadist
                             sahih</a>
-                        <a class="collapse-item" target="_blank" href="/api/muslim/quran?surah=1&ayat=2&apikey=APIKEY"
-                            target="_blank">Al Qur'an</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/muslim/kisahnabi?nabi=muhammad&apikey=APIKEY" target="_blank">Kisah Nabi</a>
+                            href="/api/muslim/quran?surah=1&ayat=2&apikey=<%= user.apiKey%>" target="_blank">Al
+                            Qur'an</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/muslim/kisahnabi?nabi=muhammad&apikey=<%= user.apiKey%>" target="_blank">Kisah
+                            Nabi</a>
                     </div>
                 </div>
             </li>
@@ -379,25 +416,34 @@
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Simi simi api</h6>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimi?text=assalamualaikum&apikey=APIKEY" target="_blank">Simi IND</a>
+                            href="/api/fun/simisimi?text=assalamualaikum&apikey=<%= user.apiKey%>" target="_blank">Simi
+                            IND</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimi-ind2?text=hallo%20kak&apikey=APIKEY" target="_blank">Simi IND2</a>
+                            href="/api/fun/simisimi-ind2?text=hallo%20kak&apikey=<%= user.apiKey%>" target="_blank">Simi
+                            IND2</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimi2?text=how%20are%20you&apikey=APIKEY" target="_blank">Simi EN</a>
+                            href="/api/fun/simisimi2?text=how%20are%20you&apikey=<%= user.apiKey%>" target="_blank">Simi
+                            EN</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimi-en2?text=Hi%20friend%20&apikey=APIKEY" target="_blank">Simi
+                            href="/api/fun/simisimi-en2?text=Hi%20friend%20&apikey=<%= user.apiKey%>"
+                            target="_blank">Simi
                             EN2</a>
-                        <a class="collapse-item" target="_blank" href="/api/fun/simisimi3?text=arigatou&apikey=APIKEY"
-                            target="_blank">Simi JPN</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimi-jp2?text=arigatou&apikey=APIKEY" target="_blank">Simi JPN2</a>
+                            href="/api/fun/simisimi3?text=arigatou&apikey=<%= user.apiKey%>" target="_blank">Simi
+                            JPN</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimi4?text=assalamualaikum ya aqhi&apikey=APIKEY" target="_blank">Simi
+                            href="/api/fun/simisimi-jp2?text=arigatou&apikey=<%= user.apiKey%>" target="_blank">Simi
+                            JPN2</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/fun/simisimi4?text=assalamualaikum ya aqhi&apikey=<%= user.apiKey%>"
+                            target="_blank">Simi
                             ARB</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimi-ar2?text=la%20tahzan&apikey=APIKEY" target="_blank">Simi ARB2</a>
+                            href="/api/fun/simisimi-ar2?text=la%20tahzan&apikey=<%= user.apiKey%>" target="_blank">Simi
+                            ARB2</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/fun/simisimiall?text=la%20tahzan&apikey=APIKEY&lang=" target="_blank">Simi
+                            href="/api/fun/simisimiall?text=la%20tahzan&apikey=<%= user.apiKey%>&lang="
+                            target="_blank">Simi
                             All</a>
                     </div>
                 </div>
@@ -413,9 +459,10 @@
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">primbon Api</h6>
                         <a class="collapse-item" target="_blank"
-                            href="/api/primbon/artimimpi?text=bangkrut&apikey=APIKEY" target="_blank">Arti mimpi</a>
-                        <a class="collapse-item" target="_blank" href="/api/primbon/artinama?text=Rey&apikey=APIKEY"
-                            target="_blank">Arti nama</a>
+                            href="/api/primbon/artimimpi?text=bangkrut&apikey=<%= user.apiKey%>" target="_blank">Arti
+                            mimpi</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/primbon/artinama?text=Rey&apikey=<%= user.apiKey%>" target="_blank">Arti nama</a>
                     </div>
                 </div>
             </li>
@@ -429,71 +476,90 @@
                     data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Random image</h6>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/trans?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/trans?apikey=<%= user.apiKey%>">wallhp
                             Transformers </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/jeni?apikey=APIKEY">wallhp jeni
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/jeni?apikey=<%= user.apiKey%>">wallhp jeni
                             blpk </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/jiso?apikey=APIKEY">wallhp jisso
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/jiso?apikey=<%= user.apiKey%>">wallhp jisso
                             blpkl </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/cecan2?apikey=APIKEY">wallhp cecan
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/cecan2?apikey=<%= user.apiKey%>">wallhp cecan
                         </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/cogan2?apikey=APIKEY">wallhp cogan
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/cogan2?apikey=<%= user.apiKey%>">wallhp cogan
                         </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/satanic?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/satanic?apikey=<%= user.apiKey%>">wallhp
                             satanic </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/katakata?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/katakata?apikey=<%= user.apiKey%>">wallhp
                             quotes </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/pentol?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/pentol?apikey=<%= user.apiKey%>">wallhp
                             pentol </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kartun?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/kartun?apikey=<%= user.apiKey%>">wallhp
                             cartoon </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/tatasurya?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/tatasurya?apikey=<%= user.apiKey%>">wallhp
                             planet </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/cyberspace?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/cyberspace?apikey=<%= user.apiKey%>">wallhp
                             cyberspace </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/gaming?apikey=APIKEY">wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/gaming?apikey=<%= user.apiKey%>">wallhp
                             gaming </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/islami?apikey=APIKEY"> wallhp
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/islami?apikey=<%= user.apiKey%>">
+                            wallhp
                             islami </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/programing?apikey=APIKEY"> wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/programing?apikey=<%= user.apiKey%>"> wallhp
                             programing </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/teknologi?apikey=APIKEY"> wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/teknologi?apikey=<%= user.apiKey%>"> wallhp
                             teknologi </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/mountain?apikey=APIKEY"> wallhp
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/mountain?apikey=<%= user.apiKey%>"> wallhp
                             mountain </a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ryujin?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ryujin?apikey=<%= user.apiKey%>"
                             target="_blank">Random Ryujin ityz</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/rose?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/rose?apikey=<%= user.apiKey%>"
                             target="_blank">Random rose blpk</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/justina?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/justina?apikey=<%= user.apiKey%>"
                             target="_blank">Random justina xie</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/random/blackpink?apikey=APIKEY"
-                            target="_blank">Random blackpink</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/doraemon?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/random/blackpink?apikey=<%= user.apiKey%>" target="_blank">Random
+                            blackpink</a>
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/doraemon?apikey=<%= user.apiKey%>"
                             target="_blank">Random Doraemon</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ppcouple?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ppcouple?apikey=<%= user.apiKey%>"
                             target="_blank">Random ppcouple</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kpop?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kpop?apikey=<%= user.apiKey%>"
                             target="_blank">Random kpop</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/hekel?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/hekel?apikey=<%= user.apiKey%>"
                             target="_blank">Random hekel</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/pubg?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/pubg?apikey=<%= user.apiKey%>"
                             target="_blank">Random PUBG</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/cogan?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/cogan?apikey=<%= user.apiKey%>"
                             target="_blank">Random cogan</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/cecan?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/cecan?apikey=<%= user.apiKey%>"
                             target="_blank">Random cecan</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/aesthetic?apikey=APIKEY"
-                            target="_blank">Random Aesthetic</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/wallhp?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/aesthetic?apikey=<%= user.apiKey%>" target="_blank">Random
+                            Aesthetic</a>
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/wallhp?apikey=<%= user.apiKey%>"
                             target="_blank">Random wallhp aesthetic</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/anime?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/anime?apikey=<%= user.apiKey%>"
                             target="_blank">Random wallhp anime</a>
-                        <a class="collapse-item" target="_blank" href="/api/asupan?apikey=APIKEY" target="_blank">Random
+                        <a class="collapse-item" target="_blank" href="/api/asupan?apikey=<%= user.apiKey%>"
+                            target="_blank">Random
                             asupan</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kucing?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kucing?apikey=<%= user.apiKey%>"
                             target="_blank">Random Kucing</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/anjing?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/anjing?apikey=<%= user.apiKey%>"
                             target="_blank">Random Anjing</a>
                     </div>
                 </div>
@@ -508,59 +574,63 @@
                 <div id="collapseNsfw" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">NSFW Features</h6>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/nsfwloli?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/nsfwloli?apikey=<%= user.apiKey%>"
                             target="_blank">Nswf loli</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/ahegao?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/ahegao?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw ahegao</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/ass?apikey=APIKEY" target="_blank">nsfw
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/ass?apikey=<%= user.apiKey%>"
+                            target="_blank">nsfw
                             ass</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/bdsm?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/bdsm?apikey=<%= user.apiKey%>"
                             target="_blank">Nswf bdsm</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/blowjob?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/blowjob?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw blowjob</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/cuckold?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/cuckold?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw cuckold</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/cum?apikey=APIKEY" target="_blank">nsfw
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/cum?apikey=<%= user.apiKey%>"
+                            target="_blank">nsfw
                             cum</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/ero?apikey=APIKEY" target="_blank">nsfw
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/ero?apikey=<%= user.apiKey%>"
+                            target="_blank">nsfw
                             ero</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/femdom?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/femdom?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw femdom</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/foot?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/foot?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw foot</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/gangbang?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/gangbang?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw gangbanh</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/glasses?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/glasses?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw glasses</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/hentai?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/hentai?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw hentai</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/gifs?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/gifs?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw gifs</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/jahy?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/jahy?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw jahy</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/manga?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/manga?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw manga</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/masturbation?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/masturbation?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw mstb</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/neko?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/neko?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw neko</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/orgy?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/orgy?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw orgy</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/panties?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/panties?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw panties</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/pussy?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/pussy?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw pussy</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/neko2?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/neko2?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw neko2</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/tentacles?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/tentacles?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw tentacles</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/thighs?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/thighs?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw things</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/yuri?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/yuri?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw yuri</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/zettai?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/zettai?apikey=<%= user.apiKey%>"
                             target="_blank">nsfw zettai</a>
-                        <a class="collapse-item" target="_blank" href="/api/nsfw/vid?apikey=APIKEY" target="_blank">nsfw
+                        <a class="collapse-item" target="_blank" href="/api/nsfw/vid?apikey=<%= user.apiKey%>"
+                            target="_blank">nsfw
                             video</a>
                     </div>
                 </div>
@@ -574,123 +644,126 @@
                 <div id="collapseImage" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Wibu</h6>
-                        <a class="collapse-item" target="_blank" href="/api/random/cosplay?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/random/cosplay?apikey=<%= user.apiKey%>"
                             target="_blank">Random Cosplay</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/waifu?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/waifu?apikey=<%= user.apiKey%>"
                             target="_blank">Waifu</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/waifu2?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/waifu2?apikey=<%= user.apiKey%>"
                             target="_blank">Waifu2</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shota?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shota?apikey=<%= user.apiKey%>"
                             target="_blank">shota</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/loli?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/loli?apikey=<%= user.apiKey%>"
                             target="_blank">anime loli</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yotsuba?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yotsuba?apikey=<%= user.apiKey%>"
                             target="_blank">Random yotsuba</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shinomiya?apikey=APIKEY"
-                            target="_blank">Random shinomiya</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yumeko?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/shinomiya?apikey=<%= user.apiKey%>" target="_blank">Random
+                            shinomiya</a>
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yumeko?apikey=<%= user.apiKey%>"
                             target="_blank">Random yumeko</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/tejina?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/tejina?apikey=<%= user.apiKey%>"
                             target="_blank">Random tejina</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/chiho?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/chiho?apikey=<%= user.apiKey%>"
                             target="_blank">Random chiho</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/boruto?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/boruto?apikey=<%= user.apiKey%>"
                             target="_blank">Random boruto</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kaori?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kaori?apikey=<%= user.apiKey%>"
                             target="_blank">Random kaori</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shizuka?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shizuka?apikey=<%= user.apiKey%>"
                             target="_blank">Random shizuka</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kaga?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kaga?apikey=<%= user.apiKey%>"
                             target="_blank">Random kaga</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kotori?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kotori?apikey=<%= user.apiKey%>"
                             target="_blank">Random kotori</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/mikasa?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/mikasa?apikey=<%= user.apiKey%>"
                             target="_blank">Random mikasa</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/akiyama?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/akiyama?apikey=<%= user.apiKey%>"
                             target="_blank">Random akiyama</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/gremory?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/gremory?apikey=<%= user.apiKey%>"
                             target="_blank">Random gremory</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/isuzu?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/isuzu?apikey=<%= user.apiKey%>"
                             target="_blank">Random isuzu</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shina?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shina?apikey=<%= user.apiKey%>"
                             target="_blank">Random shina</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kagura?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kagura?apikey=<%= user.apiKey%>"
                             target="_blank">Random kagura</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shinka?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/shinka?apikey=<%= user.apiKey%>"
                             target="_blank">Random shinka</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/eba?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/eba?apikey=<%= user.apiKey%>"
                             target="_blank">Random eba</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/elaina?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/elaina?apikey=<%= user.apiKey%>"
                             target="_blank">Random elaina</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yuri?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yuri?apikey=<%= user.apiKey%>"
                             target="_blank">Random yuri</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/erza?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/erza?apikey=<%= user.apiKey%>"
                             target="_blank">Random erza</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/hinata?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/hinata?apikey=<%= user.apiKey%>"
                             target="_blank">Random hinata</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/minato?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/minato?apikey=<%= user.apiKey%>"
                             target="_blank">Random minato</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/naruto?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/naruto?apikey=<%= user.apiKey%>"
                             target="_blank">Random Naruto</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/sagiri?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/sagiri?apikey=<%= user.apiKey%>"
                             target="_blank">Random Sagiri</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/nezuko?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/nezuko?apikey=<%= user.apiKey%>"
                             target="_blank">Random nezuko</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/rize?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/rize?apikey=<%= user.apiKey%>"
                             target="_blank">Random rize</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ana?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ana?apikey=<%= user.apiKey%>"
                             target="_blank">Random Anna</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/deidara?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/deidara?apikey=<%= user.apiKey%>"
                             target="_blank">Random Deidara</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yuki?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/yuki?apikey=<%= user.apiKey%>"
                             target="_blank">Random Yuki</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ana?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ana?apikey=<%= user.apiKey%>"
                             target="_blank">Random Anna</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/asuna?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/asuna?apikey=<%= user.apiKey%>"
                             target="_blank">Random Asuna</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ayuzawa?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/ayuzawa?apikey=<%= user.apiKey%>"
                             target="_blank">Random Ayuzawa</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/chitoge?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/chitoge?apikey=<%= user.apiKey%>"
                             target="_blank">Random Chitoge</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/emilia?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/emilia?apikey=<%= user.apiKey%>"
                             target="_blank">Random Emilia</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/hestia?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/hestia?apikey=<%= user.apiKey%>"
                             target="_blank">Random hestia</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/inori?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/inori?apikey=<%= user.apiKey%>"
                             target="_blank">Random inori</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/itachi?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/itachi?apikey=<%= user.apiKey%>"
                             target="_blank">Random itachi</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/madara?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/madara?apikey=<%= user.apiKey%>"
                             target="_blank">Random Madara</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/sakura?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/sakura?apikey=<%= user.apiKey%>"
                             target="_blank">Random sakura</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/sasuke?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/sasuke?apikey=<%= user.apiKey%>"
                             target="_blank">Random Sasuke</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/tsunade?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/tsunade?apikey=<%= user.apiKey%>"
                             target="_blank">Random Tsunade</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/onepiece?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/onepiece?apikey=<%= user.apiKey%>"
                             target="_blank">Random one piece</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/mobil?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/mobil?apikey=<%= user.apiKey%>"
                             target="_blank">Random mobil</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/montor?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/montor?apikey=<%= user.apiKey%>"
                             target="_blank">Random montor</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/boneka-chucky?apikey=APIKEY"
-                            target="_blank">Random boneka chucky</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/keneki?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/boneka-chucky?apikey=<%= user.apiKey%>" target="_blank">Random boneka
+                            chucky</a>
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/keneki?apikey=<%= user.apiKey%>"
                             target="_blank">Random keneki</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/megumin?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/megumin?apikey=<%= user.apiKey%>"
                             target="_blank">Random Megumin</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/toukachan?apikey=APIKEY"
-                            target="_blank">Random toukachan</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/akira?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank"
+                            href="/api/wallpaper/toukachan?apikey=<%= user.apiKey%>" target="_blank">Random
+                            toukachan</a>
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/akira?apikey=<%= user.apiKey%>"
                             target="_blank">Random akira</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/itori?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/itori?apikey=<%= user.apiKey%>"
                             target="_blank">Random itori</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kurumi?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/kurumi?apikey=<%= user.apiKey%>"
                             target="_blank">Random kurumi</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/miku?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/miku?apikey=<%= user.apiKey%>"
                             target="_blank">Random miku</a>
-                        <a class="collapse-item" target="_blank" href="/api/wallpaper/pokemon?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/wallpaper/pokemon?apikey=<%= user.apiKey%>"
                             target="_blank">Random pokemon</a>
                     </div>
                 </div>
@@ -706,11 +779,12 @@
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sticker</h6>
                         <a class="collapse-item" target="_blank"
-                            href="/api/maker/ttp?text=Rey&color=2FFF2E&apikey=APIKEY" target="_blank">TTP maker</a>
-                        <a class="collapse-item" target="_blank" href="/api/maker/attp?text=Rey&apikey=APIKEY"
-                            target="_blank">ATTP MAKER</a>
+                            href="/api/maker/ttp?text=Rey&color=2FFF2E&apikey=<%= user.apiKey%>" target="_blank">TTP
+                            maker</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/canvas/welcome?username=Reyganz&memberCount=257&gcname=Whatsapp Bot Nodejs&bg=&pp=https://avatars.githubusercontent.com/u/85196372?s=400&u=7ccec6bcffa37e5c4517d9ed53698944070b7063&v=4.jpg&pp=https://avatars.githubusercontent.com/u/85196372?s=400&u=7ccec6bcffa37e5c4517d9ed53698944070b7063&v=4.jpg&gcicon=https://avatars.githubusercontent.com/u/85196372?s=400&u=7ccec6bcffa37e5c4517d9ed53698944070b7063&v=4.jpg&apikey=APIKEY"
+                            href="/api/maker/attp?text=Rey&apikey=<%= user.apiKey%>" target="_blank">ATTP MAKER</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/canvas/welcome?username=Reyganz&memberCount=257&gcname=Whatsapp Bot Nodejs&bg=&pp=https://avatars.githubusercontent.com/u/85196372?s=400&u=7ccec6bcffa37e5c4517d9ed53698944070b7063&v=4.jpg&pp=https://avatars.githubusercontent.com/u/85196372?s=400&u=7ccec6bcffa37e5c4517d9ed53698944070b7063&v=4.jpg&gcicon=https://avatars.githubusercontent.com/u/85196372?s=400&u=7ccec6bcffa37e5c4517d9ed53698944070b7063&v=4.jpg&apikey=<%= user.apiKey%>"
                             target="_blank">Welcome Canvas</a>
                     </div>
                 </div>
@@ -725,22 +799,23 @@
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">AI</h6>
                         <a class="collapse-item" target="_blank"
-                            href="/api/ai/chatai?query=manusia adalah&apikey=APIKEY" target="_blank">Chat AI 1</a>
+                            href="/api/ai/chatai?query=manusia adalah&apikey=<%= user.apiKey%>" target="_blank">Chat AI
+                            1</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/ai/chatai2?query=manusia adalah&apikey=APIKEY&userId=082144323683"
+                            href="/api/ai/chatai2?query=manusia adalah&apikey=<%= user.apiKey%>&userId=082144323683"
                             target="_blank">Chat AI 2</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/ai/chatai3?query=manusia adalah&previousresponse=&apikey=APIKEY&userId=082144323683"
+                            href="/api/ai/chatai3?query=manusia adalah&previousresponse=&apikey=<%= user.apiKey%>&userId=082144323683"
                             target="_blank">Chat AI 3</a>
-                        <a class="collapse-item" target="_blank" href="/api/ai/bard?query=manusia adalah&apikey=APIKEY"
-                            target="_blank">Bard</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/ai/cai?query=hai&charid=T7PN2NSlgjw_V7ClUaN2REO7XFBKT2YKEUcara5z0Ao&apikey=APIKEY"
+                            href="/api/ai/bard?query=manusia adalah&apikey=<%= user.apiKey%>" target="_blank">Bard</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/ai/cai?query=hai&charid=T7PN2NSlgjw_V7ClUaN2REO7XFBKT2YKEUcara5z0Ao&apikey=<%= user.apiKey%>"
                             target="_blank">Char
                             AI</a>
-                        <a class="collapse-item" target="_blank" href="/api/ai/remini?url=&apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/ai/remini?url=&apikey=<%= user.apiKey%>"
                             target="_blank">Remini</a>
-                        <a class="collapse-item" target="_blank" href="/api/ai/removebg?url=&apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/ai/removebg?url=&apikey=<%= user.apiKey%>"
                             target="_blank">Remove Bg</a>
                     </div>
                 </div>
@@ -755,32 +830,34 @@
                     data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Onlyfans</h6>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/noname?apikey=APIKEY&isjson=false"
-                            target="_blank">Noname</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/Hestia?apikey=APIKEY&isjson=false"
-                            target="_blank">Hestia</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/Mihye?apikey=APIKEY&isjson=false"
-                            target="_blank">Mihye</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/onlyfans/nguyenxhuang?apikey=APIKEY&isjson=false"
+                            href="/api/onlyfans/noname?apikey=<%= user.apiKey%>&isjson=false" target="_blank">Noname</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/Hestia?apikey=<%= user.apiKey%>&isjson=false" target="_blank">Hestia</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/Mihye?apikey=<%= user.apiKey%>&isjson=false" target="_blank">Mihye</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/nguyenxhuang?apikey=<%= user.apiKey%>&isjson=false"
                             target="_blank">nguyenxhuang</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/UmekoJ?apikey=APIKEY&isjson=false"
-                            target="_blank">UmekoJ</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/merial?apikey=APIKEY&isjson=false"
-                            target="_blank">merial</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/nanaqi?apikey=APIKEY&isjson=false"
-                            target="_blank">nanaqi</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/okita?apikey=APIKEY&isjson=false"
-                            target="_blank">okita</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/onlyfans/onlyfans?apikey=APIKEY&isjson=false" target="_blank">onlyfans</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/quan?apikey=APIKEY&isjson=false"
-                            target="_blank">quan</a>
+                            href="/api/onlyfans/UmekoJ?apikey=<%= user.apiKey%>&isjson=false" target="_blank">UmekoJ</a>
                         <a class="collapse-item" target="_blank"
-                            href="/api/onlyfans/yoshinobi?apikey=APIKEY&isjson=false" target="_blank">yoshinobi</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/vid?apikey=APIKEY"
+                            href="/api/onlyfans/merial?apikey=<%= user.apiKey%>&isjson=false" target="_blank">merial</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/nanaqi?apikey=<%= user.apiKey%>&isjson=false" target="_blank">nanaqi</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/okita?apikey=<%= user.apiKey%>&isjson=false" target="_blank">okita</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/onlyfans?apikey=<%= user.apiKey%>&isjson=false"
+                            target="_blank">onlyfans</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/quan?apikey=<%= user.apiKey%>&isjson=false" target="_blank">quan</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/onlyfans/yoshinobi?apikey=<%= user.apiKey%>&isjson=false"
+                            target="_blank">yoshinobi</a>
+                        <a class="collapse-item" target="_blank" href="/api/onlyfans/vid?apikey=<%= user.apiKey%>"
                             target="_blank">Video</a>
-                        <a class="collapse-item" target="_blank" href="/api/onlyfans/vid2?apikey=APIKEY"
+                        <a class="collapse-item" target="_blank" href="/api/onlyfans/vid2?apikey=<%= user.apiKey%>"
                             target="_blank">Video2</a>
                     </div>
                 </div>
@@ -816,7 +893,7 @@
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user fa-fw"></i>
+                                <%= user.username %> <i class="fas fa-user fa-fw"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                 <!-- Informasi Pengguna -->
@@ -899,7 +976,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">APIKEY</div>
-                                            <div class="h5 mb-0 font-weight-bold API"></div>
+                                            <div class="h5 mb-0 font-weight-bold API"> <%= user.apiKey %></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-key faa-wrench animated fa-2x text-coklat"></i>
@@ -914,7 +991,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">LIMIT</div>
-                                            <div class="h5 mb-0 font-weight-bold LIMIT"></div>
+                                            <div class="h5 mb-0 font-weight-bold LIMIT"> <%= user.limit %></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-coins  faa-wrench animated fa-2x text-coklat"></i>
@@ -942,13 +1019,13 @@
                                     <div class="col">
                                         <!-- Form untuk mengunggah file -->
                                         <form method="post" enctype="multipart/form-data">
-
                                             <div class="input-group mt-3">
                                                 <input type="file" class="form-control" id="fileUpload" name="file"
                                                     accept="image/*, video/*">
 
                                                 <div class="input-group-append">
-                                                    <button type="submit" class="btn btn-primary">Upload</button>
+                                                    <button type="submit" class="btn btn-primary"
+                                                        id="uploadButton">Upload</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -973,7 +1050,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">Uptimer</div>
-                                            <div class="h5 mb-0 font-weight-bold UPTIMER"></div>
+                                            <div class="h5 mb-0 font-weight-bold UPTIMER"><%= uptime %></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-clock  faa-wrench animated fa-2x text-coklat"></i>
@@ -1018,56 +1095,16 @@
                 <script src="https://inirey.github.io/lolhuman/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
                 <script src="https://inirey.github.io/lolhuman/vendor/jquery-easing/jquery.easing.min.js"></script>
                 <script src="https://inirey.github.io/lolhuman/js/ruang-admin.min.js"></script>
-                <script type="module">
-                    document.addEventListener('DOMContentLoaded', function () {
-        updateUptime();
-    });
-
-    // Fungsi untuk mengupdate waktu aktif
-    function updateUptime() {
-        const uptimeElement = document.querySelector('.UPTIMER');
-        if (uptimeElement) {
-            setInterval(() => {
-                const uptimeInSeconds = Math.floor(performance.now() / 1000); // Menggunakan performance.now() untuk menghitung waktu aktif
-                const days = Math.floor(uptimeInSeconds / 86400);
-                const hours = Math.floor((uptimeInSeconds % 86400) / 3600);
-                const minutes = Math.floor((uptimeInSeconds % 3600) / 60);
-                const seconds = uptimeInSeconds % 60;
-                uptimeElement.textContent = `Uptime: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-            }, 1000);
-        }
-    }
-</script>
-
-
                 <script>
-                    const APIKEY = localStorage.getItem('APIKEY'); // Dapatkan APIKEY dari localStorage
-                    const LIMIT = localStorage.getItem('LIMIT');
-
-                    function updateLinks() {
-                        const links = document.querySelectorAll('.collapse-inner a');
-
-                        links.forEach(link => {
-                            link.href = link.href.replace('APIKEY', APIKEY);
-                        });
-                        const API = document.querySelector('.API')
-                        const LIM = document.querySelector('.LIMIT')
-                        API.innerHTML = APIKEY
-                        LIM.innerHTML = LIMIT
-                    }
-
-
-
-                    // Pada saat halaman dimuat
-                    document.addEventListener('DOMContentLoaded', function () {
-                        // Perbarui tautan dengan APIKEY dari localStorage
-                        updateLinks();
-                    });
-
-
-
                     document.querySelector('form').addEventListener('submit', async (e) => {
                         e.preventDefault();
+
+                        // Mendapatkan tombol "Upload"
+                        const uploadButton = document.getElementById('uploadButton');
+
+                        // Menonaktifkan tombol dan menambahkan ikon loading
+                        uploadButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                        uploadButton.disabled = true;
 
                         const formData = new FormData();
                         const fileInput = document.getElementById('fileUpload');
@@ -1075,10 +1112,14 @@
                         if (fileInput.files.length > 0) {
                             formData.append('media', fileInput.files[0]);
                             console.log('formData');
-                            const response = await fetch('/api/uploadfile?apikey=' + APIKEY, {
+                            const response = await fetch('/api/uploadfile', {
                                 method: 'POST',
                                 body: formData
                             });
+
+                            // Mengembalikan tampilan tombol normal setelah pengiriman selesai
+                            uploadButton.innerHTML = 'Upload';
+                            uploadButton.disabled = false;
 
                             if (response.ok) {
                                 const result = await response.json();
@@ -1093,6 +1134,9 @@
                                     linkDiv.style.display = 'block'; // Menampilkan tautan media
                                 }
                             } else {
+                                // Mengembalikan tampilan tombol normal setelah pengiriman selesai
+                                uploadButton.innerHTML = 'Upload';
+                                uploadButton.disabled = false;
                                 console.error('Error uploading file.');
                                 // Menggantikan alert dengan SweetAlert2
                                 Swal.fire({
@@ -1102,6 +1146,9 @@
                                 });
                             }
                         } else {
+                            // Mengembalikan tampilan tombol normal setelah pengiriman selesai
+                            uploadButton.innerHTML = 'Upload';
+                            uploadButton.disabled = false;
                             console.error('Please select a file.');
                             // Menggantikan alert dengan SweetAlert2
                             Swal.fire({
@@ -1111,6 +1158,7 @@
                             });
                         }
                     });
+
 
                     // Select the text input and copy button
                     const mediaLinkInput = document.getElementById('mediaLink');
