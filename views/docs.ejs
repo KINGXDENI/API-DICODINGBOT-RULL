@@ -23,8 +23,7 @@
     <div id="wrapper">
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <i class="fa fa-smile-beam fa-2x"></i>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/docs">
                 <div class="sidebar-brand-text mx-3">DIBO APIs</div>
             </a>
             <hr class="sidebar-divider my-0">
@@ -813,6 +812,11 @@
                             href="/api/ai/cai?query=hai&charid=T7PN2NSlgjw_V7ClUaN2REO7XFBKT2YKEUcara5z0Ao&apikey=<%= user.apiKey%>"
                             target="_blank">Char
                             AI</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/ai/herai?query=hai&mode=&apikey=<%= user.apiKey%>" target="_blank">Hera AI</a>
+                        <a class="collapse-item" target="_blank"
+                            href="/api/ai/dall-e?query=human red hat&apikey=<%= user.apiKey%>"
+                            target="_blank">Dall-E</a>
                         <a class="collapse-item" target="_blank" href="/api/ai/remini?url=&apikey=<%= user.apiKey%>"
                             target="_blank">Remini</a>
                         <a class="collapse-item" target="_blank" href="/api/ai/removebg?url=&apikey=<%= user.apiKey%>"
@@ -897,7 +901,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                 <!-- Informasi Pengguna -->
-                                <a class="dropdown-item" href="#"> <i class="fas fa-user fa-fw"></i> Profil Saya</a>
+                                <a class="dropdown-item" href="#"> <i class="fas fa-user fa-fw"></i> Profil</a>
                                 <div class="dropdown-divider"></div>
 
                                 <!-- Tombol Logout -->
@@ -1018,7 +1022,7 @@
                                     </div>
                                     <div class="col">
                                         <!-- Form untuk mengunggah file -->
-                                        <form method="post" enctype="multipart/form-data">
+                                        <form method="post" id="tourl" enctype="multipart/form-data">
                                             <div class="input-group mt-3">
                                                 <input type="file" class="form-control" id="fileUpload" name="file"
                                                     accept="image/*, video/*">
@@ -1045,11 +1049,55 @@
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Make Url
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold">To Short</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-link faa-ring animated fa-2x text-coklat"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <!-- Form untuk mengunggah file -->
+                                        <form method="post" id="toshort">
+                                            <div class="input-group mt-3">
+                                                <input type="text" class="form-control" id="linkInput" name="link"
+                                                    autocomplete="off">
+                                                <div class="input-group-append">
+                                                    <button type="submit" class="btn btn-primary"
+                                                        id="submitLinkButton">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    <div id="linkDivshort" style="display: none; margin-top: 20px;">
+                                        <p>Media Link:</p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="mediaLinkshort" readonly>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button"
+                                                    id="copyButtonshort">Copy</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-xl-4 col-md-6 mb-4 mx-auto">
                             <div class="card h-50">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Uptimer</div>
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Uptime</div>
                                             <div class="h5 mb-0 font-weight-bold UPTIMER"><%= uptime %></div>
                                         </div>
                                         <div class="col-auto">
@@ -1060,19 +1108,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!--Row-->
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            Someone want to donate me?
-                            <p>
-                                <a href="" class="btn btn-primary btn-sm mr-2" target="_blank"><i
-                                        class="fa fa-fw fa-saweria"></i>&nbsp;Saweria</a>
-                                <a href="" class="btn btn-primary btn-sm ml-2" target="_blank"><i
-                                        class="fab fa-fw fa-bitly"></i>&nbsp;Bitly</a>
-                            </p>
-                        </div>
-                    </div>
+                   
                 </div>
                 <!---Container Fluid-->
             </div>
@@ -1096,7 +1132,7 @@
                 <script src="https://inirey.github.io/lolhuman/vendor/jquery-easing/jquery.easing.min.js"></script>
                 <script src="https://inirey.github.io/lolhuman/js/ruang-admin.min.js"></script>
                 <script>
-                    document.querySelector('form').addEventListener('submit', async (e) => {
+                    document.querySelector('#tourl').addEventListener('submit', async (e) => {
                         e.preventDefault();
 
                         // Mendapatkan tombol "Upload"
@@ -1159,6 +1195,70 @@
                         }
                     });
 
+                    document.querySelector('#toshort').addEventListener('submit', async (e) => {
+                        e.preventDefault();
+
+                        // Mendapatkan tombol "Submit Link"
+                        const submitLinkButton = document.getElementById('submitLinkButton');
+
+                        // Menonaktifkan tombol dan menambahkan ikon loading
+                        submitLinkButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                        submitLinkButton.disabled = true;
+
+                        const formData = new FormData();
+                        const linkInput = document.getElementById('linkInput');
+                        const linkValue = linkInput.value;
+
+                        if (linkValue) {
+                            const url = `/api/shortlink?link=${encodeURIComponent(linkValue)}`;
+                            const response = await fetch(url, {
+                                method: 'POST'
+                            });
+
+
+                            // Mengembalikan tampilan tombol normal setelah pengiriman selesai
+                            submitLinkButton.innerHTML = 'Submit';
+                            submitLinkButton.disabled = false;
+
+                            if (response.ok) {
+                                const result = await response.json();
+                                console.log(result);
+
+                                if (result.status && result.link) {
+                                    // Tampilkan tautan media
+                                    const linkDiv = document.getElementById('linkDivshort');
+                                    const mediaLink = document.getElementById('mediaLinkshort');
+                                    mediaLink.value = result.link;
+                                    mediaLink.textContent = result.link;
+                                    linkDiv.style.display = 'block'; // Menampilkan tautan media
+                                }
+                            } else {
+                                // Mengembalikan tampilan tombol normal setelah pengiriman selesai
+                                submitLinkButton.innerHTML = 'Submit';
+                                submitLinkButton.disabled = false;
+                                console.error('Error submitting link.');
+                                // Menggantikan alert dengan SweetAlert2
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Error submitting link!',
+                                });
+                            }
+                        } else {
+                            // Mengembalikan tampilan tombol normal setelah pengiriman selesai
+                            submitLinkButton.innerHTML = 'Submit';
+                            submitLinkButton.disabled = false;
+                            console.error('Please enter a link.');
+                            // Menggantikan alert dengan SweetAlert2
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Please enter a link!',
+                            });
+                        }
+                    });
+
+
 
                     // Select the text input and copy button
                     const mediaLinkInput = document.getElementById('mediaLink');
@@ -1170,6 +1270,23 @@
                         document.execCommand('copy');
                         // Deselect the input field
                         mediaLinkInput.setSelectionRange(0, 0);
+                        // Menggantikan alert dengan SweetAlert2
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: 'Link copied to clipboard!',
+                        });
+                    });
+
+                    const mediaLinkInputshort = document.getElementById('mediaLinkshort');
+                    const copyButtonshort = document.getElementById('copyButtonshort');
+
+                    // Copy link to clipboard when the button is clicked
+                    copyButtonshort.addEventListener('click', () => {
+                        mediaLinkInputshort.select();
+                        document.execCommand('copy');
+                        // Deselect the input field
+                        mediaLinkInputshort.setSelectionRange(0, 0);
                         // Menggantikan alert dengan SweetAlert2
                         Swal.fire({
                             icon: 'success',

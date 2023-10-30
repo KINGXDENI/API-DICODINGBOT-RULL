@@ -138,6 +138,11 @@ const multer = require('multer');
 const {
   Aki
 } = require('aki-api');
+const {
+  Hercai
+} = require('hercai');
+const turl = require('turl');
+const sendErrorEmail = require('../lib/emailerrornotif');
 
 // Define storage configuration for multer
 const storage = multer.diskStorage({
@@ -600,6 +605,8 @@ router.get('/music/spotify', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -623,6 +630,8 @@ router.get('/download/ytmp3', async (req, res, next) => {
       .catch((error) => {
         console.log(error)
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -647,6 +656,8 @@ router.get('/download/ytmp4', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -665,7 +676,9 @@ router.get("/yt/playmp3", async (req, res, next) => {
         res.json(result);
       })
       .catch((error) => {
-        res.json(error);
+        res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl);
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -686,7 +699,9 @@ router.get("/yt/playmp4", async (req, res, next) => {
         res.json(result);
       })
       .catch((error) => {
-        res.json(error);
+        res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl);
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -711,7 +726,9 @@ router.get('/yt/search', async (req, res, next) => {
         })
       })
       .catch((error) => {
-        res.json(error);
+        res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl);
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -788,7 +805,9 @@ router.get('/download/igstory', async (req, res, next) => {
       })
       .catch(err => {
         console.error(err); // Menangani kesalahan dengan mencetaknya ke konsol
-        res.json(loghandler.error); // Anda dapat mengganti 'loghandler.error' sesuai dengan pesan kesalahan yang sesuai
+        res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl); // Anda dapat mengganti 'loghandler.error' sesuai dengan pesan kesalahan yang sesuai
       });
   } else {
     res.json(loghandler.invalidKey);
@@ -815,6 +834,8 @@ router.get('/download/ig2', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -842,6 +863,8 @@ router.get('/download/stickerline', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -869,6 +892,8 @@ router.get('/download/smule', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -896,6 +921,8 @@ router.get('/download/joox3', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -923,6 +950,8 @@ router.get('/download/joox2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -950,6 +979,8 @@ router.get('/download/apkdl', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -977,6 +1008,8 @@ router.get('/download/apk', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1001,6 +1034,8 @@ router.get('/download/googleimg', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1025,6 +1060,8 @@ router.get('/download/mediafire', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1081,6 +1118,8 @@ router.get('/stalk/ig', async (req, res, next) => {
         })
         .catch(error => {
           res.json(loghandler.error)
+          const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
         });
     } else {
       res.json(loghandler.invalidKey)
@@ -1112,6 +1151,8 @@ router.get('/downloader/wallpaperflare', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1139,6 +1180,8 @@ router.get('/download/ytmp32', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1166,6 +1209,8 @@ router.get('/download/ytmp42', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1193,6 +1238,8 @@ router.get('/download/shoppe', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1220,6 +1267,8 @@ router.get('/primbon/zodiak', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1247,6 +1296,8 @@ router.get('/primbon/artimimpi', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1274,6 +1325,8 @@ router.get('/primbon/artinama', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1301,6 +1354,8 @@ router.get('/download/unplash', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1328,6 +1383,8 @@ router.get('/download/sticker', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1352,6 +1409,8 @@ router.get('/downloader/xnxx', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1376,6 +1435,8 @@ router.get('/downloader/twittervid', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1403,6 +1464,8 @@ router.get('/downloader/twitterimg', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1430,6 +1493,8 @@ router.get('/downloader/xvideo', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1457,6 +1522,8 @@ router.get('/downloader/pornhub', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1481,6 +1548,8 @@ router.get('/downloader/pinterest', async (req, res, next) => {
       })
     }).catch(err => {
       res.json(loghandler.error)
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
     });
   } else {
     res.json(loghandler.invalidKey)
@@ -1508,6 +1577,8 @@ router.get('/downloader/igtv', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1535,6 +1606,8 @@ router.get('/download/tiktok3', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1562,6 +1635,8 @@ router.get('/download/tiktok2', async (req, res, next) => {
       })
     }).catch(e => {
       res.json(loghandler.error)
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
     })
   } else {
     res.json(loghandler.invalidKey)
@@ -1589,6 +1664,8 @@ router.get('/downloader/facebook2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1613,6 +1690,8 @@ router.get('/downloader/facebook', async (req, res, next) => {
       })
       .catch(err => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1668,6 +1747,8 @@ router.get('/downloader/fb', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1748,6 +1829,8 @@ router.get('/stalk/npm', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1770,6 +1853,8 @@ router.get('/random/faktaunik', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1792,6 +1877,8 @@ router.get('/random/katabijak', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1814,6 +1901,8 @@ router.get('/random/pantun', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1839,6 +1928,8 @@ router.get('/random/fancytext', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1862,6 +1953,8 @@ router.get('/random/quotes', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1996,6 +2089,8 @@ router.get('/base', async (req, res, next) => {
       })
     } else {
       res.json(loghandler.error)
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
     }
   } else {
     res.json(loghandler.invalidKey)
@@ -2053,6 +2148,8 @@ router.get('/info/gempa', async (req, res, next) => {
       .catch(e => {
         console.log('Error :', color(e, 'red'))
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2076,6 +2173,8 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
       .catch(e => {
         console.log('Error :', color(e, 'red'))
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2109,6 +2208,8 @@ router.get('/muslim/hadits', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2144,6 +2245,8 @@ router.get('/muslim/quran', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2166,6 +2269,8 @@ router.get('/muslim/tahlil', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2189,6 +2294,8 @@ router.get('/muslim/wirid', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2212,6 +2319,8 @@ router.get('/muslim/ayatkursi', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2235,6 +2344,8 @@ router.get('/muslim/doaharian', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2258,6 +2369,8 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2281,6 +2394,8 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2304,6 +2419,8 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2341,6 +2458,8 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2364,6 +2483,8 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2387,6 +2508,8 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2410,6 +2533,8 @@ router.get('/muslim/niatisya', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2433,6 +2558,8 @@ router.get('/muslim/niatashar', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2460,6 +2587,8 @@ router.get('/muslim/jadwalshalat', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2528,12 +2657,12 @@ router.get('/onlyfans/noname', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/noname.jpg', data);
           res.sendFile(__path + '/tmp/noname.jpg');
-          
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/noname.jpg', data);
           res.sendFile(__path + '/tmp/noname.jpg');
-          
+
         }
       })
       .catch(e => {
@@ -2578,12 +2707,12 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/Hestia.jpg', data);
           res.sendFile(__path + '/tmp/Hestia.jpg');
-          
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/Hestia.jpg', data);
           res.sendFile(__path + '/tmp/Hestia.jpg');
-          
+
         }
       })
       .catch(e => {
@@ -2617,12 +2746,12 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/mihye.jpg', data);
           res.sendFile(__path + '/tmp/mihye.jpg');
-           
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/mihye.jpg', data);
           res.sendFile(__path + '/tmp/mihye.jpg');
-           
+
         }
       })
       .catch(e => {
@@ -2656,12 +2785,12 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/nguyen.jpg', data);
           res.sendFile(__path + '/tmp/nguyen.jpg');
-          
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/nguyen.jpg', data);
           res.sendFile(__path + '/tmp/nguyen.jpg');
-          
+
         }
       })
       .catch(e => {
@@ -2695,12 +2824,12 @@ router.get('/onlyfans/UmekoJ', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/UmekoJ.jpg', data);
           res.sendFile(__path + '/tmp/UmekoJ.jpg');
-          
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/UmekoJ.jpg', data);
           res.sendFile(__path + '/tmp/UmekoJ.jpg');
-          
+
         }
       })
       .catch(e => {
@@ -2771,12 +2900,12 @@ router.get('/onlyfans/nanaqi', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/nanaqi.jpg', data);
           res.sendFile(__path + '/tmp/nanaqi.jpg');
-          
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/nanaqi.jpg', data);
           res.sendFile(__path + '/tmp/nanaqi.jpg');
-          
+
         }
       })
       .catch(e => {
@@ -2810,12 +2939,12 @@ router.get('/onlyfans/okita', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/okita.jpg', data);
           res.sendFile(__path + '/tmp/okita.jpg');
-       
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/okita.jpg', data);
           res.sendFile(__path + '/tmp/okita.jpg');
-       
+
         }
       })
       .catch(e => {
@@ -2849,12 +2978,12 @@ router.get('/onlyfans/onlyfans', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/onlyfans.jpg', data);
           res.sendFile(__path + '/tmp/onlyfans.jpg');
-         
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/onlyfans.jpg', data);
           res.sendFile(__path + '/tmp/onlyfans.jpg');
-         
+
         }
       })
       .catch(e => {
@@ -2888,12 +3017,12 @@ router.get('/onlyfans/quan', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/quan.jpg', data);
           res.sendFile(__path + '/tmp/quan.jpg');
-          
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await (__path + '/tmp/quan.jpg', data);
           res.sendFile(__path + '/tmp/quan.jpg');
-          
+
         }
       })
       .catch(e => {
@@ -2927,12 +3056,12 @@ router.get('/onlyfans/yoshinobi', async (req, res, next) => {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/yoshinobi.jpg', data);
           res.sendFile(__path + '/tmp/yoshinobi.jpg');
-           
+
         } else {
           data = await fetch(buffer).then(v => v.buffer());
           await fs.promises.writeFile(__path + '/tmp/yoshinobi.jpg', data);
           res.sendFile(__path + '/tmp/yoshinobi.jpg');
-           
+
         }
       })
       .catch(e => {
@@ -3029,6 +3158,8 @@ router.get('/nsfw/xnxxsearch', async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.errorMessage)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey);
@@ -3062,7 +3193,7 @@ router.get('/nsfw/ass', async (req, res, next) => {
     data = await fetch(randass).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ass.jpeg', data)
     res.sendFile(__path + '/tmp/ass.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3095,7 +3226,7 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
     data = await fetch(randblowjob).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/blowjob.jpeg', data)
     res.sendFile(__path + '/tmp/blowjob.jpeg')
-     
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3112,7 +3243,7 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
     data = await fetch(randcuckold).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cuckold.jpeg', data)
     res.sendFile(__path + '/tmp/cuckold.jpeg')
-     
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3129,7 +3260,7 @@ router.get('/nsfw/cum', async (req, res, next) => {
     data = await fetch(randcum).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cum.jpeg', data)
     res.sendFile(__path + '/tmp/cum.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3162,7 +3293,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
     data = await fetch(randfemdom).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/femdom.jpeg', data)
     res.sendFile(__path + '/tmp/femdom.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3179,7 +3310,7 @@ router.get('/nsfw/foot', async (req, res, next) => {
     data = await fetch(randfoot).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/foot.jpeg', data)
     res.sendFile(__path + '/tmp/foot.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3196,7 +3327,7 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
     data = await fetch(randgangbang).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/gangbang.jpeg', data)
     res.sendFile(__path + '/tmp/gangbang.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3213,7 +3344,7 @@ router.get('/nsfw/glasses', async (req, res, next) => {
     data = await fetch(randglasses).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/glasses.jpeg', data)
     res.sendFile(__path + '/tmp/glasses.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3230,7 +3361,7 @@ router.get('/nsfw/hentai', async (req, res, next) => {
     data = await fetch(randhentai).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/hentai.jpeg', data)
     res.sendFile(__path + '/tmp/hentai.jpeg')
-     
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3247,7 +3378,7 @@ router.get('/nsfw/gifs', async (req, res, next) => {
     data = await fetch(randgifs).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/gifs.jpeg', data)
     res.sendFile(__path + '/tmp/gifs.jpeg')
-     
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3264,7 +3395,7 @@ router.get('/nsfw/jahy', async (req, res, next) => {
     data = await fetch(randjahy).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/jahy.jpeg', data)
     res.sendFile(__path + '/tmp/jahy.jpeg')
-     
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3281,7 +3412,7 @@ router.get('/nsfw/manga', async (req, res, next) => {
     data = await fetch(randmanga).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/manga.jpeg', data)
     res.sendFile(__path + '/tmp/manga.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3298,7 +3429,7 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
     data = await fetch(randmasturbation).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/masturbation.jpeg', data)
     res.sendFile(__path + '/tmp/masturbation.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3315,7 +3446,7 @@ router.get('/nsfw/neko', async (req, res, next) => {
     data = await fetch(randneko).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/neko.jpeg', data)
     res.sendFile(__path + '/tmp/neko.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3332,7 +3463,7 @@ router.get('/nsfw/orgy', async (req, res, next) => {
     data = await fetch(randorgy).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/orgy.jpeg', data)
     res.sendFile(__path + '/tmp/orgy.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3349,7 +3480,7 @@ router.get('/nsfw/panties', async (req, res, next) => {
     data = await fetch(randpanties).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/panties.jpeg', data)
     res.sendFile(__path + '/tmp/panties.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3366,7 +3497,7 @@ router.get('/nsfw/pussy', async (req, res, next) => {
     data = await fetch(randpussy).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pussy.jpeg', data)
     res.sendFile(__path + '/tmp/pussy.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3383,7 +3514,7 @@ router.get('/nsfw/neko2', async (req, res, next) => {
     data = await fetch(randneko2).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/neko2.jpeg', data)
     res.sendFile(__path + '/tmp/neko2.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3400,7 +3531,7 @@ router.get('/nsfw/tentacles', async (req, res, next) => {
     data = await fetch(randtentacles).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/tentacles.jpeg', data)
     res.sendFile(__path + '/tmp/tentacles.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3417,7 +3548,7 @@ router.get('/nsfw/thighs', async (req, res, next) => {
     data = await fetch(randthighs).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/thighs.jpeg', data)
     res.sendFile(__path + '/tmp/thighs.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3434,7 +3565,7 @@ router.get('/nsfw/yuri', async (req, res, next) => {
     data = await fetch(randyuri).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yuri.jpeg', data)
     res.sendFile(__path + '/tmp/yuri.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3451,7 +3582,7 @@ router.get('/nsfw/zettai', async (req, res, next) => {
     data = await fetch(randzettai).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/zettai.jpeg', data)
     res.sendFile(__path + '/tmp/zettai.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3468,7 +3599,7 @@ router.get('/wallpaper/keneki', async (req, res, next) => {
     data = await fetch(randkeneki).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/keneki.jpeg', data)
     res.sendFile(__path + '/tmp/keneki.jpeg')
-     
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3485,7 +3616,7 @@ router.get('/wallpaper/megumin', async (req, res, next) => {
     data = await fetch(randmegumin).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/megumin.jpeg', data)
     res.sendFile(__path + '/tmp/megumin.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3502,7 +3633,7 @@ router.get('/wallpaper/yotsuba', async (req, res, next) => {
     data = await fetch(randyotsuba).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yotsuba.jpeg', data)
     res.sendFile(__path + '/tmp/yotsuba.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3519,7 +3650,7 @@ router.get('/wallpaper/shinomiya', async (req, res, next) => {
     data = await fetch(randshinomiya).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shinomiya.jpeg', data)
     res.sendFile(__path + '/tmp/shinomiya.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3536,7 +3667,7 @@ router.get('/wallpaper/yumeko', async (req, res, next) => {
     data = await fetch(randyumeko).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yumeko.jpeg', data)
     res.sendFile(__path + '/tmp/yumeko.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3553,7 +3684,7 @@ router.get('/wallpaper/tejina', async (req, res, next) => {
     data = await fetch(randtejina).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/tejina.jpeg', data)
     res.sendFile(__path + '/tmp/tejina.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3570,7 +3701,7 @@ router.get('/wallpaper/chiho', async (req, res, next) => {
     data = await fetch(randchiho).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/chiho.jpeg', data)
     res.sendFile(__path + '/tmp/chiho.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3651,7 +3782,7 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
     data = await fetch(randteknologi).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/teknologi.jpeg', data)
     res.sendFile(__path + '/tmp/teknologi.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3668,7 +3799,7 @@ router.get('/wallpaper/mountain', async (req, res, next) => {
     data = await fetch(randmountain).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/mountain.jpeg', data)
     res.sendFile(__path + '/tmp/mountain.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3685,7 +3816,7 @@ router.get('/wallpaper/tatasurya', async (req, res, next) => {
     data = await fetch(randtatasurya).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/tatasurya.jpeg', data)
     res.sendFile(__path + '/tmp/tatasurya.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3702,7 +3833,7 @@ router.get('/wallpaper/kartun', async (req, res, next) => {
     data = await fetch(randkartun).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kartun.jpeg', data)
     res.sendFile(__path + '/tmp/kartun.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3719,7 +3850,7 @@ router.get('/random/yuli', async (req, res, next) => {
     data = await fetch(randyuli).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yuli.jpeg', data)
     res.sendFile(__path + '/tmp/yuli.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3736,7 +3867,7 @@ router.get('/wallpaper/pentol', async (req, res, next) => {
     data = await fetch(randpentol).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pentol.jpeg', data)
     res.sendFile(__path + '/tmp/pentol.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3770,7 +3901,7 @@ router.get('/wallpaper/toukachan', async (req, res, next) => {
     data = await fetch(randtoukachan).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/toukachan.jpeg', data)
     res.sendFile(__path + '/tmp/toukachan.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3787,7 +3918,7 @@ router.get('/wallpaper/akira', async (req, res, next) => {
     data = await fetch(randakira).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/akira.jpeg', data)
     res.sendFile(__path + '/tmp/akira.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3804,7 +3935,7 @@ router.get('/wallpaper/itori', async (req, res, next) => {
     data = await fetch(randitori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/itori.jpeg', data)
     res.sendFile(__path + '/tmp/itori.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3821,7 +3952,7 @@ router.get('/wallpaper/kurumi', async (req, res, next) => {
     data = await fetch(randkurumi).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kurumi.jpeg', data)
     res.sendFile(__path + '/tmp/kurumi.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3838,7 +3969,7 @@ router.get('/wallpaper/miku', async (req, res, next) => {
     data = await fetch(randmiku).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/miku.jpeg', data)
     res.sendFile(__path + '/tmp/miku.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3855,7 +3986,7 @@ router.get('/wallpaper/pokemon', async (req, res, next) => {
     data = await fetch(randpokemon).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pokemon.jpeg', data)
     res.sendFile(__path + '/tmp/pokemon.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3872,7 +4003,7 @@ router.get('/wallpaper/ryujin', async (req, res, next) => {
     data = await fetch(randryujin).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ryujin.jpeg', data)
     res.sendFile(__path + '/tmp/ryujin.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3889,7 +4020,7 @@ router.get('/wallpaper/rose', async (req, res, next) => {
     data = await fetch(randrose).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/rose.jpeg', data)
     res.sendFile(__path + '/tmp/rose.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3906,7 +4037,7 @@ router.get('/wallpaper/kaori', async (req, res, next) => {
     data = await fetch(randkaori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kaori.jpeg', data)
     res.sendFile(__path + '/tmp/kaori.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3923,7 +4054,7 @@ router.get('/wallpaper/shizuka', async (req, res, next) => {
     data = await fetch(randshizuka).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shizuka.jpeg', data)
     res.sendFile(__path + '/tmp/shizuka.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3940,7 +4071,7 @@ router.get('/wallpaper/kaga', async (req, res, next) => {
     data = await fetch(randkaga).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kaga.jpeg', data)
     res.sendFile(__path + '/tmp/kaga.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3957,7 +4088,7 @@ router.get('/wallpaper/kotori', async (req, res, next) => {
     data = await fetch(randkotori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kotori.jpeg', data)
     res.sendFile(__path + '/tmp/kotori.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3974,7 +4105,7 @@ router.get('/wallpaper/mikasa', async (req, res, next) => {
     data = await fetch(randmikasa).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/mikasa.jpeg', data)
     res.sendFile(__path + '/tmp/mikasa.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -3991,7 +4122,7 @@ router.get('/wallpaper/akiyama', async (req, res, next) => {
     data = await fetch(randakiyama).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/akiyama.jpeg', data)
     res.sendFile(__path + '/tmp/akiyama.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4008,7 +4139,7 @@ router.get('/wallpaper/gremory', async (req, res, next) => {
     data = await fetch(randgremory).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/gremory.jpeg', data)
     res.sendFile(__path + '/tmp/gremory.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4025,7 +4156,7 @@ router.get('/wallpaper/isuzu', async (req, res, next) => {
     data = await fetch(randisuzu).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/isuzu.jpeg', data)
     res.sendFile(__path + '/tmp/isuzu.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4042,7 +4173,7 @@ router.get('/random/cosplay', async (req, res, next) => {
     data = await fetch(randcosplay).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cosplay.jpeg', data)
     res.sendFile(__path + '/tmp/cosplay.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4059,7 +4190,7 @@ router.get('/wallpaper/shina', async (req, res, next) => {
     data = await fetch(randshina).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shina.jpeg', data)
     res.sendFile(__path + '/tmp/shina.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4076,7 +4207,7 @@ router.get('/wallpaper/kagura', async (req, res, next) => {
     data = await fetch(randkagura).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kagura.jpeg', data)
     res.sendFile(__path + '/tmp/kagura.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4093,7 +4224,7 @@ router.get('/wallpaper/shinka', async (req, res, next) => {
     data = await fetch(randshinka).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shinka.jpeg', data)
     res.sendFile(__path + '/tmp/shinka.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4110,7 +4241,7 @@ router.get('/wallpaper/eba', async (req, res, next) => {
     data = await fetch(randeba).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/eba.jpeg', data)
     res.sendFile(__path + '/tmp/eba.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4127,7 +4258,7 @@ router.get('/wallpaper/deidara', async (req, res, next) => {
     data = await fetch(randDeidara).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/deidara.jpeg', data)
     res.sendFile(__path + '/tmp/deidara.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4144,7 +4275,7 @@ router.get('/wallpaper/trans', async (req, res, next) => {
     data = await fetch(randtrans).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/trans.jpeg', data)
     res.sendFile(__path + '/tmp/trans.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4161,7 +4292,7 @@ router.get('/wallpaper/jeni', async (req, res, next) => {
     data = await fetch(randjeni).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/jeni.jpeg', data)
     res.sendFile(__path + '/tmp/jeni.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4178,7 +4309,7 @@ router.get('/wallpaper/jiso', async (req, res, next) => {
     data = await fetch(randjiso).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/jiso.jpeg', data)
     res.sendFile(__path + '/tmp/jiso.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4195,7 +4326,7 @@ router.get('/wallpaper/satanic', async (req, res, next) => {
     data = await fetch(randsatanic).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/satanic.jpeg', data)
     res.sendFile(__path + '/tmp/satanic.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4212,7 +4343,7 @@ router.get('/wallpaper/cecan2', async (req, res, next) => {
     data = await fetch(randcecan2).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cecan2.jpeg', data)
     res.sendFile(__path + '/tmp/cecan2.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4229,7 +4360,7 @@ router.get('/wallpaper/cogan2', async (req, res, next) => {
     data = await fetch(randcogan2).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cogan2.jpeg', data)
     res.sendFile(__path + '/tmp/cogan2.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4246,7 +4377,7 @@ router.get('/wallpaper/itachi', async (req, res, next) => {
     data = await fetch(randItachi).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ita.jpeg', data)
     res.sendFile(__path + '/tmp/ita.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4263,7 +4394,7 @@ router.get('/wallpaper/madara', async (req, res, next) => {
     data = await fetch(randMadara).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/madara.jpeg', data)
     res.sendFile(__path + '/tmp/madara.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4280,7 +4411,7 @@ router.get('/wallpaper/yuki', async (req, res, next) => {
     data = await fetch(randYuki).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yuki.jpeg', data)
     res.sendFile(__path + '/tmp/yuki.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4297,7 +4428,7 @@ router.get('/wallpaper/asuna', async (req, res, next) => {
     data = await fetch(randasuna).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/asuna.jpeg', data)
     res.sendFile(__path + '/tmp/asuna.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4314,7 +4445,7 @@ router.get('/wallpaper/ayuzawa', async (req, res, next) => {
     data = await fetch(randayuzawa).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ayuzawa.jpeg', data)
     res.sendFile(__path + '/tmp/ayuzawa.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4331,7 +4462,7 @@ router.get('/wallpaper/chitoge', async (req, res, next) => {
     data = await fetch(randchitoge).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/chitoge.jpeg', data)
     res.sendFile(__path + '/tmp/chitoge.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4348,7 +4479,7 @@ router.get('/wallpaper/emilia', async (req, res, next) => {
     data = await fetch(randemilia).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/emilia.jpeg', data)
     res.sendFile(__path + '/tmp/emilia.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4365,7 +4496,7 @@ router.get('/wallpaper/hestia', async (req, res, next) => {
     data = await fetch(randhestia).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/hestia.jpeg', data)
     res.sendFile(__path + '/tmp/hestia.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4382,7 +4513,7 @@ router.get('/wallpaper/inori', async (req, res, next) => {
     data = await fetch(randinori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/inori.jpeg', data)
     res.sendFile(__path + '/tmp/inori.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4399,7 +4530,7 @@ router.get('/wallpaper/ana', async (req, res, next) => {
     data = await fetch(randana).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ana.jpeg', data)
     res.sendFile(__path + '/tmp/ana.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4416,7 +4547,7 @@ router.get('/wallpaper/boruto', async (req, res, next) => {
     data = await fetch(randBoruto).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/bor.jpeg', data)
     res.sendFile(__path + '/tmp/bor.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4433,7 +4564,7 @@ router.get('/wallpaper/erza', async (req, res, next) => {
     data = await fetch(randErza).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/erza.jpeg', data)
     res.sendFile(__path + '/tmp/erza.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4450,7 +4581,7 @@ router.get('/wallpaper/kakasih', async (req, res, next) => {
     data = await fetch(randKakasih).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ka.jpeg', data)
     res.sendFile(__path + '/tmp/ka.jpeg')
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4467,7 +4598,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
     data = await fetch(randSagiri).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sagiri.jpeg', data)
     res.sendFile(__path + '/tmp/sagiri.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4484,7 +4615,7 @@ router.get('/wallpaper/minato', async (req, res, next) => {
     data = await fetch(randMinato).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/minato.jpeg', data)
     res.sendFile(__path + '/tmp/minato.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4501,7 +4632,7 @@ router.get('/wallpaper/naruto', async (req, res, next) => {
     data = await fetch(randNaruto).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/naruto.jpeg', data)
     res.sendFile(__path + '/tmp/naruto.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4518,7 +4649,7 @@ router.get('/wallpaper/nezuko', async (req, res, next) => {
     data = await fetch(randNezuko).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/nezu.jpeg', data)
     res.sendFile(__path + '/tmp/nezu.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4535,7 +4666,7 @@ router.get('/wallpaper/onepiece', async (req, res, next) => {
     data = await fetch(randPic).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pic.jpeg', data)
     res.sendFile(__path + '/tmp/pic.jpeg')
- 
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4552,7 +4683,7 @@ router.get('/wallpaper/rize', async (req, res, next) => {
     data = await fetch(randRize).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/rize.jpeg', data)
     res.sendFile(__path + '/tmp/rize.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4569,7 +4700,7 @@ router.get('/wallpaper/sakura', async (req, res, next) => {
     data = await fetch(randSakura).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sakura.jpeg', data)
     res.sendFile(__path + '/tmp/sakura.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4586,7 +4717,7 @@ router.get('/wallpaper/sasuke', async (req, res, next) => {
     data = await fetch(randSasuke).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sasuke.jpeg', data)
     res.sendFile(__path + '/tmp/sasuke.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4603,7 +4734,7 @@ router.get('/wallpaper/tsunade', async (req, res, next) => {
     data = await fetch(randSu).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/su.jpeg', data)
     res.sendFile(__path + '/tmp/su.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4620,7 +4751,7 @@ router.get('/wallpaper/montor', async (req, res, next) => {
     data = await fetch(randMon).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/montor.jpeg', data)
     res.sendFile(__path + '/tmp/montor.jpeg');
-   
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4637,7 +4768,7 @@ router.get('/wallpaper/mobil', async (req, res, next) => {
     data = await fetch(randMob).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/mobil.jpeg', data)
     res.sendFile(__path + '/tmp/mobil.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4654,7 +4785,7 @@ router.get('/wallpaper/boneka-chucky', async (req, res, next) => {
     data = await fetch(randBon).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/chucky.jpeg', data)
     res.sendFile(__path + '/tmp/chucky.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4671,7 +4802,7 @@ router.get('/wallpaper/anime', async (req, res, next) => {
     data = await fetch(randWai23).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wallhp2.jpeg', data)
     res.sendFile(__path + '/tmp/wallhp2.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4688,7 +4819,7 @@ router.get('/wallpaper/random/blackpink', async (req, res, next) => {
     data = await fetch(randBlack).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/blak.jpeg', data)
     res.sendFile(__path + '/tmp/blak.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4705,7 +4836,7 @@ router.get('/wallpaper/wallhp', async (req, res, next) => {
     data = await fetch(randWai22).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wallhp.jpeg', data)
     res.sendFile(__path + '/tmp/wallhp.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4722,7 +4853,7 @@ router.get('/wallpaper/waifu2', async (req, res, next) => {
     data = await fetch(randWai2).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wibu2.jpeg', data)
     res.sendFile(__path + '/tmp/wibu2.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4739,7 +4870,7 @@ router.get('/wallpaper/waifu', async (req, res, next) => {
     data = await fetch(randWai).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wibu.jpeg', data)
     res.sendFile(__path + '/tmp/wibu.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4756,7 +4887,7 @@ router.get('/wallpaper/kpop', async (req, res, next) => {
     data = await fetch(randKpop).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kpop.jpeg', data)
     res.sendFile(__path + '/tmp/kpop.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4773,7 +4904,7 @@ router.get('/wallpaper/hekel', async (req, res, next) => {
     data = await fetch(randHekel).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/hek.jpeg', data)
     res.sendFile(__path + '/tmp/hek.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4790,7 +4921,7 @@ router.get('/wallpaper/kucing', async (req, res, next) => {
     data = await fetch(randKucing).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kucing.jpeg', data)
     res.sendFile(__path + '/tmp/kucing.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4807,7 +4938,7 @@ router.get('/wallpaper/pubg', async (req, res, next) => {
     data = await fetch(randPubg).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pubg.jpeg', data)
     res.sendFile(__path + '/tmp/pubg.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4824,7 +4955,7 @@ router.get('/wallpaper/ppcouple', async (req, res, next) => {
     data = await fetch(randPp).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pp.jpeg', data)
     res.sendFile(__path + '/tmp/pp.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4841,7 +4972,7 @@ router.get('/wallpaper/anjing', async (req, res, next) => {
     data = await fetch(randAnjing).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ajg.jpeg', data)
     res.sendFile(__path + '/tmp/ajg.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4858,7 +4989,7 @@ router.get('/wallpaper/doraemon', async (req, res, next) => {
     data = await fetch(randDora).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/dora.jpeg', data)
     res.sendFile(__path + '/tmp/dora.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4875,7 +5006,7 @@ router.get('/wallpaper/cogan', async (req, res, next) => {
     data = await fetch(randCogan).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cogan.jpeg', data)
     res.sendFile(__path + '/tmp/cogan.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4893,7 +5024,7 @@ router.get('/wallpaper/elaina', async (req, res, next) => {
     data = await fetch(randElaina).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/elaina.jpeg', data)
     res.sendFile(__path + '/tmp/elaina.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4911,7 +5042,7 @@ router.get('/wallpaper/loli', async (req, res, next) => {
     data = await fetch(randLoli).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/loli.jpeg', data)
     res.sendFile(__path + '/tmp/loli.jpeg')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4929,7 +5060,7 @@ router.get('/wallpaper/yuri', async (req, res, next) => {
     data = await fetch(randYuri).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/Yuri.jpeg', data)
     res.sendFile(__path + '/tmp/Yuri.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4947,7 +5078,7 @@ router.get('/wallpaper/cecan', async (req, res, next) => {
     data = await fetch(randCecan).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/cecan.jpeg', data)
     res.sendFile(__path + '/tmp/cecan.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4965,7 +5096,7 @@ router.get('/wallpaper/aesthetic', async (req, res, next) => {
     data = await fetch(randAesthetic).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/aesthetic.jpeg', data)
     res.sendFile(__path + '/tmp/aesthetic.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -4983,7 +5114,7 @@ router.get('/wallpaper/justina', async (req, res, next) => {
     data = await fetch(randJus).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/justina.jpeg', data)
     res.sendFile(__path + '/tmp/justina.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -5001,7 +5132,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
     data = await fetch(randSagiri).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sagiri.jpeg', data)
     res.sendFile(__path + '/tmp/sagiri.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -5018,7 +5149,7 @@ router.get('/wallpaper/shota', async (req, res, next) => {
     data = await fetch(randShota).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/shota.jpeg', data)
     res.sendFile(__path + '/tmp/shota.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -5035,7 +5166,7 @@ router.get('/wallpaper/nsfwloli', async (req, res, next) => {
     data = await fetch(randLol).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/lol.jpeg', data)
     res.sendFile(__path + '/tmp/lol.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -5052,7 +5183,7 @@ router.get('/wallpaper/hinata', async (req, res, next) => {
     data = await fetch(randHin).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/Hinata.jpeg', data)
     res.sendFile(__path + '/tmp/Hinata.jpeg');
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -5075,6 +5206,8 @@ router.get('/random/quotes2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5105,6 +5238,8 @@ router.get('/fun/simisimi-ar2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5135,6 +5270,8 @@ router.get('/fun/simisimi-en2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5166,6 +5303,8 @@ router.get('/fun/simisimi-jp2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5196,6 +5335,8 @@ router.get('/fun/simisimi-ind2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5227,6 +5368,8 @@ router.get('/fun/simisimiall', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5257,6 +5400,8 @@ router.get('/fun/simisimi4', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5287,6 +5432,8 @@ router.get('/fun/simisimi3', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5317,6 +5464,8 @@ router.get('/fun/simisimi2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5347,6 +5496,8 @@ router.get('/fun/simisimi', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5369,6 +5520,8 @@ router.get('/random/asmaulhusna', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5397,6 +5550,8 @@ router.get('/info/wikipedia', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5426,6 +5581,8 @@ router.get('/info/drakorasia', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5454,6 +5611,8 @@ router.get('/fakedata', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5483,6 +5642,8 @@ router.get('/hilih', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5534,6 +5695,8 @@ router.get('/music/chordlagu', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5563,6 +5726,8 @@ router.get('/info/kbbi', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5586,6 +5751,8 @@ router.get('/info/covidindo', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5609,6 +5776,8 @@ router.get('/info/covidworld', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5631,6 +5800,8 @@ router.get('/random/meme', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5660,6 +5831,8 @@ router.get('/info/kodepos', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5688,6 +5861,8 @@ router.get('/translate', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5716,6 +5891,8 @@ router.get('/anime/kusonime', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5778,6 +5955,8 @@ router.get('/anime/manga', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5799,6 +5978,8 @@ router.get('/kuis/caklontong', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5855,6 +6036,8 @@ router.get("/photooxy/shadow", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -5879,6 +6062,8 @@ router.get("/photooxy/romantic", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -5905,6 +6090,8 @@ router.get("/photooxy/smoke", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -5929,6 +6116,8 @@ router.get("/photooxy/burn-papper", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -5953,6 +6142,8 @@ router.get("/photooxy/naruto", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -5977,6 +6168,8 @@ router.get("/photooxy/love-message", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6001,6 +6194,8 @@ router.get("/photooxy/message-under-grass", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6027,6 +6222,8 @@ router.get("/photooxy/glitch", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6051,6 +6248,8 @@ router.get("/photooxy/double-heart", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6075,6 +6274,8 @@ router.get("/photooxy/coffe-cup", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6099,6 +6300,8 @@ router.get("/photooxy/love-text", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6123,6 +6326,8 @@ router.get("/photooxy/butterfly", async (req, res, next) => {
       })
       .catch((error) => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -7891,7 +8096,7 @@ router.get('/maker/dadu', async (req, res, next) => {
     data = await fetch(hasil).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/dadu.png', data)
     res.sendFile(__path + '/tmp/dadu.png')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -7908,7 +8113,7 @@ router.get('/blackpink', async (req, res, next) => {
     data = await fetch(hasil).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pink.jpeg', data)
     res.sendFile(__path + '/tmp/pink.jpeg')
-  
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -7924,7 +8129,7 @@ router.get('/asupan', async (req, res, next) => {
     data = await fetch(randAsupan).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/asupan.mp4', data)
     res.sendFile(__path + '/tmp/asupan.mp4')
-    
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -7943,7 +8148,7 @@ router.get("/maker/nulis", async (req, res, next) => {
     data = await fetch(hasil).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/nulis.jpeg', data)
     res.sendFile(__path + '/tmp/nulis.jpeg')
-     
+
   } else {
     res.json(loghandler.invalidKey)
   }
@@ -7968,7 +8173,9 @@ router.get('/maker/ttp', async (req, res, next) => {
       res.sendFile(__path + '/tmp/ttp.png');
     } catch (error) {
       console.error(error);
-      res.json(loghandler.errorMessage); // Ganti dengan pesan kesalahan yang sesuai
+      res.json(loghandler.errorMessage)
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl); // Ganti dengan pesan kesalahan yang sesuai
     }
   } else {
     res.json(loghandler.invalidKey);
@@ -8306,6 +8513,8 @@ router.get('/maker/emoji2png', async (req, res, next) => {
 
       .catch((err) => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -8333,6 +8542,8 @@ router.get('/downloader/facebook2', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -8360,6 +8571,8 @@ router.get('/web2plain-text', async (req, res, next) => {
       })
       .catch(e => {
         res.json(loghandler.error)
+        const currentUrl = req.originalUrl;
+      sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -8374,6 +8587,43 @@ const configuration = new Configuration({
 
 
 const openai = new OpenAIApi(configuration);
+
+router.get('/ai/dall-e', async (req, res, next) => {
+  var apikey = req.query.apikey
+  var text = req.query.query
+  if (!apikey) return res.json(loghandler.notparam)
+  if (!text) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "masukan parameter query"
+  })
+  if (listkey.includes(apikey)) {
+    try {
+      const response = await openai.createImage({
+        prompt: text,
+        n: 1,
+        size: "512x512",
+      });
+      //console.log(response.data.data[0].url)
+      res.status(200).json({
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result: response.data.data[0].url
+      })
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        error
+      });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
+    }
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+
+});
 
 router.get('/ai/chatai', async (req, res, next) => {
   var apikey = req.query.apikey
@@ -8406,6 +8656,9 @@ router.get('/ai/chatai', async (req, res, next) => {
       res.status(500).json({
         error
       });
+      
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
     }
   } else {
     res.json(loghandler.invalidKey)
@@ -8501,7 +8754,7 @@ router.get('/ai/chatai2', async (req, res, next) => {
           code: 200,
           creator: `${creator}`,
           response: mergedContent,
-          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://rull.dicodingbot.site/api/ai/clear?apikey=&userId=`
+          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, ${req.protocol}://${req.get('host')}/api/ai/clear?apikey=&userId=`
         })
       });
     } catch (error) {
@@ -8509,6 +8762,8 @@ router.get('/ai/chatai2', async (req, res, next) => {
       res.status(500).json({
         error: 'Internal Server Error'
       });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
     }
   } else {
     res.json(loghandler.invalidKey)
@@ -8595,6 +8850,8 @@ router.get('/ai/chatai3', async (req, res, next) => {
 
             } catch (error) {
               console.error('Error parsing JSON:', error.message);
+              const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
             }
           }
         });
@@ -8612,7 +8869,7 @@ router.get('/ai/chatai3', async (req, res, next) => {
           code: 200,
           creator: `${creator}`,
           response: mergedContent,
-          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, https://rull.dicodingbot.site/api/ai/clear?apikey=&userId=`,
+          note: `Jangan lupa Untuk Menghapus Riwayat Chat Dengan, ${req.protocol}://${req.get('host')}/api/ai/clear?apikey=&userId=`,
         })
       });
     } catch (error) {
@@ -8620,6 +8877,8 @@ router.get('/ai/chatai3', async (req, res, next) => {
       res.status(500).json({
         error: 'Internal Server Error'
       });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
     }
   } else {
     res.json(loghandler.invalidKey)
@@ -8685,11 +8944,93 @@ router.get('/ai/bard', async (req, res, next) => {
       res.status(500).json({
         error
       });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
     }
   } else {
     res.json(loghandler.invalidKey)
   }
 
+});
+
+router.get('/ai/herai', async (req, res) => {
+  var apikey = req.query.apikey;
+  var text = req.query.query;
+  var mode = req.query.mode; // Tambahkan parameter mode
+  if (!apikey) return res.json(loghandler.notparam);
+  if (!text) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "Masukkan parameter query"
+  });
+
+  if (listkey.includes(apikey)) {
+    if (!mode) {
+      return res.json({
+        status: false,
+        creator: `${creator}`,
+        message: "Masukkan parameter mode (chat atau image)."
+      });
+    }
+
+    try {
+      const herc = new Hercai();
+      if (mode === 'chat') {
+        /* Available Models */
+        /* "v2" , "beta" , "v3-beta" */
+        /* Default Model; "v2" */
+        herc.question({
+          model: "v3-beta",
+          content: text
+        }).then(response => {
+          res.status(200).json({
+            status: true,
+            code: 200,
+            creator: `${creator}`,
+            result: response.reply
+          });
+        });
+      } else if (mode === 'image') {
+        /* Available Models */
+        /* "v1" , "v2" , "v2-beta" , "v3" (DALL-E) , "lexica" , "prodia" */
+        /* Default Model; "v2" */
+        herc.drawImage({
+          model: "v2",
+          prompt: text
+        }).then(async response => {
+          let data = response.url;
+          datas = await fetch(data).then(v => v.buffer());
+          try {
+            await fs.promises.writeFile(__path + '/tmp/aiimage.jpg', datas);
+            res.sendFile(__path + '/tmp/aiimage.jpg');
+          } catch (error) {
+            console.log(error);
+            res.status(500).json({
+              error
+            });
+            const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
+          }
+        });
+
+      } else {
+        res.json({
+          status: false,
+          creator: `${creator}`,
+          message: "Mode tidak valid. Gunakan 'chat' atau 'image'."
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        error
+      });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
+    }
+  } else {
+    res.json(loghandler.invalidKey);
+  }
 });
 
 
@@ -8732,13 +9073,43 @@ router.get('/ai/cai', async (req, res) => {
       res.status(500).json({
         error
       });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
     }
   } else {
     res.json(loghandler.invalidKey);
   }
 });
 
+router.post('/shortlink', async (req, res, next) => {
+  var url = req.query.link;
+  if (!url) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "masukan parameter url"
+  });
 
+  try {
+    turl.shorten(url).then((result) => {
+      let data = result
+
+      res.status(200).json({
+        status: true,
+        creator: creator,
+        link: data
+      });
+
+    }).catch((err) => {
+      console.log(err);
+    });
+
+  } catch (error) {
+    console.error('Error:', error.message);
+    res.status(500).json({
+      error: 'Internal Server Error'
+    });
+  }
+});
 
 router.get('/ai/remini', async (req, res, next) => {
   var apikey = req.query.apikey;
@@ -8760,7 +9131,7 @@ router.get('/ai/remini', async (req, res, next) => {
       let proses = await remini(buffer, "enhance");
       await fs.promises.writeFile(__path + '/tmp/remini.jpg', proses);
       res.sendFile(__path + '/tmp/remini.jpg');
-      
+
       // res.status(200).json({
       //   status: true,
       //   code: 200,
@@ -8772,6 +9143,8 @@ router.get('/ai/remini', async (req, res, next) => {
       res.status(500).json({
         error: 'Internal Server Error'
       });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
     }
   } else {
     res.json(loghandler.invalidKey);
@@ -8810,7 +9183,7 @@ router.get('/ai/removebg', async (req, res, next) => {
         if (response.status != 200) return console.error('Error:', response.status, response.statusText);
         await fs.promises.writeFile(__path + '/tmp/nobg.png', data);
         res.sendFile(__path + '/tmp/nobg.png');
-      
+
       })
       .catch((error) => {
         return console.error('Request failed:', error);
@@ -8856,6 +9229,8 @@ router.post('/uploadfile', upload.single('media'), async (req, res) => {
       status: false,
       message: 'Internal server error.'
     });
+    const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
   }
 });
 

@@ -50,6 +50,7 @@
     "form-data": "^4.0.0",
     "fs": "0.0.1-security",
     "genius-lyrics": "^4.2.7",
+    "hercai": "^11.0.0",
     "instatouch": "^2.3.3",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
@@ -69,6 +70,7 @@
     "skh-api": "^1.0.0",
     "snapsave-downloader-itj": "^1.0.1",
     "ssl-express-www": "^3.0.7",
+    "turl": "^1.1.2",
     "urlencode": "^1.1.0",
     "zrapi": "0.0.6"
   },
