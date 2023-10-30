@@ -142,7 +142,7 @@ const {
 // Define storage configuration for multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const uploadDir = __path + 'tmp/upload'; // Sesuaikan dengan path yang diinginkan
+    const uploadDir = __path + '/tmp/upload'; // Sesuaikan dengan path yang diinginkan
     cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
@@ -2526,7 +2526,7 @@ router.get('/onlyfans/noname', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/noname.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/noname.jpg', data);
           res.sendFile(__path + '/tmp/noname.jpg');
           await fs.promises.unlink(__path + '/tmp/noname.jpg', (err) => {
             if (err) {
@@ -2537,7 +2537,7 @@ router.get('/onlyfans/noname', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/noname.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/noname.jpg', data);
           res.sendFile(__path + '/tmp/noname.jpg');
           await fs.promises.unlink(__path + '/tmp/noname.jpg', (err) => {
             if (err) {
@@ -2588,7 +2588,7 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/Hestia.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/Hestia.jpg', data);
           res.sendFile(__path + '/tmp/Hestia.jpg');
           await fs.promises.unlink(__path + '/tmp/Hestia.jpg', (err) => {
             if (err) {
@@ -2599,7 +2599,7 @@ router.get('/onlyfans/Hestia', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/Hestia.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/Hestia.jpg', data);
           res.sendFile(__path + '/tmp/Hestia.jpg');
           await fs.promises.unlink(__path + '/tmp/Hestia.jpg', (err) => {
             if (err) {
@@ -2639,7 +2639,7 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/mihye.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/mihye.jpg', data);
           res.sendFile(__path + '/tmp/mihye.jpg');
           await fs.promises.unlink(__path + '/tmp/mihye.jpg', (err) => {
             if (err) {
@@ -2650,7 +2650,7 @@ router.get('/onlyfans/Mihye', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/mihye.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/mihye.jpg', data);
           res.sendFile(__path + '/tmp/mihye.jpg');
           await fs.promises.unlink(__path + '/tmp/mihye.jpg', (err) => {
             if (err) {
@@ -2690,7 +2690,7 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/nguyen.jpg', data);
           res.sendFile(__path + '/tmp/nguyen.jpg');
           await fs.promises.unlink(__path + '/tmp/nguyen.jpg', (err) => {
             if (err) {
@@ -2701,7 +2701,7 @@ router.get('/onlyfans/nguyenxhuang', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/nguyen.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/nguyen.jpg', data);
           res.sendFile(__path + '/tmp/nguyen.jpg');
           await fs.promises.unlink(__path + '/tmp/nguyen.jpg', (err) => {
             if (err) {
@@ -2741,7 +2741,7 @@ router.get('/onlyfans/UmekoJ', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/UmekoJ.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/UmekoJ.jpg', data);
           res.sendFile(__path + '/tmp/UmekoJ.jpg');
           await fs.promises.unlink(__path + '/tmp/UmekoJ.jpg', (err) => {
             if (err) {
@@ -2752,7 +2752,7 @@ router.get('/onlyfans/UmekoJ', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/UmekoJ.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/UmekoJ.jpg', data);
           res.sendFile(__path + '/tmp/UmekoJ.jpg');
           await fs.promises.unlink(__path + '/tmp/UmekoJ.jpg', (err) => {
             if (err) {
@@ -2792,7 +2792,7 @@ router.get('/onlyfans/merial', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/merial.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/merial.jpg', data);
           res.sendFile(__path + '/tmp/merial.jpg');
           await fs.promises.unlink(__path + '/tmp/merial.jpg', (err) => {
             if (err) {
@@ -2809,7 +2809,7 @@ router.get('/onlyfans/merial', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/merial.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/merial.jpg', data);
           res.sendFile(__path + '/tmp/merial.jpg');
           await fs.promises.unlink(__path + '/tmp/merial.jpg', (err) => {
             if (err) {
@@ -2855,7 +2855,7 @@ router.get('/onlyfans/nanaqi', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/nanaqi.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/nanaqi.jpg', data);
           res.sendFile(__path + '/tmp/nanaqi.jpg');
           await fs.promises.unlink(__path + '/tmp/nanaqi.jpg', (err) => {
             if (err) {
@@ -2866,7 +2866,7 @@ router.get('/onlyfans/nanaqi', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/nanaqi.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/nanaqi.jpg', data);
           res.sendFile(__path + '/tmp/nanaqi.jpg');
           await fs.promises.unlink(__path + '/tmp/nanaqi.jpg', (err) => {
             if (err) {
@@ -2906,7 +2906,7 @@ router.get('/onlyfans/okita', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/okita.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/okita.jpg', data);
           res.sendFile(__path + '/tmp/okita.jpg');
           await fs.promises.unlink(__path + '/tmp/okita.jpg', (err) => {
             if (err) {
@@ -2917,7 +2917,7 @@ router.get('/onlyfans/okita', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/okita.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/okita.jpg', data);
           res.sendFile(__path + '/tmp/okita.jpg');
           await fs.promises.unlink(__path + '/tmp/okita.jpg', (err) => {
             if (err) {
@@ -2957,7 +2957,7 @@ router.get('/onlyfans/onlyfans', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/onlyfans.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/onlyfans.jpg', data);
           res.sendFile(__path + '/tmp/onlyfans.jpg');
           await fs.promises.unlink(__path + '/tmp/onlyfans.jpg', (err) => {
             if (err) {
@@ -2968,7 +2968,7 @@ router.get('/onlyfans/onlyfans', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/onlyfans.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/onlyfans.jpg', data);
           res.sendFile(__path + '/tmp/onlyfans.jpg');
           await fs.promises.unlink(__path + '/tmp/onlyfans.jpg', (err) => {
             if (err) {
@@ -3008,7 +3008,7 @@ router.get('/onlyfans/quan', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/quan.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/quan.jpg', data);
           res.sendFile(__path + '/tmp/quan.jpg');
           await fs.promises.unlink(__path + '/tmp/quan.jpg', (err) => {
             if (err) {
@@ -3059,7 +3059,7 @@ router.get('/onlyfans/yoshinobi', async (req, res, next) => {
           });
         } else if (isJson == "false") {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/yoshinobi.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/yoshinobi.jpg', data);
           res.sendFile(__path + '/tmp/yoshinobi.jpg');
           await fs.promises.unlink(__path + '/tmp/yoshinobi.jpg', (err) => {
             if (err) {
@@ -3070,7 +3070,7 @@ router.get('/onlyfans/yoshinobi', async (req, res, next) => {
           });
         } else {
           data = await fetch(buffer).then(v => v.buffer());
-          await fs.writeFileSync(__path + '/tmp/yoshinobi.jpg', data);
+          await fs.promises.writeFile(__path + '/tmp/yoshinobi.jpg', data);
           res.sendFile(__path + '/tmp/yoshinobi.jpg');
           await fs.promises.unlink(__path + '/tmp/yoshinobi.jpg', (err) => {
             if (err) {
@@ -3189,7 +3189,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
     const ahegao = JSON.parse(fs.readFileSync(__path + '/data/ahegao.json'));
     const randahegao = ahegao[Math.floor(Math.random() * ahegao.length)];
     data = await fetch(randahegao).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/ahegao.jpeg', data);
+    await fs.promises.writeFile(__path + '/tmp/ahegao.jpeg', data);
     res.sendFile(__path + '/tmp/ahegao.jpeg');
     await fs.promises.unlink(__path + '/tmp/ahegao.jpeg')
       .then(() => {
@@ -3213,7 +3213,7 @@ router.get('/nsfw/ass', async (req, res, next) => {
     const ass = JSON.parse(fs.readFileSync(__path + '/data/ass.json'));
     const randass = ass[Math.floor(Math.random() * ass.length)];
     data = await fetch(randass).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ass.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ass.jpeg', data)
     res.sendFile(__path + '/tmp/ass.jpeg')
     await fs.promises.unlink(__path + '/tmp/ass.jpeg', (err) => {
       if (err) {
@@ -3236,7 +3236,7 @@ router.get('/nsfw/bdsm', async (req, res, next) => {
     const bdsm = JSON.parse(fs.readFileSync(__path + '/data/bdsm.json'));
     const randbdsm = bdsm[Math.floor(Math.random() * bdsm.length)];
     data = await fetch(randbdsm).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/bdsm.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/bdsm.jpeg', data)
     res.sendFile(__path + '/tmp/bdsm.jpeg')
     await fs.promises.unlink(__path + '/tmp/bdsm.jpeg', (err) => {
       if (err) {
@@ -3259,7 +3259,7 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
     const blowjob = JSON.parse(fs.readFileSync(__path + '/data/blowjob.json'));
     const randblowjob = blowjob[Math.floor(Math.random() * blowjob.length)];
     data = await fetch(randblowjob).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/blowjob.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/blowjob.jpeg', data)
     res.sendFile(__path + '/tmp/blowjob.jpeg')
     await fs.promises.unlink(__path + '/tmp/blowjob.jpeg', (err) => {
       if (err) {
@@ -3282,7 +3282,7 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
     const cuckold = JSON.parse(fs.readFileSync(__path + '/data/cuckold.json'));
     const randcuckold = cuckold[Math.floor(Math.random() * cuckold.length)];
     data = await fetch(randcuckold).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/cuckold.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cuckold.jpeg', data)
     res.sendFile(__path + '/tmp/cuckold.jpeg')
     await fs.promises.unlink(__path + '/tmp/cuckold.jpeg', (err) => {
       if (err) {
@@ -3305,7 +3305,7 @@ router.get('/nsfw/cum', async (req, res, next) => {
     const cum = JSON.parse(fs.readFileSync(__path + '/data/cum.json'));
     const randcum = cum[Math.floor(Math.random() * cum.length)];
     data = await fetch(randcum).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/cum.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cum.jpeg', data)
     res.sendFile(__path + '/tmp/cum.jpeg')
     await fs.promises.unlink(__path + '/tmp/cum.jpeg', (err) => {
       if (err) {
@@ -3328,7 +3328,7 @@ router.get('/nsfw/ero', async (req, res, next) => {
     const ero = JSON.parse(fs.readFileSync(__path + '/data/ero.json'));
     const randero = ero[Math.floor(Math.random() * ero.length)];
     data = await fetch(randero).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ero.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ero.jpeg', data)
     res.sendFile(__path + '/tmp/ero.jpeg')
     await fs.promises.unlink(__path + '/tmp/ero.jpeg', (err) => {
       if (err) {
@@ -3351,7 +3351,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
     const femdom = JSON.parse(fs.readFileSync(__path + '/data/femdom.json'));
     const randfemdom = femdom[Math.floor(Math.random() * femdom.length)];
     data = await fetch(randfemdom).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/femdom.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/femdom.jpeg', data)
     res.sendFile(__path + '/tmp/femdom.jpeg')
     await fs.promises.unlink(__path + '/tmp/femdom.jpeg', (err) => {
       if (err) {
@@ -3374,7 +3374,7 @@ router.get('/nsfw/foot', async (req, res, next) => {
     const foot = JSON.parse(fs.readFileSync(__path + '/data/foot.json'));
     const randfoot = foot[Math.floor(Math.random() * foot.length)];
     data = await fetch(randfoot).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/foot.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/foot.jpeg', data)
     res.sendFile(__path + '/tmp/foot.jpeg')
     await fs.promises.unlink(__path + '/tmp/foot.jpeg', (err) => {
       if (err) {
@@ -3397,7 +3397,7 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
     const gangbang = JSON.parse(fs.readFileSync(__path + '/data/gangbang.json'));
     const randgangbang = gangbang[Math.floor(Math.random() * gangbang.length)];
     data = await fetch(randgangbang).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/gangbang.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/gangbang.jpeg', data)
     res.sendFile(__path + '/tmp/gangbang.jpeg')
     await fs.promises.unlink(__path + '/tmp/gangbang.jpeg', (err) => {
       if (err) {
@@ -3420,7 +3420,7 @@ router.get('/nsfw/glasses', async (req, res, next) => {
     const glasses = JSON.parse(fs.readFileSync(__path + '/data/glasses.json'));
     const randglasses = glasses[Math.floor(Math.random() * glasses.length)];
     data = await fetch(randglasses).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/glasses.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/glasses.jpeg', data)
     res.sendFile(__path + '/tmp/glasses.jpeg')
     await fs.promises.unlink(__path + '/tmp/glasses.jpeg', (err) => {
       if (err) {
@@ -3443,7 +3443,7 @@ router.get('/nsfw/hentai', async (req, res, next) => {
     const hentai = JSON.parse(fs.readFileSync(__path + '/data/hentai.json'));
     const randhentai = hentai[Math.floor(Math.random() * hentai.length)];
     data = await fetch(randhentai).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/hentai.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/hentai.jpeg', data)
     res.sendFile(__path + '/tmp/hentai.jpeg')
     await fs.promises.unlink(__path + '/tmp/hentai.jpeg', (err) => {
       if (err) {
@@ -3466,7 +3466,7 @@ router.get('/nsfw/gifs', async (req, res, next) => {
     const gifs = JSON.parse(fs.readFileSync(__path + '/data/gifs.json'));
     const randgifs = gifs[Math.floor(Math.random() * gifs.length)];
     data = await fetch(randgifs).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/gifs.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/gifs.jpeg', data)
     res.sendFile(__path + '/tmp/gifs.jpeg')
     await fs.promises.unlink(__path + '/tmp/gifs.jpeg', (err) => {
       if (err) {
@@ -3489,7 +3489,7 @@ router.get('/nsfw/jahy', async (req, res, next) => {
     const jahy = JSON.parse(fs.readFileSync(__path + '/data/jahy.json'));
     const randjahy = jahy[Math.floor(Math.random() * jahy.length)];
     data = await fetch(randjahy).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/jahy.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/jahy.jpeg', data)
     res.sendFile(__path + '/tmp/jahy.jpeg')
     await fs.promises.unlink(__path + '/tmp/jahy.jpeg', (err) => {
       if (err) {
@@ -3512,7 +3512,7 @@ router.get('/nsfw/manga', async (req, res, next) => {
     const manga = JSON.parse(fs.readFileSync(__path + '/data/manga.json'));
     const randmanga = manga[Math.floor(Math.random() * manga.length)];
     data = await fetch(randmanga).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/manga.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/manga.jpeg', data)
     res.sendFile(__path + '/tmp/manga.jpeg')
     await fs.promises.unlink(__path + '/tmp/manga.jpeg', (err) => {
       if (err) {
@@ -3535,7 +3535,7 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
     const masturbation = JSON.parse(fs.readFileSync(__path + '/data/masturbation.json'));
     const randmasturbation = masturbation[Math.floor(Math.random() * masturbation.length)];
     data = await fetch(randmasturbation).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/masturbation.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/masturbation.jpeg', data)
     res.sendFile(__path + '/tmp/masturbation.jpeg')
     await fs.promises.unlink(__path + '/tmp/masturbation.jpeg', (err) => {
       if (err) {
@@ -3558,7 +3558,7 @@ router.get('/nsfw/neko', async (req, res, next) => {
     const neko = JSON.parse(fs.readFileSync(__path + '/data/neko.json'));
     const randneko = neko[Math.floor(Math.random() * neko.length)];
     data = await fetch(randneko).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/neko.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/neko.jpeg', data)
     res.sendFile(__path + '/tmp/neko.jpeg')
     await fs.promises.unlink(__path + '/tmp/neko.jpeg', (err) => {
       if (err) {
@@ -3581,7 +3581,7 @@ router.get('/nsfw/orgy', async (req, res, next) => {
     const orgy = JSON.parse(fs.readFileSync(__path + '/data/orgy.json'));
     const randorgy = orgy[Math.floor(Math.random() * orgy.length)];
     data = await fetch(randorgy).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/orgy.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/orgy.jpeg', data)
     res.sendFile(__path + '/tmp/orgy.jpeg')
     await fs.promises.unlink(__path + '/tmp/orgy.jpeg', (err) => {
       if (err) {
@@ -3604,7 +3604,7 @@ router.get('/nsfw/panties', async (req, res, next) => {
     const panties = JSON.parse(fs.readFileSync(__path + '/data/panties.json'));
     const randpanties = panties[Math.floor(Math.random() * panties.length)];
     data = await fetch(randpanties).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/panties.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/panties.jpeg', data)
     res.sendFile(__path + '/tmp/panties.jpeg')
     await fs.promises.unlink(__path + '/tmp/panties.jpeg', (err) => {
       if (err) {
@@ -3627,7 +3627,7 @@ router.get('/nsfw/pussy', async (req, res, next) => {
     const pussy = JSON.parse(fs.readFileSync(__path + '/data/pussy.json'));
     const randpussy = pussy[Math.floor(Math.random() * pussy.length)];
     data = await fetch(randpussy).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pussy.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/pussy.jpeg', data)
     res.sendFile(__path + '/tmp/pussy.jpeg')
     await fs.promises.unlink(__path + '/tmp/pussy.jpeg', (err) => {
       if (err) {
@@ -3650,7 +3650,7 @@ router.get('/nsfw/neko2', async (req, res, next) => {
     const neko2 = JSON.parse(fs.readFileSync(__path + '/data/neko2.json'));
     const randneko2 = neko2[Math.floor(Math.random() * neko2.length)];
     data = await fetch(randneko2).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/neko2.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/neko2.jpeg', data)
     res.sendFile(__path + '/tmp/neko2.jpeg')
     await fs.promises.unlink(__path + '/tmp/neko2.jpeg', (err) => {
       if (err) {
@@ -3673,7 +3673,7 @@ router.get('/nsfw/tentacles', async (req, res, next) => {
     const tentacles = JSON.parse(fs.readFileSync(__path + '/data/tentacles.json'));
     const randtentacles = tentacles[Math.floor(Math.random() * tentacles.length)];
     data = await fetch(randtentacles).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/tentacles.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/tentacles.jpeg', data)
     res.sendFile(__path + '/tmp/tentacles.jpeg')
     await fs.promises.unlink(__path + '/tmp/tentacles.jpeg', (err) => {
       if (err) {
@@ -3696,7 +3696,7 @@ router.get('/nsfw/thighs', async (req, res, next) => {
     const thighs = JSON.parse(fs.readFileSync(__path + '/data/thighs.json'));
     const randthighs = thighs[Math.floor(Math.random() * thighs.length)];
     data = await fetch(randthighs).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/thighs.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/thighs.jpeg', data)
     res.sendFile(__path + '/tmp/thighs.jpeg')
     await fs.promises.unlink(__path + '/tmp/thighs.jpeg', (err) => {
       if (err) {
@@ -3719,7 +3719,7 @@ router.get('/nsfw/yuri', async (req, res, next) => {
     const yuri = JSON.parse(fs.readFileSync(__path + '/data/yuri.json'));
     const randyuri = yuri[Math.floor(Math.random() * yuri.length)];
     data = await fetch(randyuri).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/yuri.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/yuri.jpeg', data)
     res.sendFile(__path + '/tmp/yuri.jpeg')
     await fs.promises.unlink(__path + '/tmp/yuri.jpeg', (err) => {
       if (err) {
@@ -3742,7 +3742,7 @@ router.get('/nsfw/zettai', async (req, res, next) => {
     const zettai = JSON.parse(fs.readFileSync(__path + '/data/zettai.json'));
     const randzettai = zettai[Math.floor(Math.random() * zettai.length)];
     data = await fetch(randzettai).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/zettai.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/zettai.jpeg', data)
     res.sendFile(__path + '/tmp/zettai.jpeg')
     await fs.promises.unlink(__path + '/tmp/zettai.jpeg', (err) => {
       if (err) {
@@ -3765,7 +3765,7 @@ router.get('/wallpaper/keneki', async (req, res, next) => {
     const keneki = JSON.parse(fs.readFileSync(__path + '/data/keneki.json'));
     const randkeneki = keneki[Math.floor(Math.random() * keneki.length)];
     data = await fetch(randkeneki).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/keneki.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/keneki.jpeg', data)
     res.sendFile(__path + '/tmp/keneki.jpeg')
     await fs.promises.unlink(__path + '/tmp/keneki.jpeg', (err) => {
       if (err) {
@@ -3788,7 +3788,7 @@ router.get('/wallpaper/megumin', async (req, res, next) => {
     const megumin = JSON.parse(fs.readFileSync(__path + '/data/megumin.json'));
     const randmegumin = megumin[Math.floor(Math.random() * megumin.length)];
     data = await fetch(randmegumin).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/megumin.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/megumin.jpeg', data)
     res.sendFile(__path + '/tmp/megumin.jpeg')
     await fs.promises.unlink(__path + '/tmp/megumin.jpeg', (err) => {
       if (err) {
@@ -3811,7 +3811,7 @@ router.get('/wallpaper/yotsuba', async (req, res, next) => {
     const yotsuba = JSON.parse(fs.readFileSync(__path + '/data/yotsuba.json'));
     const randyotsuba = yotsuba[Math.floor(Math.random() * yotsuba.length)];
     data = await fetch(randyotsuba).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/yotsuba.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/yotsuba.jpeg', data)
     res.sendFile(__path + '/tmp/yotsuba.jpeg')
     await fs.promises.unlink(__path + '/tmp/yotsuba.jpeg', (err) => {
       if (err) {
@@ -3834,7 +3834,7 @@ router.get('/wallpaper/shinomiya', async (req, res, next) => {
     const shinomiya = JSON.parse(fs.readFileSync(__path + '/data/shinomiya.json'));
     const randshinomiya = shinomiya[Math.floor(Math.random() * shinomiya.length)];
     data = await fetch(randshinomiya).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/shinomiya.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/shinomiya.jpeg', data)
     res.sendFile(__path + '/tmp/shinomiya.jpeg')
     await fs.promises.unlink(__path + '/tmp/shinomiya.jpeg', (err) => {
       if (err) {
@@ -3857,7 +3857,7 @@ router.get('/wallpaper/yumeko', async (req, res, next) => {
     const yumeko = JSON.parse(fs.readFileSync(__path + '/data/yumeko.json'));
     const randyumeko = yumeko[Math.floor(Math.random() * yumeko.length)];
     data = await fetch(randyumeko).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/yumeko.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/yumeko.jpeg', data)
     res.sendFile(__path + '/tmp/yumeko.jpeg')
     await fs.promises.unlink(__path + '/tmp/yumeko.jpeg', (err) => {
       if (err) {
@@ -3880,7 +3880,7 @@ router.get('/wallpaper/tejina', async (req, res, next) => {
     const tejina = JSON.parse(fs.readFileSync(__path + '/data/tejina.json'));
     const randtejina = tejina[Math.floor(Math.random() * tejina.length)];
     data = await fetch(randtejina).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/tejina.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/tejina.jpeg', data)
     res.sendFile(__path + '/tmp/tejina.jpeg')
     await fs.promises.unlink(__path + '/tmp/tejina.jpeg', (err) => {
       if (err) {
@@ -3903,7 +3903,7 @@ router.get('/wallpaper/chiho', async (req, res, next) => {
     const chiho = JSON.parse(fs.readFileSync(__path + '/data/chiho.json'));
     const randchiho = chiho[Math.floor(Math.random() * chiho.length)];
     data = await fetch(randchiho).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/chiho.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/chiho.jpeg', data)
     res.sendFile(__path + '/tmp/chiho.jpeg')
     await fs.promises.unlink(__path + '/tmp/chiho.jpeg', (err) => {
       if (err) {
@@ -3926,7 +3926,7 @@ router.get('/wallpaper/cyberspace', async (req, res, next) => {
     const cyberspace = JSON.parse(fs.readFileSync(__path + '/data/CyberSpace.json'));
     const randcyberspace = cyberspace[Math.floor(Math.random() * cyberspace.length)];
     data = await fetch(randcyberspace).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/cyberspace.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cyberspace.jpeg', data)
     res.sendFile(__path + '/tmp/cyberspace.jpeg')
     await fs.promises.unlink(__path + '/tmp/cyberspace.jpeg', (err) => {
       if (err) {
@@ -3949,7 +3949,7 @@ router.get('/wallpaper/gaming', async (req, res, next) => {
     const gaming = JSON.parse(fs.readFileSync(__path + '/data/GameWallp.json'));
     const randgaming = gaming[Math.floor(Math.random() * gaming.length)];
     data = await fetch(randgaming).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/gaming.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/gaming.jpeg', data)
     res.sendFile(__path + '/tmp/gaming.jpeg')
     await fs.promises.unlink(__path + '/tmp/gaming.jpeg', (err) => {
       if (err) {
@@ -3972,7 +3972,7 @@ router.get('/wallpaper/islami', async (req, res, next) => {
     const islami = JSON.parse(fs.readFileSync(__path + '/data/Islamic.json'));
     const randislami = islami[Math.floor(Math.random() * islami.length)];
     data = await fetch(randislami).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/islami.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/islami.jpeg', data)
     res.sendFile(__path + '/tmp/islami.jpeg')
     await fs.promises.unlink(__path + '/tmp/islami.jpeg', (err) => {
       if (err) {
@@ -3995,7 +3995,7 @@ router.get('/wallpaper/programing', async (req, res, next) => {
     const programing = JSON.parse(fs.readFileSync(__path + '/data/Programming.json'));
     const randprograming = programing[Math.floor(Math.random() * programing.length)];
     data = await fetch(randprograming).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/programing.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/programing.jpeg', data)
     res.sendFile(__path + '/tmp/programing.jpeg')
     await fs.promises.unlink(__path + '/tmp/programing.jpeg', (err) => {
       if (err) {
@@ -4018,7 +4018,7 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
     const teknologi = JSON.parse(fs.readFileSync(__path + '/data/Technology.json'));
     const randteknologi = teknologi[Math.floor(Math.random() * teknologi.length)];
     data = await fetch(randteknologi).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/teknologi.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/teknologi.jpeg', data)
     res.sendFile(__path + '/tmp/teknologi.jpeg')
     await fs.promises.unlink(__path + '/tmp/teknologi.jpeg', (err) => {
       if (err) {
@@ -4041,7 +4041,7 @@ router.get('/wallpaper/mountain', async (req, res, next) => {
     const mountain = JSON.parse(fs.readFileSync(__path + '/data/Mountain.json'));
     const randmountain = mountain[Math.floor(Math.random() * mountain.length)];
     data = await fetch(randmountain).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/mountain.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/mountain.jpeg', data)
     res.sendFile(__path + '/tmp/mountain.jpeg')
     await fs.promises.unlink(__path + '/tmp/mountain.jpeg', (err) => {
       if (err) {
@@ -4064,7 +4064,7 @@ router.get('/wallpaper/tatasurya', async (req, res, next) => {
     const tatasurya = JSON.parse(fs.readFileSync(__path + '/data/tatasurya.json'));
     const randtatasurya = tatasurya[Math.floor(Math.random() * tatasurya.length)];
     data = await fetch(randtatasurya).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/tatasurya.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/tatasurya.jpeg', data)
     res.sendFile(__path + '/tmp/tatasurya.jpeg')
     await fs.promises.unlink(__path + '/tmp/tatasurya.jpeg', (err) => {
       if (err) {
@@ -4087,7 +4087,7 @@ router.get('/wallpaper/kartun', async (req, res, next) => {
     const kartun = JSON.parse(fs.readFileSync(__path + '/data/kartun.json'));
     const randkartun = kartun[Math.floor(Math.random() * kartun.length)];
     data = await fetch(randkartun).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kartun.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kartun.jpeg', data)
     res.sendFile(__path + '/tmp/kartun.jpeg')
     await fs.promises.unlink(__path + '/tmp/kartun.jpeg', (err) => {
       if (err) {
@@ -4110,7 +4110,7 @@ router.get('/random/yuli', async (req, res, next) => {
     const yuli = JSON.parse(fs.readFileSync(__path + '/data/yulibocil.json'));
     const randyuli = yuli[Math.floor(Math.random() * yuli.length)];
     data = await fetch(randyuli).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/yuli.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/yuli.jpeg', data)
     res.sendFile(__path + '/tmp/yuli.jpeg')
     await fs.promises.unlink(__path + '/tmp/yuli.jpeg', (err) => {
       if (err) {
@@ -4133,7 +4133,7 @@ router.get('/wallpaper/pentol', async (req, res, next) => {
     const pentol = JSON.parse(fs.readFileSync(__path + '/data/pentol.json'));
     const randpentol = pentol[Math.floor(Math.random() * pentol.length)];
     data = await fetch(randpentol).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pentol.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/pentol.jpeg', data)
     res.sendFile(__path + '/tmp/pentol.jpeg')
     await fs.promises.unlink(__path + '/tmp/pentol.jpeg', (err) => {
       if (err) {
@@ -4156,7 +4156,7 @@ router.get('/wallpaper/katakata', async (req, res, next) => {
     const katakata = JSON.parse(fs.readFileSync(__path + '/data/katakata.json'));
     const randkatakata = katakata[Math.floor(Math.random() * katakata.length)];
     data = await fetch(randkatakata).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/katakata.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/katakata.jpeg', data)
     res.sendFile(__path + '/tmp/katakata.jpeg')
     await fs.promises.unlink(__path + '/tmp/katakata.jpeg', (err) => {
       if (err) {
@@ -4179,7 +4179,7 @@ router.get('/wallpaper/toukachan', async (req, res, next) => {
     const toukachan = JSON.parse(fs.readFileSync(__path + '/data/toukachan.json'));
     const randtoukachan = toukachan[Math.floor(Math.random() * toukachan.length)];
     data = await fetch(randtoukachan).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/toukachan.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/toukachan.jpeg', data)
     res.sendFile(__path + '/tmp/toukachan.jpeg')
     await fs.promises.unlink(__path + '/tmp/toukachan.jpeg', (err) => {
       if (err) {
@@ -4202,7 +4202,7 @@ router.get('/wallpaper/akira', async (req, res, next) => {
     const akira = JSON.parse(fs.readFileSync(__path + '/data/akira.json'));
     const randakira = akira[Math.floor(Math.random() * akira.length)];
     data = await fetch(randakira).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/akira.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/akira.jpeg', data)
     res.sendFile(__path + '/tmp/akira.jpeg')
     await fs.promises.unlink(__path + '/tmp/akira.jpeg', (err) => {
       if (err) {
@@ -4225,7 +4225,7 @@ router.get('/wallpaper/itori', async (req, res, next) => {
     const itori = JSON.parse(fs.readFileSync(__path + '/data/itori.json'));
     const randitori = itori[Math.floor(Math.random() * itori.length)];
     data = await fetch(randitori).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/itori.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/itori.jpeg', data)
     res.sendFile(__path + '/tmp/itori.jpeg')
     await fs.promises.unlink(__path + '/tmp/itori.jpeg', (err) => {
       if (err) {
@@ -4248,7 +4248,7 @@ router.get('/wallpaper/kurumi', async (req, res, next) => {
     const kurumi = JSON.parse(fs.readFileSync(__path + '/data/kurumi.json'));
     const randkurumi = kurumi[Math.floor(Math.random() * kurumi.length)];
     data = await fetch(randkurumi).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kurumi.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kurumi.jpeg', data)
     res.sendFile(__path + '/tmp/kurumi.jpeg')
     await fs.promises.unlink(__path + '/tmp/kurumi.jpeg', (err) => {
       if (err) {
@@ -4271,7 +4271,7 @@ router.get('/wallpaper/miku', async (req, res, next) => {
     const miku = JSON.parse(fs.readFileSync(__path + '/data/miku.json'));
     const randmiku = miku[Math.floor(Math.random() * miku.length)];
     data = await fetch(randmiku).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/miku.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/miku.jpeg', data)
     res.sendFile(__path + '/tmp/miku.jpeg')
     await fs.promises.unlink(__path + '/tmp/miku.jpeg', (err) => {
       if (err) {
@@ -4294,7 +4294,7 @@ router.get('/wallpaper/pokemon', async (req, res, next) => {
     const pokemon = JSON.parse(fs.readFileSync(__path + '/data/pokemon.json'));
     const randpokemon = pokemon[Math.floor(Math.random() * pokemon.length)];
     data = await fetch(randpokemon).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pokemon.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/pokemon.jpeg', data)
     res.sendFile(__path + '/tmp/pokemon.jpeg')
     await fs.promises.unlink(__path + '/tmp/pokemon.jpeg', (err) => {
       if (err) {
@@ -4317,7 +4317,7 @@ router.get('/wallpaper/ryujin', async (req, res, next) => {
     const ryujin = JSON.parse(fs.readFileSync(__path + '/data/ryujin.json'));
     const randryujin = ryujin[Math.floor(Math.random() * ryujin.length)];
     data = await fetch(randryujin).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ryujin.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ryujin.jpeg', data)
     res.sendFile(__path + '/tmp/ryujin.jpeg')
     await fs.promises.unlink(__path + '/tmp/ryujin.jpeg', (err) => {
       if (err) {
@@ -4340,7 +4340,7 @@ router.get('/wallpaper/rose', async (req, res, next) => {
     const rose = JSON.parse(fs.readFileSync(__path + '/data/rose.json'));
     const randrose = rose[Math.floor(Math.random() * rose.length)];
     data = await fetch(randrose).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/rose.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/rose.jpeg', data)
     res.sendFile(__path + '/tmp/rose.jpeg')
     await fs.promises.unlink(__path + '/tmp/rose.jpeg', (err) => {
       if (err) {
@@ -4363,7 +4363,7 @@ router.get('/wallpaper/kaori', async (req, res, next) => {
     const kaori = JSON.parse(fs.readFileSync(__path + '/data/kaori.json'));
     const randkaori = kaori[Math.floor(Math.random() * kaori.length)];
     data = await fetch(randkaori).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kaori.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kaori.jpeg', data)
     res.sendFile(__path + '/tmp/kaori.jpeg')
     await fs.promises.unlink(__path + '/tmp/kaori.jpeg', (err) => {
       if (err) {
@@ -4386,7 +4386,7 @@ router.get('/wallpaper/shizuka', async (req, res, next) => {
     const shizuka = JSON.parse(fs.readFileSync(__path + '/data/shizuka.json'));
     const randshizuka = shizuka[Math.floor(Math.random() * shizuka.length)];
     data = await fetch(randshizuka).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/shizuka.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/shizuka.jpeg', data)
     res.sendFile(__path + '/tmp/shizuka.jpeg')
     await fs.promises.unlink(__path + '/tmp/shizuka.jpeg', (err) => {
       if (err) {
@@ -4409,7 +4409,7 @@ router.get('/wallpaper/kaga', async (req, res, next) => {
     const kaga = JSON.parse(fs.readFileSync(__path + '/data/kaga.json'));
     const randkaga = kaga[Math.floor(Math.random() * kaga.length)];
     data = await fetch(randkaga).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kaga.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kaga.jpeg', data)
     res.sendFile(__path + '/tmp/kaga.jpeg')
     await fs.promises.unlink(__path + '/tmp/kaga.jpeg', (err) => {
       if (err) {
@@ -4432,7 +4432,7 @@ router.get('/wallpaper/kotori', async (req, res, next) => {
     const kotori = JSON.parse(fs.readFileSync(__path + '/data/kotori.json'));
     const randkotori = kotori[Math.floor(Math.random() * kotori.length)];
     data = await fetch(randkotori).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kotori.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kotori.jpeg', data)
     res.sendFile(__path + '/tmp/kotori.jpeg')
     await fs.promises.unlink(__path + '/tmp/kotori.jpeg', (err) => {
       if (err) {
@@ -4455,7 +4455,7 @@ router.get('/wallpaper/mikasa', async (req, res, next) => {
     const mikasa = JSON.parse(fs.readFileSync(__path + '/data/mikasa.json'));
     const randmikasa = mikasa[Math.floor(Math.random() * mikasa.length)];
     data = await fetch(randmikasa).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/mikasa.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/mikasa.jpeg', data)
     res.sendFile(__path + '/tmp/mikasa.jpeg')
     await fs.promises.unlink(__path + '/tmp/mikasa.jpeg', (err) => {
       if (err) {
@@ -4478,7 +4478,7 @@ router.get('/wallpaper/akiyama', async (req, res, next) => {
     const akiyama = JSON.parse(fs.readFileSync(__path + '/data/akiyama.json'));
     const randakiyama = akiyama[Math.floor(Math.random() * akiyama.length)];
     data = await fetch(randakiyama).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/akiyama.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/akiyama.jpeg', data)
     res.sendFile(__path + '/tmp/akiyama.jpeg')
     await fs.promises.unlink(__path + '/tmp/akiyama.jpeg', (err) => {
       if (err) {
@@ -4501,7 +4501,7 @@ router.get('/wallpaper/gremory', async (req, res, next) => {
     const gremory = JSON.parse(fs.readFileSync(__path + '/data/gremory.json'));
     const randgremory = gremory[Math.floor(Math.random() * gremory.length)];
     data = await fetch(randgremory).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/gremory.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/gremory.jpeg', data)
     res.sendFile(__path + '/tmp/gremory.jpeg')
     await fs.promises.unlink(__path + '/tmp/gremory.jpeg', (err) => {
       if (err) {
@@ -4524,7 +4524,7 @@ router.get('/wallpaper/isuzu', async (req, res, next) => {
     const isuzu = JSON.parse(fs.readFileSync(__path + '/data/isuzu.json'));
     const randisuzu = isuzu[Math.floor(Math.random() * isuzu.length)];
     data = await fetch(randisuzu).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/isuzu.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/isuzu.jpeg', data)
     res.sendFile(__path + '/tmp/isuzu.jpeg')
     await fs.promises.unlink(__path + '/tmp/isuzu.jpeg', (err) => {
       if (err) {
@@ -4547,7 +4547,7 @@ router.get('/random/cosplay', async (req, res, next) => {
     const cosplay = JSON.parse(fs.readFileSync(__path + '/data/cosplay.json'));
     const randcosplay = cosplay[Math.floor(Math.random() * cosplay.length)];
     data = await fetch(randcosplay).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/cosplay.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cosplay.jpeg', data)
     res.sendFile(__path + '/tmp/cosplay.jpeg')
     await fs.promises.unlink(__path + '/tmp/cosplay.jpeg', (err) => {
       if (err) {
@@ -4570,7 +4570,7 @@ router.get('/wallpaper/shina', async (req, res, next) => {
     const shina = JSON.parse(fs.readFileSync(__path + '/data/shina.json'));
     const randshina = shina[Math.floor(Math.random() * shina.length)];
     data = await fetch(randshina).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/shina.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/shina.jpeg', data)
     res.sendFile(__path + '/tmp/shina.jpeg')
     await fs.promises.unlink(__path + '/tmp/shina.jpeg', (err) => {
       if (err) {
@@ -4593,7 +4593,7 @@ router.get('/wallpaper/kagura', async (req, res, next) => {
     const kagura = JSON.parse(fs.readFileSync(__path + '/data/kagura.json'));
     const randkagura = kagura[Math.floor(Math.random() * kagura.length)];
     data = await fetch(randkagura).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kagura.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kagura.jpeg', data)
     res.sendFile(__path + '/tmp/kagura.jpeg')
     await fs.promises.unlink(__path + '/tmp/kagura.jpeg', (err) => {
       if (err) {
@@ -4616,7 +4616,7 @@ router.get('/wallpaper/shinka', async (req, res, next) => {
     const shinka = JSON.parse(fs.readFileSync(__path + '/data/shinka.json'));
     const randshinka = shinka[Math.floor(Math.random() * shinka.length)];
     data = await fetch(randshinka).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/shinka.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/shinka.jpeg', data)
     res.sendFile(__path + '/tmp/shinka.jpeg')
     await fs.promises.unlink(__path + '/tmp/shinka.jpeg', (err) => {
       if (err) {
@@ -4639,7 +4639,7 @@ router.get('/wallpaper/eba', async (req, res, next) => {
     const eba = JSON.parse(fs.readFileSync(__path + '/data/eba.json'));
     const randeba = eba[Math.floor(Math.random() * eba.length)];
     data = await fetch(randeba).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/eba.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/eba.jpeg', data)
     res.sendFile(__path + '/tmp/eba.jpeg')
     await fs.promises.unlink(__path + '/tmp/eba.jpeg', (err) => {
       if (err) {
@@ -4662,7 +4662,7 @@ router.get('/wallpaper/deidara', async (req, res, next) => {
     const Deidara = JSON.parse(fs.readFileSync(__path + '/data/deidara.json'));
     const randDeidara = Deidara[Math.floor(Math.random() * Deidara.length)];
     data = await fetch(randDeidara).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/deidara.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/deidara.jpeg', data)
     res.sendFile(__path + '/tmp/deidara.jpeg')
     await fs.promises.unlink(__path + '/tmp/deidara.jpeg', (err) => {
       if (err) {
@@ -4685,7 +4685,7 @@ router.get('/wallpaper/trans', async (req, res, next) => {
     const trans = JSON.parse(fs.readFileSync(__path + '/data/trans.json'));
     const randtrans = trans[Math.floor(Math.random() * trans.length)];
     data = await fetch(randtrans).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/trans.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/trans.jpeg', data)
     res.sendFile(__path + '/tmp/trans.jpeg')
     await fs.promises.unlink(__path + '/tmp/trans.jpeg', (err) => {
       if (err) {
@@ -4708,7 +4708,7 @@ router.get('/wallpaper/jeni', async (req, res, next) => {
     const jeni = JSON.parse(fs.readFileSync(__path + '/data/jeni.json'));
     const randjeni = jeni[Math.floor(Math.random() * jeni.length)];
     data = await fetch(randjeni).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/jeni.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/jeni.jpeg', data)
     res.sendFile(__path + '/tmp/jeni.jpeg')
     await fs.promises.unlink(__path + '/tmp/jeni.jpeg', (err) => {
       if (err) {
@@ -4731,7 +4731,7 @@ router.get('/wallpaper/jiso', async (req, res, next) => {
     const jiso = JSON.parse(fs.readFileSync(__path + '/data/jiso.json'));
     const randjiso = jiso[Math.floor(Math.random() * jiso.length)];
     data = await fetch(randjiso).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/jiso.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/jiso.jpeg', data)
     res.sendFile(__path + '/tmp/jiso.jpeg')
     await fs.promises.unlink(__path + '/tmp/jiso.jpeg', (err) => {
       if (err) {
@@ -4754,7 +4754,7 @@ router.get('/wallpaper/satanic', async (req, res, next) => {
     const satanic = JSON.parse(fs.readFileSync(__path + '/data/satanic.json'));
     const randsatanic = satanic[Math.floor(Math.random() * satanic.length)];
     data = await fetch(randsatanic).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/satanic.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/satanic.jpeg', data)
     res.sendFile(__path + '/tmp/satanic.jpeg')
     await fs.promises.unlink(__path + '/tmp/satanic.jpeg', (err) => {
       if (err) {
@@ -4777,7 +4777,7 @@ router.get('/wallpaper/cecan2', async (req, res, next) => {
     const cecan2 = JSON.parse(fs.readFileSync(__path + '/data/cecan2.json'));
     const randcecan2 = cecan2[Math.floor(Math.random() * cecan2.length)];
     data = await fetch(randcecan2).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/cecan2.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cecan2.jpeg', data)
     res.sendFile(__path + '/tmp/cecan2.jpeg')
     await fs.promises.unlink(__path + '/tmp/cecan2.jpeg', (err) => {
       if (err) {
@@ -4800,7 +4800,7 @@ router.get('/wallpaper/cogan2', async (req, res, next) => {
     const cogan2 = JSON.parse(fs.readFileSync(__path + '/data/cogan2.json'));
     const randcogan2 = cogan2[Math.floor(Math.random() * cogan2.length)];
     data = await fetch(randcogan2).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/cogan2.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cogan2.jpeg', data)
     res.sendFile(__path + '/tmp/cogan2.jpeg')
     await fs.promises.unlink(__path + '/tmp/cogan2.jpeg', (err) => {
       if (err) {
@@ -4823,7 +4823,7 @@ router.get('/wallpaper/itachi', async (req, res, next) => {
     const Itachi = JSON.parse(fs.readFileSync(__path + '/data/itachi.json'));
     const randItachi = Itachi[Math.floor(Math.random() * Itachi.length)];
     data = await fetch(randItachi).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ita.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ita.jpeg', data)
     res.sendFile(__path + '/tmp/ita.jpeg')
     await fs.promises.unlink(__path + '/tmp/ita.jpeg', (err) => {
       if (err) {
@@ -4846,7 +4846,7 @@ router.get('/wallpaper/madara', async (req, res, next) => {
     const Madara = JSON.parse(fs.readFileSync(__path + '/data/madara.json'));
     const randMadara = Madara[Math.floor(Math.random() * Madara.length)];
     data = await fetch(randMadara).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/madara.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/madara.jpeg', data)
     res.sendFile(__path + '/tmp/madara.jpeg')
     await fs.promises.unlink(__path + '/tmp/madara.jpeg', (err) => {
       if (err) {
@@ -4869,7 +4869,7 @@ router.get('/wallpaper/yuki', async (req, res, next) => {
     const Yuki = JSON.parse(fs.readFileSync(__path + '/data/yuki.json'));
     const randYuki = Yuki[Math.floor(Math.random() * Yuki.length)];
     data = await fetch(randYuki).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/yuki.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/yuki.jpeg', data)
     res.sendFile(__path + '/tmp/yuki.jpeg')
     await fs.promises.unlink(__path + '/tmp/yuki.jpeg', (err) => {
       if (err) {
@@ -4892,7 +4892,7 @@ router.get('/wallpaper/asuna', async (req, res, next) => {
     const asuna = JSON.parse(fs.readFileSync(__path + '/data/asuna.json'));
     const randasuna = asuna[Math.floor(Math.random() * asuna.length)];
     data = await fetch(randasuna).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/asuna.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/asuna.jpeg', data)
     res.sendFile(__path + '/tmp/asuna.jpeg')
     await fs.promises.unlink(__path + '/tmp/asuna.jpeg', (err) => {
       if (err) {
@@ -4915,7 +4915,7 @@ router.get('/wallpaper/ayuzawa', async (req, res, next) => {
     const ayuzawa = JSON.parse(fs.readFileSync(__path + '/data/ayuzawa.json'));
     const randayuzawa = ayuzawa[Math.floor(Math.random() * ayuzawa.length)];
     data = await fetch(randayuzawa).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ayuzawa.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ayuzawa.jpeg', data)
     res.sendFile(__path + '/tmp/ayuzawa.jpeg')
     await fs.promises.unlink(__path + '/tmp/ayuzawa.jpeg', (err) => {
       if (err) {
@@ -4938,7 +4938,7 @@ router.get('/wallpaper/chitoge', async (req, res, next) => {
     const chitoge = JSON.parse(fs.readFileSync(__path + '/data/chitoge.json'));
     const randchitoge = chitoge[Math.floor(Math.random() * chitoge.length)];
     data = await fetch(randchitoge).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/chitoge.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/chitoge.jpeg', data)
     res.sendFile(__path + '/tmp/chitoge.jpeg')
     await fs.promises.unlink(__path + '/tmp/chitoge.jpeg', (err) => {
       if (err) {
@@ -4961,7 +4961,7 @@ router.get('/wallpaper/emilia', async (req, res, next) => {
     const emilia = JSON.parse(fs.readFileSync(__path + '/data/emilia.json'));
     const randemilia = emilia[Math.floor(Math.random() * emilia.length)];
     data = await fetch(randemilia).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/emilia.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/emilia.jpeg', data)
     res.sendFile(__path + '/tmp/emilia.jpeg')
     await fs.promises.unlink(__path + '/tmp/emilia.jpeg', (err) => {
       if (err) {
@@ -4984,7 +4984,7 @@ router.get('/wallpaper/hestia', async (req, res, next) => {
     const hestia = JSON.parse(fs.readFileSync(__path + '/data/hestia.json'));
     const randhestia = hestia[Math.floor(Math.random() * hestia.length)];
     data = await fetch(randhestia).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/hestia.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/hestia.jpeg', data)
     res.sendFile(__path + '/tmp/hestia.jpeg')
     await fs.promises.unlink(__path + '/tmp/hestia.jpeg', (err) => {
       if (err) {
@@ -5007,7 +5007,7 @@ router.get('/wallpaper/inori', async (req, res, next) => {
     const inori = JSON.parse(fs.readFileSync(__path + '/data/inori.json'));
     const randinori = inori[Math.floor(Math.random() * inori.length)];
     data = await fetch(randinori).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/inori.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/inori.jpeg', data)
     res.sendFile(__path + '/tmp/inori.jpeg')
     await fs.promises.unlink(__path + '/tmp/inori.jpeg', (err) => {
       if (err) {
@@ -5030,7 +5030,7 @@ router.get('/wallpaper/ana', async (req, res, next) => {
     const ana = JSON.parse(fs.readFileSync(__path + '/data/ana.json'));
     const randana = ana[Math.floor(Math.random() * ana.length)];
     data = await fetch(randana).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ana.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ana.jpeg', data)
     res.sendFile(__path + '/tmp/ana.jpeg')
     await fs.promises.unlink(__path + '/tmp/ana.jpeg', (err) => {
       if (err) {
@@ -5053,7 +5053,7 @@ router.get('/wallpaper/boruto', async (req, res, next) => {
     const Boruto = JSON.parse(fs.readFileSync(__path + '/data/boruto.json'));
     const randBoruto = Boruto[Math.floor(Math.random() * Boruto.length)];
     data = await fetch(randBoruto).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/bor.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/bor.jpeg', data)
     res.sendFile(__path + '/tmp/bor.jpeg')
     await fs.promises.unlink(__path + '/tmp/bor.jpeg', (err) => {
       if (err) {
@@ -5076,7 +5076,7 @@ router.get('/wallpaper/erza', async (req, res, next) => {
     const Erza = JSON.parse(fs.readFileSync(__path + '/data/erza.json'));
     const randErza = Erza[Math.floor(Math.random() * Erza.length)];
     data = await fetch(randErza).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/erza.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/erza.jpeg', data)
     res.sendFile(__path + '/tmp/erza.jpeg')
     await fs.promises.unlink(__path + '/tmp/erza.jpeg', (err) => {
       if (err) {
@@ -5099,7 +5099,7 @@ router.get('/wallpaper/kakasih', async (req, res, next) => {
     const Kakasih = JSON.parse(fs.readFileSync(__path + '/data/kakasih.json'));
     const randKakasih = Kakasih[Math.floor(Math.random() * Kakasih.length)];
     data = await fetch(randKakasih).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ka.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ka.jpeg', data)
     res.sendFile(__path + '/tmp/ka.jpeg')
     await fs.promises.unlink(__path + '/tmp/ka.jpeg', (err) => {
       if (err) {
@@ -5122,7 +5122,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
     const Sagiri = JSON.parse(fs.readFileSync(__path + '/data/sagiri.json'));
     const randSagiri = Sagiri[Math.floor(Math.random() * Sagiri.length)];
     data = await fetch(randSagiri).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/sagiri.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/sagiri.jpeg', data)
     res.sendFile(__path + '/tmp/sagiri.jpeg')
     await fs.promises.unlink(__path + '/tmp/sagiri.jpeg', (err) => {
       if (err) {
@@ -5145,7 +5145,7 @@ router.get('/wallpaper/minato', async (req, res, next) => {
     const Minato = JSON.parse(fs.readFileSync(__path + '/data/minato.json'));
     const randMinato = Minato[Math.floor(Math.random() * Minato.length)];
     data = await fetch(randMinato).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/minato.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/minato.jpeg', data)
     res.sendFile(__path + '/tmp/minato.jpeg')
     await fs.promises.unlink(__path + '/tmp/minato.jpeg', (err) => {
       if (err) {
@@ -5168,7 +5168,7 @@ router.get('/wallpaper/naruto', async (req, res, next) => {
     const Naruto = JSON.parse(fs.readFileSync(__path + '/data/naruto.json'));
     const randNaruto = Naruto[Math.floor(Math.random() * Naruto.length)];
     data = await fetch(randNaruto).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/naruto.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/naruto.jpeg', data)
     res.sendFile(__path + '/tmp/naruto.jpeg')
     await fs.promises.unlink(__path + '/tmp/naruto.jpeg', (err) => {
       if (err) {
@@ -5191,7 +5191,7 @@ router.get('/wallpaper/nezuko', async (req, res, next) => {
     const Nezuko = JSON.parse(fs.readFileSync(__path + '/data/nezuko.json'));
     const randNezuko = Nezuko[Math.floor(Math.random() * Nezuko.length)];
     data = await fetch(randNezuko).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/nezu.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/nezu.jpeg', data)
     res.sendFile(__path + '/tmp/nezu.jpeg')
     await fs.promises.unlink(__path + '/tmp/nezu.jpeg', (err) => {
       if (err) {
@@ -5214,7 +5214,7 @@ router.get('/wallpaper/onepiece', async (req, res, next) => {
     const Pic = JSON.parse(fs.readFileSync(__path + '/data/onepiece.json'));
     const randPic = Pic[Math.floor(Math.random() * Pic.length)];
     data = await fetch(randPic).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pic.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/pic.jpeg', data)
     res.sendFile(__path + '/tmp/pic.jpeg')
     await fs.promises.unlink(__path + '/tmp/pic.jpeg', (err) => {
       if (err) {
@@ -5237,7 +5237,7 @@ router.get('/wallpaper/rize', async (req, res, next) => {
     const Rize = JSON.parse(fs.readFileSync(__path + '/data/rize.json'));
     const randRize = Rize[Math.floor(Math.random() * Rize.length)];
     data = await fetch(randRize).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/rize.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/rize.jpeg', data)
     res.sendFile(__path + '/tmp/rize.jpeg')
     await fs.promises.unlink(__path + '/tmp/rize.jpeg', (err) => {
       if (err) {
@@ -5260,7 +5260,7 @@ router.get('/wallpaper/sakura', async (req, res, next) => {
     const Sakura = JSON.parse(fs.readFileSync(__path + '/data/sakura.json'));
     const randSakura = Sakura[Math.floor(Math.random() * Sakura.length)];
     data = await fetch(randSakura).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/sakura.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/sakura.jpeg', data)
     res.sendFile(__path + '/tmp/sakura.jpeg')
     await fs.promises.unlink(__path + '/tmp/sakura.jpeg', (err) => {
       if (err) {
@@ -5283,7 +5283,7 @@ router.get('/wallpaper/sasuke', async (req, res, next) => {
     const Sasuke = JSON.parse(fs.readFileSync(__path + '/data/sasuke.json'));
     const randSasuke = Sasuke[Math.floor(Math.random() * Sasuke.length)];
     data = await fetch(randSasuke).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/sasuke.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/sasuke.jpeg', data)
     res.sendFile(__path + '/tmp/sasuke.jpeg')
     await fs.promises.unlink(__path + '/tmp/sasuke.jpeg', (err) => {
       if (err) {
@@ -5306,7 +5306,7 @@ router.get('/wallpaper/tsunade', async (req, res, next) => {
     const Su = JSON.parse(fs.readFileSync(__path + '/data/tsunade.json'));
     const randSu = Su[Math.floor(Math.random() * Su.length)];
     data = await fetch(randSu).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/su.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/su.jpeg', data)
     res.sendFile(__path + '/tmp/su.jpeg')
     await fs.promises.unlink(__path + '/tmp/su.jpeg', (err) => {
       if (err) {
@@ -5329,7 +5329,7 @@ router.get('/wallpaper/montor', async (req, res, next) => {
     const Mon = JSON.parse(fs.readFileSync(__path + '/data/montor.json'));
     const randMon = Mon[Math.floor(Math.random() * Mon.length)];
     data = await fetch(randMon).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/montor.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/montor.jpeg', data)
     res.sendFile(__path + '/tmp/montor.jpeg');
     await fs.promises.unlink(__path + '/tmp/montor.jpeg', (err) => {
       if (err) {
@@ -5352,7 +5352,7 @@ router.get('/wallpaper/mobil', async (req, res, next) => {
     const Mob = JSON.parse(fs.readFileSync(__path + '/data/mobil.json'));
     const randMob = Mob[Math.floor(Math.random() * Mob.length)];
     data = await fetch(randMob).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/mobil.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/mobil.jpeg', data)
     res.sendFile(__path + '/tmp/mobil.jpeg');
     await fs.promises.unlink(__path + '/tmp/mobil.jpeg', (err) => {
       if (err) {
@@ -5375,7 +5375,7 @@ router.get('/wallpaper/boneka-chucky', async (req, res, next) => {
     const Bon = JSON.parse(fs.readFileSync(__path + '/data/boneka.json'));
     const randBon = Bon[Math.floor(Math.random() * Bon.length)];
     data = await fetch(randBon).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/chucky.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/chucky.jpeg', data)
     res.sendFile(__path + '/tmp/chucky.jpeg');
     await fs.promises.unlink(__path + '/tmp/chucky.jpeg', (err) => {
       if (err) {
@@ -5398,7 +5398,7 @@ router.get('/wallpaper/anime', async (req, res, next) => {
     const Wai23 = JSON.parse(fs.readFileSync(__path + '/data/wallhp2.json'));
     const randWai23 = Wai23[Math.floor(Math.random() * Wai23.length)];
     data = await fetch(randWai23).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/wallhp2.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/wallhp2.jpeg', data)
     res.sendFile(__path + '/tmp/wallhp2.jpeg');
     await fs.promises.unlink(__path + '/tmp/wallhp2.jpeg', (err) => {
       if (err) {
@@ -5421,7 +5421,7 @@ router.get('/wallpaper/random/blackpink', async (req, res, next) => {
     Black = JSON.parse(fs.readFileSync(__path + '/data/blackpink.json'));
     const randBlack = Black[Math.floor(Math.random() * Black.length)]
     data = await fetch(randBlack).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/blak.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/blak.jpeg', data)
     res.sendFile(__path + '/tmp/blak.jpeg')
     await fs.promises.unlink(__path + '/tmp/blak.jpeg', (err) => {
       if (err) {
@@ -5444,7 +5444,7 @@ router.get('/wallpaper/wallhp', async (req, res, next) => {
     const Wai22 = JSON.parse(fs.readFileSync(__path + '/data/wallhp.json'));
     const randWai22 = Wai22[Math.floor(Math.random() * Wai22.length)];
     data = await fetch(randWai22).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/wallhp.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/wallhp.jpeg', data)
     res.sendFile(__path + '/tmp/wallhp.jpeg');
     await fs.promises.unlink(__path + '/tmp/wallhp.jpeg', (err) => {
       if (err) {
@@ -5467,7 +5467,7 @@ router.get('/wallpaper/waifu2', async (req, res, next) => {
     const Wai2 = JSON.parse(fs.readFileSync(__path + '/data/waifu2.json'));
     const randWai2 = Wai2[Math.floor(Math.random() * Wai2.length)];
     data = await fetch(randWai2).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/wibu2.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/wibu2.jpeg', data)
     res.sendFile(__path + '/tmp/wibu2.jpeg')
     await fs.promises.unlink(__path + '/tmp/wibu2.jpeg', (err) => {
       if (err) {
@@ -5490,7 +5490,7 @@ router.get('/wallpaper/waifu', async (req, res, next) => {
     const Wai = JSON.parse(fs.readFileSync(__path + '/data/waifu.json'));
     const randWai = Wai[Math.floor(Math.random() * Wai.length)];
     data = await fetch(randWai).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/wibu.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/wibu.jpeg', data)
     res.sendFile(__path + '/tmp/wibu.jpeg');
     await fs.promises.unlink(__path + '/tmp/wibu.jpeg', (err) => {
       if (err) {
@@ -5513,7 +5513,7 @@ router.get('/wallpaper/kpop', async (req, res, next) => {
     Kpop = JSON.parse(fs.readFileSync(__path + '/data/kpop.json'));
     const randKpop = Kpop[Math.floor(Math.random() * Kpop.length)]
     data = await fetch(randKpop).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kpop.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kpop.jpeg', data)
     res.sendFile(__path + '/tmp/kpop.jpeg')
     await fs.promises.unlink(__path + '/tmp/kpop.jpeg', (err) => {
       if (err) {
@@ -5536,7 +5536,7 @@ router.get('/wallpaper/hekel', async (req, res, next) => {
     Hekel = JSON.parse(fs.readFileSync(__path + '/data/hekel.json'));
     const randHekel = Hekel[Math.floor(Math.random() * Hekel.length)]
     data = await fetch(randHekel).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/hek.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/hek.jpeg', data)
     res.sendFile(__path + '/tmp/hek.jpeg')
     await fs.promises.unlink(__path + '/tmp/hek.jpeg', (err) => {
       if (err) {
@@ -5559,7 +5559,7 @@ router.get('/wallpaper/kucing', async (req, res, next) => {
     Kucing = JSON.parse(fs.readFileSync(__path + '/data/kucing.json'));
     const randKucing = Kucing[Math.floor(Math.random() * Kucing.length)]
     data = await fetch(randKucing).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/kucing.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/kucing.jpeg', data)
     res.sendFile(__path + '/tmp/kucing.jpeg')
     await fs.promises.unlink(__path + '/tmp/kucing.jpeg', (err) => {
       if (err) {
@@ -5582,7 +5582,7 @@ router.get('/wallpaper/pubg', async (req, res, next) => {
     Pubg = JSON.parse(fs.readFileSync(__path + '/data/pubg.json'));
     const randPubg = Pubg[Math.floor(Math.random() * Pubg.length)]
     data = await fetch(randPubg).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pubg.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/pubg.jpeg', data)
     res.sendFile(__path + '/tmp/pubg.jpeg')
     await fs.promises.unlink(__path + '/tmp/pubg.jpeg', (err) => {
       if (err) {
@@ -5605,7 +5605,7 @@ router.get('/wallpaper/ppcouple', async (req, res, next) => {
     Pp = JSON.parse(fs.readFileSync(__path + '/data/profil.json'));
     const randPp = Pp[Math.floor(Math.random() * Pp.length)]
     data = await fetch(randPp).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pp.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/pp.jpeg', data)
     res.sendFile(__path + '/tmp/pp.jpeg')
     await fs.promises.unlink(__path + '/tmp/pp.jpeg', (err) => {
       if (err) {
@@ -5628,7 +5628,7 @@ router.get('/wallpaper/anjing', async (req, res, next) => {
     Anjing = JSON.parse(fs.readFileSync(__path + '/data/anjing.json'));
     const randAnjing = Anjing[Math.floor(Math.random() * Anjing.length)]
     data = await fetch(randAnjing).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ajg.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/ajg.jpeg', data)
     res.sendFile(__path + '/tmp/ajg.jpeg')
     await fs.promises.unlink(__path + '/tmp/ajg.jpeg', (err) => {
       if (err) {
@@ -5651,7 +5651,7 @@ router.get('/wallpaper/doraemon', async (req, res, next) => {
     Dora = JSON.parse(fs.readFileSync(__path + '/data/doraemon.json'));
     const randDora = Dora[Math.floor(Math.random() * Dora.length)]
     data = await fetch(randDora).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/dora.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/dora.jpeg', data)
     res.sendFile(__path + '/tmp/dora.jpeg')
     await fs.promises.unlink(__path + '/tmp/dora.jpeg', (err) => {
       if (err) {
@@ -5674,7 +5674,7 @@ router.get('/wallpaper/cogan', async (req, res, next) => {
     Cogan = JSON.parse(fs.readFileSync(__path + '/data/cogan.json'));
     const randCogan = Cogan[Math.floor(Math.random() * Cogan.length)]
     data = await fetch(randCogan).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/cogan.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cogan.jpeg', data)
     res.sendFile(__path + '/tmp/cogan.jpeg')
     await fs.promises.unlink(__path + '/tmp/cogan.jpeg', (err) => {
       if (err) {
@@ -5698,7 +5698,7 @@ router.get('/wallpaper/elaina', async (req, res, next) => {
     const randElaina = Elaina[Math.floor(Math.random() * Elaina.length)]
     //tansole.log(randLoli)
     data = await fetch(randElaina).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/elaina.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/elaina.jpeg', data)
     res.sendFile(__path + '/tmp/elaina.jpeg')
     await fs.promises.unlink(__path + '/tmp/elaina.jpeg', (err) => {
       if (err) {
@@ -5722,7 +5722,7 @@ router.get('/wallpaper/loli', async (req, res, next) => {
     const randLoli = Loli[Math.floor(Math.random() * Loli.length)]
     //tansole.log(randLoli)
     data = await fetch(randLoli).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/loli.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/loli.jpeg', data)
     res.sendFile(__path + '/tmp/loli.jpeg')
     await fs.promises.unlink(__path + '/tmp/loli.jpeg', (err) => {
       if (err) {
@@ -5746,7 +5746,7 @@ router.get('/wallpaper/yuri', async (req, res, next) => {
     const randYuri = Yuri[Math.floor(Math.random() * Yuri.length)]
     //tansole.log(randTech)
     data = await fetch(randYuri).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/Yuri.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/Yuri.jpeg', data)
     res.sendFile(__path + '/tmp/Yuri.jpeg')
     await fs.promises.unlink(__path + '/tmp/Yuri.jpeg', (err) => {
       if (err) {
@@ -5770,7 +5770,7 @@ router.get('/wallpaper/cecan', async (req, res, next) => {
     const cecan = JSON.parse(fs.readFileSync(__path + '/data/cecan.json'));
     const randCecan = cecan[Math.floor(Math.random() * cecan.length)];
     data = await fetch(randCecan).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/cecan.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/cecan.jpeg', data)
     res.sendFile(__path + '/tmp/cecan.jpeg');
     await fs.promises.unlink(__path + '/tmp/cecan.jpeg', (err) => {
       if (err) {
@@ -5794,7 +5794,7 @@ router.get('/wallpaper/aesthetic', async (req, res, next) => {
     const Aesthetic = JSON.parse(fs.readFileSync(__path + '/data/aesthetic.json'));
     const randAesthetic = Aesthetic[Math.floor(Math.random() * Aesthetic.length)];
     data = await fetch(randAesthetic).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/aesthetic.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/aesthetic.jpeg', data)
     res.sendFile(__path + '/tmp/aesthetic.jpeg');
     await fs.promises.unlink(__path + '/tmp/aesthetic.jpeg', (err) => {
       if (err) {
@@ -5818,7 +5818,7 @@ router.get('/wallpaper/justina', async (req, res, next) => {
     const Justina = JSON.parse(fs.readFileSync(__path + '/data/justina.json'));
     const randJus = Justina[Math.floor(Math.random() * Justina.length)];
     data = await fetch(randJus).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/justina.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/justina.jpeg', data)
     res.sendFile(__path + '/tmp/justina.jpeg')
     await fs.promises.unlink(__path + '/tmp/justina.jpeg', (err) => {
       if (err) {
@@ -5842,7 +5842,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
     const Sagiri = JSON.parse(fs.readFileSync(__path + '/data/sagiri.json'));
     const randSagiri = Sagiri[Math.floor(Math.random() * Sagiri.length)];
     data = await fetch(randSagiri).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/sagiri.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/sagiri.jpeg', data)
     res.sendFile(__path + '/tmp/sagiri.jpeg')
     await fs.promises.unlink(__path + '/tmp/sagiri.jpeg', (err) => {
       if (err) {
@@ -5865,7 +5865,7 @@ router.get('/wallpaper/shota', async (req, res, next) => {
     const Shota = JSON.parse(fs.readFileSync(__path + '/data/shota.json'));
     const randShota = Shota[Math.floor(Math.random() * Shota.length)];
     data = await fetch(randShota).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/shota.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/shota.jpeg', data)
     res.sendFile(__path + '/tmp/shota.jpeg');
     await fs.promises.unlink(__path + '/tmp/shota.jpeg', (err) => {
       if (err) {
@@ -5888,7 +5888,7 @@ router.get('/wallpaper/nsfwloli', async (req, res, next) => {
     const Lol = JSON.parse(fs.readFileSync(__path + '/data/nsfwloli.json'));
     const randLol = Lol[Math.floor(Math.random() * Lol.length)];
     data = await fetch(randLol).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/lol.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/lol.jpeg', data)
     res.sendFile(__path + '/tmp/lol.jpeg');
     await fs.promises.unlink(__path + '/tmp/lol.jpeg', (err) => {
       if (err) {
@@ -5911,7 +5911,7 @@ router.get('/wallpaper/hinata', async (req, res, next) => {
     const Hinata = JSON.parse(fs.readFileSync(__path + '/data/hinata.json'));
     const randHin = Hinata[Math.floor(Math.random() * Hinata.length)];
     data = await fetch(randHin).then(v => v.buffer());
-    await fs.writeFileSync(__path + '/tmp/Hinata.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/Hinata.jpeg', data)
     res.sendFile(__path + '/tmp/Hinata.jpeg');
     await fs.promises.unlink(__path + '/tmp/Hinata.jpeg', (err) => {
       if (err) {
@@ -8756,7 +8756,7 @@ router.get('/maker/dadu', async (req, res, next) => {
     random = Math.floor(Math.random() * 6) + 1
     hasil = 'https://www.random.org/dice/dice' + random + '.png'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/dadu.png', data)
+    await fs.promises.writeFile(__path + '/tmp/dadu.png', data)
     res.sendFile(__path + '/tmp/dadu.png')
     await fs.promises.unlink(__path + '/tmp/dadu.jpeg', (err) => {
       if (err) {
@@ -8779,7 +8779,7 @@ router.get('/blackpink', async (req, res, next) => {
     const Pop = pop[Math.floor(Math.random() * pop.length)];
     let hasil = Pop.pop;
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pink.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/pink.jpeg', data)
     res.sendFile(__path + '/tmp/pink.jpeg')
     await fs.promises.unlink(__path + '/tmp/pink.jpeg', (err) => {
       if (err) {
@@ -8801,7 +8801,7 @@ router.get('/asupan', async (req, res, next) => {
     const Asupan = JSON.parse(fs.readFileSync(__path + '/data/asupantiktok.json'));
     const randAsupan = Asupan[Math.floor(Math.random() * Asupan.length)];
     data = await fetch(randAsupan).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/asupan.mp4', data)
+    await fs.promises.writeFile(__path + '/tmp/asupan.mp4', data)
     res.sendFile(__path + '/tmp/asupan.mp4')
     await fs.promises.unlink(__path + '/tmp/asupan.mp4');
   } else {
@@ -8820,7 +8820,7 @@ router.get("/maker/nulis", async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/nulis?text=' + text + '&apikey=apivinz'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/nulis.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/nulis.jpeg', data)
     res.sendFile(__path + '/tmp/nulis.jpeg')
     await fs.promises.unlink(__path + '/tmp/nulis.jpeg', (err) => {
       if (err) {
@@ -8870,7 +8870,7 @@ router.get('/maker/attp', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://h4ck3rs404-api.herokuapp.com/api/attp?text=' + text + '&apikey=404Api'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/attp.gif', data)
+    await fs.promises.writeFile(__path + '/tmp/attp.gif', data)
     res.sendFile(__path + '/tmp/attp.gif')
   } else {
     res.json(loghandler.invalidKey)
@@ -8887,7 +8887,7 @@ router.get('/maker/matrix', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/matrix?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/matrix.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/matrix.jpg', data)
     res.sendFile(__path + '/tmp/matrix.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -8904,7 +8904,7 @@ router.get('/maker/breakwall', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/breakwall?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/breakwall.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/breakwall.jpg', data)
     res.sendFile(__path + '/tmp/breakwall.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -8921,7 +8921,7 @@ router.get('/maker/flowertext', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/flowertext?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/flowertext.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/flowertext.jpg', data)
     res.sendFile(__path + '/tmp/flowertext.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -8938,7 +8938,7 @@ router.get('/maker/smoketext', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/smoketext?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/smoketext.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/smoketext.jpg', data)
     res.sendFile(__path + '/tmp/smoketext.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -8955,7 +8955,7 @@ router.get('/maker/skytext', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/skytext?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/skytext.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/skytext.jpg', data)
     res.sendFile(__path + '/tmp/skytext.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -8974,7 +8974,7 @@ router.get('/maker/pubglogo', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/pubglogo?text1=' + text1 + '&text2' + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/pubglogo.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/pubglogo.jpg', data)
     res.sendFile(__path + '/tmp/pubglogo.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -8991,7 +8991,7 @@ router.get('/maker/bneon', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/bneon?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/bneon.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/bneon.jpg', data)
     res.sendFile(__path + '/tmp/bneon.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9008,7 +9008,7 @@ router.get('/maker/naruto', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/naruto?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/naruto.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/naruto.jpg', data)
     res.sendFile(__path + '/tmp/naruto.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9025,7 +9025,7 @@ router.get('/maker/teks3d', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/text3dbox?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/text3dbox.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/text3dbox.jpg', data)
     res.sendFile(__path + '/tmp/text3dbox.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9042,7 +9042,7 @@ router.get('/maker/nulis', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/nulis?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/nulis.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/nulis.jpg', data)
     res.sendFile(__path + '/tmp/nulis.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9059,7 +9059,7 @@ router.get('/maker/epep', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/epep?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/epep.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/epep.jpg', data)
     res.sendFile(__path + '/tmp/epep.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9076,7 +9076,7 @@ router.get('/maker/silverbutton', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/splaybutton?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/splaybutton.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/splaybutton.jpg', data)
     res.sendFile(__path + '/tmp/splaybutton.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9093,7 +9093,7 @@ router.get('/maker/goldbutton', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.xyz/api/gplaybutton?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ppp.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/ppp.jpg', data)
     res.sendFile(__path + '/tmp/ppp.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9110,7 +9110,7 @@ router.get('/maker/harta-tahta', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = 'https://api.zeks.me/api/hartatahta?text=' + text + '&apikey=administrator'
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/ok.jpg', data)
+    await fs.promises.writeFile(__path + '/tmp/ok.jpg', data)
     res.sendFile(__path + '/tmp/ok.jpg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9125,7 +9125,7 @@ router.get('/maker/skatch', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = `https://lindow-api.herokuapp.com/api/sketcheffect?img=${url}&apikey=LindowApi`
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/skatch.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/skatch.jpeg', data)
     res.sendFile(__path + '/tmp/skatch.jpeg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9149,7 +9149,7 @@ router.get('/canvas/welcome', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = `https://hadi-api.herokuapp.com/api/card/welcome3?username=${username}&memberCount=${memberCount}&bg=${bg}&pp=${pp}&gcicon=${gcicon}`
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/welcome.png', data)
+    await fs.promises.writeFile(__path + '/tmp/welcome.png', data)
     res.sendFile(__path + '/tmp/welcome.png')
   } else {
     res.json(loghandler.invalidKey)
@@ -9163,7 +9163,7 @@ router.get('/maker/tololserti', async (req, res, next) => {
   if (listkey.includes(apikey)) {
     let hasil = `https://lolhuman.herokuapp.com/api/toloserti?apikey=muzharzain&name=${text}`
     data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path + '/tmp/tololserti.jpeg', data)
+    await fs.promises.writeFile(__path + '/tmp/tololserti.jpeg', data)
     res.sendFile(__path + '/tmp/tololserti.jpeg')
   } else {
     res.json(loghandler.invalidKey)
@@ -9643,7 +9643,7 @@ router.get('/ai/remini', async (req, res, next) => {
       const buffer = await response.buffer();
 
       let proses = await remini(buffer, "enhance");
-      await fs.writeFileSync(__path + '/tmp/remini.jpg', proses);
+      await fs.promises.writeFile(__path + '/tmp/remini.jpg', proses);
       res.sendFile(__path + '/tmp/remini.jpg');
       await fs.promises.unlink(__path + '/tmp/remini.jpg', (err) => {
         if (err) {
@@ -9699,7 +9699,7 @@ router.get('/ai/removebg', async (req, res, next) => {
       .then(async (response) => {
         data = response.data;
         if (response.status != 200) return console.error('Error:', response.status, response.statusText);
-        await fs.writeFileSync(__path + '/tmp/nobg.png', data);
+        await fs.promises.writeFile(__path + '/tmp/nobg.png', data);
         res.sendFile(__path + '/tmp/nobg.png');
         await fs.promises.unlink(__path + '/tmp/nobg.png', (err) => {
           if (err) {
