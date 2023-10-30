@@ -388,7 +388,7 @@ router.get('/game/family100', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var soal = JSON.parse(
-      fs.promises.readFile(__path + '/data/family100.json')
+      fs.readFileSync(__path + '/data/family100.json')
     )
     res
       .status(200)
@@ -408,7 +408,7 @@ router.get('/game/tebakkalimat', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var soal = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebakkalimat.json')
+      fs.readFileSync(__path + '/data/tebakkalimat.json')
     )
     res
       .status(200)
@@ -428,7 +428,7 @@ router.get('/game/tebakkata', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var soal = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebakkata.json')
+      fs.readFileSync(__path + '/data/tebakkata.json')
     )
     res
       .status(200)
@@ -448,7 +448,7 @@ router.get('/game/tebakjenaka', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var pertanyaan = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebakjenaka.json')
+      fs.readFileSync(__path + '/data/tebakjenaka.json')
     )
     res
       .status(200)
@@ -468,7 +468,7 @@ router.get('/game/tebakkimia', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var nama = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebakkimia.json')
+      fs.readFileSync(__path + '/data/tebakkimia.json')
     )
     res
       .status(200)
@@ -488,7 +488,7 @@ router.get('/game/tebaklirik', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var question = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebaklirik.json')
+      fs.readFileSync(__path + '/data/tebaklirik.json')
     )
     res
       .status(200)
@@ -508,7 +508,7 @@ router.get('/game/tebakchara', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var name = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebakchara.json')
+      fs.readFileSync(__path + '/data/tebakchara.json')
     )
     res
       .status(200)
@@ -528,7 +528,7 @@ router.get('/game/tebaktebakan', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var soal = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebaktebakan.json')
+      fs.readFileSync(__path + '/data/tebaktebakan.json')
     )
     res
       .status(200)
@@ -548,7 +548,7 @@ router.get('/game/tebakbendera', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
     var bendera = JSON.parse(
-      fs.promises.readFile(__path + '/data/tebakbendera.json')
+      fs.readFileSync(__path + '/data/tebakbendera.json')
     )
     res
       .status(200)
@@ -2317,7 +2317,7 @@ router.get('/muslim/asmaulhusna', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    asmaul = JSON.parse(fs.promises.readFile(__path + '/data/AsmaulHusna.json'));
+    asmaul = JSON.parse(fs.readFileSync(__path + '/data/AsmaulHusna.json'));
     res.json(asmaul)
   } else {
     res.json(loghandler.invalidKey)
@@ -3186,7 +3186,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
 
   if (!Apikey) return res.json(loghandler.notparam);
   if (listkey.includes(Apikey)) {
-    const ahegao = JSON.parse(fs.promises.readFile(__path + '/data/ahegao.json'));
+    const ahegao = JSON.parse(fs.readFileSync(__path + '/data/ahegao.json'));
     const randahegao = ahegao[Math.floor(Math.random() * ahegao.length)];
     data = await fetch(randahegao).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/ahegao.jpeg', data);
@@ -3210,7 +3210,7 @@ router.get('/nsfw/ass', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const ass = JSON.parse(fs.promises.readFile(__path + '/data/ass.json'));
+    const ass = JSON.parse(fs.readFileSync(__path + '/data/ass.json'));
     const randass = ass[Math.floor(Math.random() * ass.length)];
     data = await fetch(randass).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ass.jpeg', data)
@@ -3233,7 +3233,7 @@ router.get('/nsfw/bdsm', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const bdsm = JSON.parse(fs.promises.readFile(__path + '/data/bdsm.json'));
+    const bdsm = JSON.parse(fs.readFileSync(__path + '/data/bdsm.json'));
     const randbdsm = bdsm[Math.floor(Math.random() * bdsm.length)];
     data = await fetch(randbdsm).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/bdsm.jpeg', data)
@@ -3256,7 +3256,7 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const blowjob = JSON.parse(fs.promises.readFile(__path + '/data/blowjob.json'));
+    const blowjob = JSON.parse(fs.readFileSync(__path + '/data/blowjob.json'));
     const randblowjob = blowjob[Math.floor(Math.random() * blowjob.length)];
     data = await fetch(randblowjob).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/blowjob.jpeg', data)
@@ -3279,7 +3279,7 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const cuckold = JSON.parse(fs.promises.readFile(__path + '/data/cuckold.json'));
+    const cuckold = JSON.parse(fs.readFileSync(__path + '/data/cuckold.json'));
     const randcuckold = cuckold[Math.floor(Math.random() * cuckold.length)];
     data = await fetch(randcuckold).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cuckold.jpeg', data)
@@ -3302,7 +3302,7 @@ router.get('/nsfw/cum', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const cum = JSON.parse(fs.promises.readFile(__path + '/data/cum.json'));
+    const cum = JSON.parse(fs.readFileSync(__path + '/data/cum.json'));
     const randcum = cum[Math.floor(Math.random() * cum.length)];
     data = await fetch(randcum).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cum.jpeg', data)
@@ -3325,7 +3325,7 @@ router.get('/nsfw/ero', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const ero = JSON.parse(fs.promises.readFile(__path + '/data/ero.json'));
+    const ero = JSON.parse(fs.readFileSync(__path + '/data/ero.json'));
     const randero = ero[Math.floor(Math.random() * ero.length)];
     data = await fetch(randero).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ero.jpeg', data)
@@ -3348,7 +3348,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const femdom = JSON.parse(fs.promises.readFile(__path + '/data/femdom.json'));
+    const femdom = JSON.parse(fs.readFileSync(__path + '/data/femdom.json'));
     const randfemdom = femdom[Math.floor(Math.random() * femdom.length)];
     data = await fetch(randfemdom).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/femdom.jpeg', data)
@@ -3371,7 +3371,7 @@ router.get('/nsfw/foot', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const foot = JSON.parse(fs.promises.readFile(__path + '/data/foot.json'));
+    const foot = JSON.parse(fs.readFileSync(__path + '/data/foot.json'));
     const randfoot = foot[Math.floor(Math.random() * foot.length)];
     data = await fetch(randfoot).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/foot.jpeg', data)
@@ -3394,7 +3394,7 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const gangbang = JSON.parse(fs.promises.readFile(__path + '/data/gangbang.json'));
+    const gangbang = JSON.parse(fs.readFileSync(__path + '/data/gangbang.json'));
     const randgangbang = gangbang[Math.floor(Math.random() * gangbang.length)];
     data = await fetch(randgangbang).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/gangbang.jpeg', data)
@@ -3417,7 +3417,7 @@ router.get('/nsfw/glasses', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const glasses = JSON.parse(fs.promises.readFile(__path + '/data/glasses.json'));
+    const glasses = JSON.parse(fs.readFileSync(__path + '/data/glasses.json'));
     const randglasses = glasses[Math.floor(Math.random() * glasses.length)];
     data = await fetch(randglasses).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/glasses.jpeg', data)
@@ -3440,7 +3440,7 @@ router.get('/nsfw/hentai', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const hentai = JSON.parse(fs.promises.readFile(__path + '/data/hentai.json'));
+    const hentai = JSON.parse(fs.readFileSync(__path + '/data/hentai.json'));
     const randhentai = hentai[Math.floor(Math.random() * hentai.length)];
     data = await fetch(randhentai).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/hentai.jpeg', data)
@@ -3463,7 +3463,7 @@ router.get('/nsfw/gifs', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const gifs = JSON.parse(fs.promises.readFile(__path + '/data/gifs.json'));
+    const gifs = JSON.parse(fs.readFileSync(__path + '/data/gifs.json'));
     const randgifs = gifs[Math.floor(Math.random() * gifs.length)];
     data = await fetch(randgifs).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/gifs.jpeg', data)
@@ -3486,7 +3486,7 @@ router.get('/nsfw/jahy', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const jahy = JSON.parse(fs.promises.readFile(__path + '/data/jahy.json'));
+    const jahy = JSON.parse(fs.readFileSync(__path + '/data/jahy.json'));
     const randjahy = jahy[Math.floor(Math.random() * jahy.length)];
     data = await fetch(randjahy).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/jahy.jpeg', data)
@@ -3509,7 +3509,7 @@ router.get('/nsfw/manga', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const manga = JSON.parse(fs.promises.readFile(__path + '/data/manga.json'));
+    const manga = JSON.parse(fs.readFileSync(__path + '/data/manga.json'));
     const randmanga = manga[Math.floor(Math.random() * manga.length)];
     data = await fetch(randmanga).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/manga.jpeg', data)
@@ -3532,7 +3532,7 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const masturbation = JSON.parse(fs.promises.readFile(__path + '/data/masturbation.json'));
+    const masturbation = JSON.parse(fs.readFileSync(__path + '/data/masturbation.json'));
     const randmasturbation = masturbation[Math.floor(Math.random() * masturbation.length)];
     data = await fetch(randmasturbation).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/masturbation.jpeg', data)
@@ -3555,7 +3555,7 @@ router.get('/nsfw/neko', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const neko = JSON.parse(fs.promises.readFile(__path + '/data/neko.json'));
+    const neko = JSON.parse(fs.readFileSync(__path + '/data/neko.json'));
     const randneko = neko[Math.floor(Math.random() * neko.length)];
     data = await fetch(randneko).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/neko.jpeg', data)
@@ -3578,7 +3578,7 @@ router.get('/nsfw/orgy', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const orgy = JSON.parse(fs.promises.readFile(__path + '/data/orgy.json'));
+    const orgy = JSON.parse(fs.readFileSync(__path + '/data/orgy.json'));
     const randorgy = orgy[Math.floor(Math.random() * orgy.length)];
     data = await fetch(randorgy).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/orgy.jpeg', data)
@@ -3601,7 +3601,7 @@ router.get('/nsfw/panties', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const panties = JSON.parse(fs.promises.readFile(__path + '/data/panties.json'));
+    const panties = JSON.parse(fs.readFileSync(__path + '/data/panties.json'));
     const randpanties = panties[Math.floor(Math.random() * panties.length)];
     data = await fetch(randpanties).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/panties.jpeg', data)
@@ -3624,7 +3624,7 @@ router.get('/nsfw/pussy', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const pussy = JSON.parse(fs.promises.readFile(__path + '/data/pussy.json'));
+    const pussy = JSON.parse(fs.readFileSync(__path + '/data/pussy.json'));
     const randpussy = pussy[Math.floor(Math.random() * pussy.length)];
     data = await fetch(randpussy).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pussy.jpeg', data)
@@ -3647,7 +3647,7 @@ router.get('/nsfw/neko2', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const neko2 = JSON.parse(fs.promises.readFile(__path + '/data/neko2.json'));
+    const neko2 = JSON.parse(fs.readFileSync(__path + '/data/neko2.json'));
     const randneko2 = neko2[Math.floor(Math.random() * neko2.length)];
     data = await fetch(randneko2).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/neko2.jpeg', data)
@@ -3670,7 +3670,7 @@ router.get('/nsfw/tentacles', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const tentacles = JSON.parse(fs.promises.readFile(__path + '/data/tentacles.json'));
+    const tentacles = JSON.parse(fs.readFileSync(__path + '/data/tentacles.json'));
     const randtentacles = tentacles[Math.floor(Math.random() * tentacles.length)];
     data = await fetch(randtentacles).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/tentacles.jpeg', data)
@@ -3693,7 +3693,7 @@ router.get('/nsfw/thighs', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const thighs = JSON.parse(fs.promises.readFile(__path + '/data/thighs.json'));
+    const thighs = JSON.parse(fs.readFileSync(__path + '/data/thighs.json'));
     const randthighs = thighs[Math.floor(Math.random() * thighs.length)];
     data = await fetch(randthighs).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/thighs.jpeg', data)
@@ -3716,7 +3716,7 @@ router.get('/nsfw/yuri', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const yuri = JSON.parse(fs.promises.readFile(__path + '/data/yuri.json'));
+    const yuri = JSON.parse(fs.readFileSync(__path + '/data/yuri.json'));
     const randyuri = yuri[Math.floor(Math.random() * yuri.length)];
     data = await fetch(randyuri).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yuri.jpeg', data)
@@ -3739,7 +3739,7 @@ router.get('/nsfw/zettai', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const zettai = JSON.parse(fs.promises.readFile(__path + '/data/zettai.json'));
+    const zettai = JSON.parse(fs.readFileSync(__path + '/data/zettai.json'));
     const randzettai = zettai[Math.floor(Math.random() * zettai.length)];
     data = await fetch(randzettai).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/zettai.jpeg', data)
@@ -3762,7 +3762,7 @@ router.get('/wallpaper/keneki', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const keneki = JSON.parse(fs.promises.readFile(__path + '/data/keneki.json'));
+    const keneki = JSON.parse(fs.readFileSync(__path + '/data/keneki.json'));
     const randkeneki = keneki[Math.floor(Math.random() * keneki.length)];
     data = await fetch(randkeneki).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/keneki.jpeg', data)
@@ -3785,7 +3785,7 @@ router.get('/wallpaper/megumin', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const megumin = JSON.parse(fs.promises.readFile(__path + '/data/megumin.json'));
+    const megumin = JSON.parse(fs.readFileSync(__path + '/data/megumin.json'));
     const randmegumin = megumin[Math.floor(Math.random() * megumin.length)];
     data = await fetch(randmegumin).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/megumin.jpeg', data)
@@ -3808,7 +3808,7 @@ router.get('/wallpaper/yotsuba', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const yotsuba = JSON.parse(fs.promises.readFile(__path + '/data/yotsuba.json'));
+    const yotsuba = JSON.parse(fs.readFileSync(__path + '/data/yotsuba.json'));
     const randyotsuba = yotsuba[Math.floor(Math.random() * yotsuba.length)];
     data = await fetch(randyotsuba).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yotsuba.jpeg', data)
@@ -3831,7 +3831,7 @@ router.get('/wallpaper/shinomiya', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const shinomiya = JSON.parse(fs.promises.readFile(__path + '/data/shinomiya.json'));
+    const shinomiya = JSON.parse(fs.readFileSync(__path + '/data/shinomiya.json'));
     const randshinomiya = shinomiya[Math.floor(Math.random() * shinomiya.length)];
     data = await fetch(randshinomiya).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shinomiya.jpeg', data)
@@ -3854,7 +3854,7 @@ router.get('/wallpaper/yumeko', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const yumeko = JSON.parse(fs.promises.readFile(__path + '/data/yumeko.json'));
+    const yumeko = JSON.parse(fs.readFileSync(__path + '/data/yumeko.json'));
     const randyumeko = yumeko[Math.floor(Math.random() * yumeko.length)];
     data = await fetch(randyumeko).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yumeko.jpeg', data)
@@ -3877,7 +3877,7 @@ router.get('/wallpaper/tejina', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const tejina = JSON.parse(fs.promises.readFile(__path + '/data/tejina.json'));
+    const tejina = JSON.parse(fs.readFileSync(__path + '/data/tejina.json'));
     const randtejina = tejina[Math.floor(Math.random() * tejina.length)];
     data = await fetch(randtejina).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/tejina.jpeg', data)
@@ -3900,7 +3900,7 @@ router.get('/wallpaper/chiho', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const chiho = JSON.parse(fs.promises.readFile(__path + '/data/chiho.json'));
+    const chiho = JSON.parse(fs.readFileSync(__path + '/data/chiho.json'));
     const randchiho = chiho[Math.floor(Math.random() * chiho.length)];
     data = await fetch(randchiho).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/chiho.jpeg', data)
@@ -3923,7 +3923,7 @@ router.get('/wallpaper/cyberspace', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const cyberspace = JSON.parse(fs.promises.readFile(__path + '/data/CyberSpace.json'));
+    const cyberspace = JSON.parse(fs.readFileSync(__path + '/data/CyberSpace.json'));
     const randcyberspace = cyberspace[Math.floor(Math.random() * cyberspace.length)];
     data = await fetch(randcyberspace).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cyberspace.jpeg', data)
@@ -3946,7 +3946,7 @@ router.get('/wallpaper/gaming', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const gaming = JSON.parse(fs.promises.readFile(__path + '/data/GameWallp.json'));
+    const gaming = JSON.parse(fs.readFileSync(__path + '/data/GameWallp.json'));
     const randgaming = gaming[Math.floor(Math.random() * gaming.length)];
     data = await fetch(randgaming).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/gaming.jpeg', data)
@@ -3969,7 +3969,7 @@ router.get('/wallpaper/islami', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const islami = JSON.parse(fs.promises.readFile(__path + '/data/Islamic.json'));
+    const islami = JSON.parse(fs.readFileSync(__path + '/data/Islamic.json'));
     const randislami = islami[Math.floor(Math.random() * islami.length)];
     data = await fetch(randislami).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/islami.jpeg', data)
@@ -3992,7 +3992,7 @@ router.get('/wallpaper/programing', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const programing = JSON.parse(fs.promises.readFile(__path + '/data/Programming.json'));
+    const programing = JSON.parse(fs.readFileSync(__path + '/data/Programming.json'));
     const randprograming = programing[Math.floor(Math.random() * programing.length)];
     data = await fetch(randprograming).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/programing.jpeg', data)
@@ -4015,7 +4015,7 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const teknologi = JSON.parse(fs.promises.readFile(__path + '/data/Technology.json'));
+    const teknologi = JSON.parse(fs.readFileSync(__path + '/data/Technology.json'));
     const randteknologi = teknologi[Math.floor(Math.random() * teknologi.length)];
     data = await fetch(randteknologi).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/teknologi.jpeg', data)
@@ -4038,7 +4038,7 @@ router.get('/wallpaper/mountain', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const mountain = JSON.parse(fs.promises.readFile(__path + '/data/Mountain.json'));
+    const mountain = JSON.parse(fs.readFileSync(__path + '/data/Mountain.json'));
     const randmountain = mountain[Math.floor(Math.random() * mountain.length)];
     data = await fetch(randmountain).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/mountain.jpeg', data)
@@ -4061,7 +4061,7 @@ router.get('/wallpaper/tatasurya', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const tatasurya = JSON.parse(fs.promises.readFile(__path + '/data/tatasurya.json'));
+    const tatasurya = JSON.parse(fs.readFileSync(__path + '/data/tatasurya.json'));
     const randtatasurya = tatasurya[Math.floor(Math.random() * tatasurya.length)];
     data = await fetch(randtatasurya).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/tatasurya.jpeg', data)
@@ -4084,7 +4084,7 @@ router.get('/wallpaper/kartun', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const kartun = JSON.parse(fs.promises.readFile(__path + '/data/kartun.json'));
+    const kartun = JSON.parse(fs.readFileSync(__path + '/data/kartun.json'));
     const randkartun = kartun[Math.floor(Math.random() * kartun.length)];
     data = await fetch(randkartun).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kartun.jpeg', data)
@@ -4107,7 +4107,7 @@ router.get('/random/yuli', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const yuli = JSON.parse(fs.promises.readFile(__path + '/data/yulibocil.json'));
+    const yuli = JSON.parse(fs.readFileSync(__path + '/data/yulibocil.json'));
     const randyuli = yuli[Math.floor(Math.random() * yuli.length)];
     data = await fetch(randyuli).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yuli.jpeg', data)
@@ -4130,7 +4130,7 @@ router.get('/wallpaper/pentol', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const pentol = JSON.parse(fs.promises.readFile(__path + '/data/pentol.json'));
+    const pentol = JSON.parse(fs.readFileSync(__path + '/data/pentol.json'));
     const randpentol = pentol[Math.floor(Math.random() * pentol.length)];
     data = await fetch(randpentol).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pentol.jpeg', data)
@@ -4153,7 +4153,7 @@ router.get('/wallpaper/katakata', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const katakata = JSON.parse(fs.promises.readFile(__path + '/data/katakata.json'));
+    const katakata = JSON.parse(fs.readFileSync(__path + '/data/katakata.json'));
     const randkatakata = katakata[Math.floor(Math.random() * katakata.length)];
     data = await fetch(randkatakata).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/katakata.jpeg', data)
@@ -4176,7 +4176,7 @@ router.get('/wallpaper/toukachan', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const toukachan = JSON.parse(fs.promises.readFile(__path + '/data/toukachan.json'));
+    const toukachan = JSON.parse(fs.readFileSync(__path + '/data/toukachan.json'));
     const randtoukachan = toukachan[Math.floor(Math.random() * toukachan.length)];
     data = await fetch(randtoukachan).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/toukachan.jpeg', data)
@@ -4199,7 +4199,7 @@ router.get('/wallpaper/akira', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const akira = JSON.parse(fs.promises.readFile(__path + '/data/akira.json'));
+    const akira = JSON.parse(fs.readFileSync(__path + '/data/akira.json'));
     const randakira = akira[Math.floor(Math.random() * akira.length)];
     data = await fetch(randakira).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/akira.jpeg', data)
@@ -4222,7 +4222,7 @@ router.get('/wallpaper/itori', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const itori = JSON.parse(fs.promises.readFile(__path + '/data/itori.json'));
+    const itori = JSON.parse(fs.readFileSync(__path + '/data/itori.json'));
     const randitori = itori[Math.floor(Math.random() * itori.length)];
     data = await fetch(randitori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/itori.jpeg', data)
@@ -4245,7 +4245,7 @@ router.get('/wallpaper/kurumi', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const kurumi = JSON.parse(fs.promises.readFile(__path + '/data/kurumi.json'));
+    const kurumi = JSON.parse(fs.readFileSync(__path + '/data/kurumi.json'));
     const randkurumi = kurumi[Math.floor(Math.random() * kurumi.length)];
     data = await fetch(randkurumi).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kurumi.jpeg', data)
@@ -4268,7 +4268,7 @@ router.get('/wallpaper/miku', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const miku = JSON.parse(fs.promises.readFile(__path + '/data/miku.json'));
+    const miku = JSON.parse(fs.readFileSync(__path + '/data/miku.json'));
     const randmiku = miku[Math.floor(Math.random() * miku.length)];
     data = await fetch(randmiku).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/miku.jpeg', data)
@@ -4291,7 +4291,7 @@ router.get('/wallpaper/pokemon', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const pokemon = JSON.parse(fs.promises.readFile(__path + '/data/pokemon.json'));
+    const pokemon = JSON.parse(fs.readFileSync(__path + '/data/pokemon.json'));
     const randpokemon = pokemon[Math.floor(Math.random() * pokemon.length)];
     data = await fetch(randpokemon).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pokemon.jpeg', data)
@@ -4314,7 +4314,7 @@ router.get('/wallpaper/ryujin', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const ryujin = JSON.parse(fs.promises.readFile(__path + '/data/ryujin.json'));
+    const ryujin = JSON.parse(fs.readFileSync(__path + '/data/ryujin.json'));
     const randryujin = ryujin[Math.floor(Math.random() * ryujin.length)];
     data = await fetch(randryujin).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ryujin.jpeg', data)
@@ -4337,7 +4337,7 @@ router.get('/wallpaper/rose', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const rose = JSON.parse(fs.promises.readFile(__path + '/data/rose.json'));
+    const rose = JSON.parse(fs.readFileSync(__path + '/data/rose.json'));
     const randrose = rose[Math.floor(Math.random() * rose.length)];
     data = await fetch(randrose).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/rose.jpeg', data)
@@ -4360,7 +4360,7 @@ router.get('/wallpaper/kaori', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const kaori = JSON.parse(fs.promises.readFile(__path + '/data/kaori.json'));
+    const kaori = JSON.parse(fs.readFileSync(__path + '/data/kaori.json'));
     const randkaori = kaori[Math.floor(Math.random() * kaori.length)];
     data = await fetch(randkaori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kaori.jpeg', data)
@@ -4383,7 +4383,7 @@ router.get('/wallpaper/shizuka', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const shizuka = JSON.parse(fs.promises.readFile(__path + '/data/shizuka.json'));
+    const shizuka = JSON.parse(fs.readFileSync(__path + '/data/shizuka.json'));
     const randshizuka = shizuka[Math.floor(Math.random() * shizuka.length)];
     data = await fetch(randshizuka).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shizuka.jpeg', data)
@@ -4406,7 +4406,7 @@ router.get('/wallpaper/kaga', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const kaga = JSON.parse(fs.promises.readFile(__path + '/data/kaga.json'));
+    const kaga = JSON.parse(fs.readFileSync(__path + '/data/kaga.json'));
     const randkaga = kaga[Math.floor(Math.random() * kaga.length)];
     data = await fetch(randkaga).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kaga.jpeg', data)
@@ -4429,7 +4429,7 @@ router.get('/wallpaper/kotori', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const kotori = JSON.parse(fs.promises.readFile(__path + '/data/kotori.json'));
+    const kotori = JSON.parse(fs.readFileSync(__path + '/data/kotori.json'));
     const randkotori = kotori[Math.floor(Math.random() * kotori.length)];
     data = await fetch(randkotori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kotori.jpeg', data)
@@ -4452,7 +4452,7 @@ router.get('/wallpaper/mikasa', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const mikasa = JSON.parse(fs.promises.readFile(__path + '/data/mikasa.json'));
+    const mikasa = JSON.parse(fs.readFileSync(__path + '/data/mikasa.json'));
     const randmikasa = mikasa[Math.floor(Math.random() * mikasa.length)];
     data = await fetch(randmikasa).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/mikasa.jpeg', data)
@@ -4475,7 +4475,7 @@ router.get('/wallpaper/akiyama', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const akiyama = JSON.parse(fs.promises.readFile(__path + '/data/akiyama.json'));
+    const akiyama = JSON.parse(fs.readFileSync(__path + '/data/akiyama.json'));
     const randakiyama = akiyama[Math.floor(Math.random() * akiyama.length)];
     data = await fetch(randakiyama).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/akiyama.jpeg', data)
@@ -4498,7 +4498,7 @@ router.get('/wallpaper/gremory', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const gremory = JSON.parse(fs.promises.readFile(__path + '/data/gremory.json'));
+    const gremory = JSON.parse(fs.readFileSync(__path + '/data/gremory.json'));
     const randgremory = gremory[Math.floor(Math.random() * gremory.length)];
     data = await fetch(randgremory).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/gremory.jpeg', data)
@@ -4521,7 +4521,7 @@ router.get('/wallpaper/isuzu', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const isuzu = JSON.parse(fs.promises.readFile(__path + '/data/isuzu.json'));
+    const isuzu = JSON.parse(fs.readFileSync(__path + '/data/isuzu.json'));
     const randisuzu = isuzu[Math.floor(Math.random() * isuzu.length)];
     data = await fetch(randisuzu).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/isuzu.jpeg', data)
@@ -4544,7 +4544,7 @@ router.get('/random/cosplay', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const cosplay = JSON.parse(fs.promises.readFile(__path + '/data/cosplay.json'));
+    const cosplay = JSON.parse(fs.readFileSync(__path + '/data/cosplay.json'));
     const randcosplay = cosplay[Math.floor(Math.random() * cosplay.length)];
     data = await fetch(randcosplay).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cosplay.jpeg', data)
@@ -4567,7 +4567,7 @@ router.get('/wallpaper/shina', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const shina = JSON.parse(fs.promises.readFile(__path + '/data/shina.json'));
+    const shina = JSON.parse(fs.readFileSync(__path + '/data/shina.json'));
     const randshina = shina[Math.floor(Math.random() * shina.length)];
     data = await fetch(randshina).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shina.jpeg', data)
@@ -4590,7 +4590,7 @@ router.get('/wallpaper/kagura', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const kagura = JSON.parse(fs.promises.readFile(__path + '/data/kagura.json'));
+    const kagura = JSON.parse(fs.readFileSync(__path + '/data/kagura.json'));
     const randkagura = kagura[Math.floor(Math.random() * kagura.length)];
     data = await fetch(randkagura).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kagura.jpeg', data)
@@ -4613,7 +4613,7 @@ router.get('/wallpaper/shinka', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const shinka = JSON.parse(fs.promises.readFile(__path + '/data/shinka.json'));
+    const shinka = JSON.parse(fs.readFileSync(__path + '/data/shinka.json'));
     const randshinka = shinka[Math.floor(Math.random() * shinka.length)];
     data = await fetch(randshinka).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/shinka.jpeg', data)
@@ -4636,7 +4636,7 @@ router.get('/wallpaper/eba', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const eba = JSON.parse(fs.promises.readFile(__path + '/data/eba.json'));
+    const eba = JSON.parse(fs.readFileSync(__path + '/data/eba.json'));
     const randeba = eba[Math.floor(Math.random() * eba.length)];
     data = await fetch(randeba).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/eba.jpeg', data)
@@ -4659,7 +4659,7 @@ router.get('/wallpaper/deidara', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Deidara = JSON.parse(fs.promises.readFile(__path + '/data/deidara.json'));
+    const Deidara = JSON.parse(fs.readFileSync(__path + '/data/deidara.json'));
     const randDeidara = Deidara[Math.floor(Math.random() * Deidara.length)];
     data = await fetch(randDeidara).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/deidara.jpeg', data)
@@ -4682,7 +4682,7 @@ router.get('/wallpaper/trans', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const trans = JSON.parse(fs.promises.readFile(__path + '/data/trans.json'));
+    const trans = JSON.parse(fs.readFileSync(__path + '/data/trans.json'));
     const randtrans = trans[Math.floor(Math.random() * trans.length)];
     data = await fetch(randtrans).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/trans.jpeg', data)
@@ -4705,7 +4705,7 @@ router.get('/wallpaper/jeni', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const jeni = JSON.parse(fs.promises.readFile(__path + '/data/jeni.json'));
+    const jeni = JSON.parse(fs.readFileSync(__path + '/data/jeni.json'));
     const randjeni = jeni[Math.floor(Math.random() * jeni.length)];
     data = await fetch(randjeni).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/jeni.jpeg', data)
@@ -4728,7 +4728,7 @@ router.get('/wallpaper/jiso', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const jiso = JSON.parse(fs.promises.readFile(__path + '/data/jiso.json'));
+    const jiso = JSON.parse(fs.readFileSync(__path + '/data/jiso.json'));
     const randjiso = jiso[Math.floor(Math.random() * jiso.length)];
     data = await fetch(randjiso).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/jiso.jpeg', data)
@@ -4751,7 +4751,7 @@ router.get('/wallpaper/satanic', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const satanic = JSON.parse(fs.promises.readFile(__path + '/data/satanic.json'));
+    const satanic = JSON.parse(fs.readFileSync(__path + '/data/satanic.json'));
     const randsatanic = satanic[Math.floor(Math.random() * satanic.length)];
     data = await fetch(randsatanic).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/satanic.jpeg', data)
@@ -4774,7 +4774,7 @@ router.get('/wallpaper/cecan2', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const cecan2 = JSON.parse(fs.promises.readFile(__path + '/data/cecan2.json'));
+    const cecan2 = JSON.parse(fs.readFileSync(__path + '/data/cecan2.json'));
     const randcecan2 = cecan2[Math.floor(Math.random() * cecan2.length)];
     data = await fetch(randcecan2).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cecan2.jpeg', data)
@@ -4797,7 +4797,7 @@ router.get('/wallpaper/cogan2', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const cogan2 = JSON.parse(fs.promises.readFile(__path + '/data/cogan2.json'));
+    const cogan2 = JSON.parse(fs.readFileSync(__path + '/data/cogan2.json'));
     const randcogan2 = cogan2[Math.floor(Math.random() * cogan2.length)];
     data = await fetch(randcogan2).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cogan2.jpeg', data)
@@ -4820,7 +4820,7 @@ router.get('/wallpaper/itachi', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Itachi = JSON.parse(fs.promises.readFile(__path + '/data/itachi.json'));
+    const Itachi = JSON.parse(fs.readFileSync(__path + '/data/itachi.json'));
     const randItachi = Itachi[Math.floor(Math.random() * Itachi.length)];
     data = await fetch(randItachi).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ita.jpeg', data)
@@ -4843,7 +4843,7 @@ router.get('/wallpaper/madara', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Madara = JSON.parse(fs.promises.readFile(__path + '/data/madara.json'));
+    const Madara = JSON.parse(fs.readFileSync(__path + '/data/madara.json'));
     const randMadara = Madara[Math.floor(Math.random() * Madara.length)];
     data = await fetch(randMadara).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/madara.jpeg', data)
@@ -4866,7 +4866,7 @@ router.get('/wallpaper/yuki', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Yuki = JSON.parse(fs.promises.readFile(__path + '/data/yuki.json'));
+    const Yuki = JSON.parse(fs.readFileSync(__path + '/data/yuki.json'));
     const randYuki = Yuki[Math.floor(Math.random() * Yuki.length)];
     data = await fetch(randYuki).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/yuki.jpeg', data)
@@ -4889,7 +4889,7 @@ router.get('/wallpaper/asuna', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const asuna = JSON.parse(fs.promises.readFile(__path + '/data/asuna.json'));
+    const asuna = JSON.parse(fs.readFileSync(__path + '/data/asuna.json'));
     const randasuna = asuna[Math.floor(Math.random() * asuna.length)];
     data = await fetch(randasuna).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/asuna.jpeg', data)
@@ -4912,7 +4912,7 @@ router.get('/wallpaper/ayuzawa', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const ayuzawa = JSON.parse(fs.promises.readFile(__path + '/data/ayuzawa.json'));
+    const ayuzawa = JSON.parse(fs.readFileSync(__path + '/data/ayuzawa.json'));
     const randayuzawa = ayuzawa[Math.floor(Math.random() * ayuzawa.length)];
     data = await fetch(randayuzawa).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ayuzawa.jpeg', data)
@@ -4935,7 +4935,7 @@ router.get('/wallpaper/chitoge', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const chitoge = JSON.parse(fs.promises.readFile(__path + '/data/chitoge.json'));
+    const chitoge = JSON.parse(fs.readFileSync(__path + '/data/chitoge.json'));
     const randchitoge = chitoge[Math.floor(Math.random() * chitoge.length)];
     data = await fetch(randchitoge).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/chitoge.jpeg', data)
@@ -4958,7 +4958,7 @@ router.get('/wallpaper/emilia', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const emilia = JSON.parse(fs.promises.readFile(__path + '/data/emilia.json'));
+    const emilia = JSON.parse(fs.readFileSync(__path + '/data/emilia.json'));
     const randemilia = emilia[Math.floor(Math.random() * emilia.length)];
     data = await fetch(randemilia).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/emilia.jpeg', data)
@@ -4981,7 +4981,7 @@ router.get('/wallpaper/hestia', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const hestia = JSON.parse(fs.promises.readFile(__path + '/data/hestia.json'));
+    const hestia = JSON.parse(fs.readFileSync(__path + '/data/hestia.json'));
     const randhestia = hestia[Math.floor(Math.random() * hestia.length)];
     data = await fetch(randhestia).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/hestia.jpeg', data)
@@ -5004,7 +5004,7 @@ router.get('/wallpaper/inori', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const inori = JSON.parse(fs.promises.readFile(__path + '/data/inori.json'));
+    const inori = JSON.parse(fs.readFileSync(__path + '/data/inori.json'));
     const randinori = inori[Math.floor(Math.random() * inori.length)];
     data = await fetch(randinori).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/inori.jpeg', data)
@@ -5027,7 +5027,7 @@ router.get('/wallpaper/ana', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const ana = JSON.parse(fs.promises.readFile(__path + '/data/ana.json'));
+    const ana = JSON.parse(fs.readFileSync(__path + '/data/ana.json'));
     const randana = ana[Math.floor(Math.random() * ana.length)];
     data = await fetch(randana).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ana.jpeg', data)
@@ -5050,7 +5050,7 @@ router.get('/wallpaper/boruto', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Boruto = JSON.parse(fs.promises.readFile(__path + '/data/boruto.json'));
+    const Boruto = JSON.parse(fs.readFileSync(__path + '/data/boruto.json'));
     const randBoruto = Boruto[Math.floor(Math.random() * Boruto.length)];
     data = await fetch(randBoruto).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/bor.jpeg', data)
@@ -5073,7 +5073,7 @@ router.get('/wallpaper/erza', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Erza = JSON.parse(fs.promises.readFile(__path + '/data/erza.json'));
+    const Erza = JSON.parse(fs.readFileSync(__path + '/data/erza.json'));
     const randErza = Erza[Math.floor(Math.random() * Erza.length)];
     data = await fetch(randErza).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/erza.jpeg', data)
@@ -5096,7 +5096,7 @@ router.get('/wallpaper/kakasih', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Kakasih = JSON.parse(fs.promises.readFile(__path + '/data/kakasih.json'));
+    const Kakasih = JSON.parse(fs.readFileSync(__path + '/data/kakasih.json'));
     const randKakasih = Kakasih[Math.floor(Math.random() * Kakasih.length)];
     data = await fetch(randKakasih).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ka.jpeg', data)
@@ -5119,7 +5119,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Sagiri = JSON.parse(fs.promises.readFile(__path + '/data/sagiri.json'));
+    const Sagiri = JSON.parse(fs.readFileSync(__path + '/data/sagiri.json'));
     const randSagiri = Sagiri[Math.floor(Math.random() * Sagiri.length)];
     data = await fetch(randSagiri).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sagiri.jpeg', data)
@@ -5142,7 +5142,7 @@ router.get('/wallpaper/minato', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Minato = JSON.parse(fs.promises.readFile(__path + '/data/minato.json'));
+    const Minato = JSON.parse(fs.readFileSync(__path + '/data/minato.json'));
     const randMinato = Minato[Math.floor(Math.random() * Minato.length)];
     data = await fetch(randMinato).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/minato.jpeg', data)
@@ -5165,7 +5165,7 @@ router.get('/wallpaper/naruto', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Naruto = JSON.parse(fs.promises.readFile(__path + '/data/naruto.json'));
+    const Naruto = JSON.parse(fs.readFileSync(__path + '/data/naruto.json'));
     const randNaruto = Naruto[Math.floor(Math.random() * Naruto.length)];
     data = await fetch(randNaruto).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/naruto.jpeg', data)
@@ -5188,7 +5188,7 @@ router.get('/wallpaper/nezuko', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Nezuko = JSON.parse(fs.promises.readFile(__path + '/data/nezuko.json'));
+    const Nezuko = JSON.parse(fs.readFileSync(__path + '/data/nezuko.json'));
     const randNezuko = Nezuko[Math.floor(Math.random() * Nezuko.length)];
     data = await fetch(randNezuko).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/nezu.jpeg', data)
@@ -5211,7 +5211,7 @@ router.get('/wallpaper/onepiece', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Pic = JSON.parse(fs.promises.readFile(__path + '/data/onepiece.json'));
+    const Pic = JSON.parse(fs.readFileSync(__path + '/data/onepiece.json'));
     const randPic = Pic[Math.floor(Math.random() * Pic.length)];
     data = await fetch(randPic).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pic.jpeg', data)
@@ -5234,7 +5234,7 @@ router.get('/wallpaper/rize', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Rize = JSON.parse(fs.promises.readFile(__path + '/data/rize.json'));
+    const Rize = JSON.parse(fs.readFileSync(__path + '/data/rize.json'));
     const randRize = Rize[Math.floor(Math.random() * Rize.length)];
     data = await fetch(randRize).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/rize.jpeg', data)
@@ -5257,7 +5257,7 @@ router.get('/wallpaper/sakura', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Sakura = JSON.parse(fs.promises.readFile(__path + '/data/sakura.json'));
+    const Sakura = JSON.parse(fs.readFileSync(__path + '/data/sakura.json'));
     const randSakura = Sakura[Math.floor(Math.random() * Sakura.length)];
     data = await fetch(randSakura).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sakura.jpeg', data)
@@ -5280,7 +5280,7 @@ router.get('/wallpaper/sasuke', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Sasuke = JSON.parse(fs.promises.readFile(__path + '/data/sasuke.json'));
+    const Sasuke = JSON.parse(fs.readFileSync(__path + '/data/sasuke.json'));
     const randSasuke = Sasuke[Math.floor(Math.random() * Sasuke.length)];
     data = await fetch(randSasuke).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sasuke.jpeg', data)
@@ -5303,7 +5303,7 @@ router.get('/wallpaper/tsunade', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Su = JSON.parse(fs.promises.readFile(__path + '/data/tsunade.json'));
+    const Su = JSON.parse(fs.readFileSync(__path + '/data/tsunade.json'));
     const randSu = Su[Math.floor(Math.random() * Su.length)];
     data = await fetch(randSu).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/su.jpeg', data)
@@ -5326,7 +5326,7 @@ router.get('/wallpaper/montor', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Mon = JSON.parse(fs.promises.readFile(__path + '/data/montor.json'));
+    const Mon = JSON.parse(fs.readFileSync(__path + '/data/montor.json'));
     const randMon = Mon[Math.floor(Math.random() * Mon.length)];
     data = await fetch(randMon).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/montor.jpeg', data)
@@ -5349,7 +5349,7 @@ router.get('/wallpaper/mobil', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Mob = JSON.parse(fs.promises.readFile(__path + '/data/mobil.json'));
+    const Mob = JSON.parse(fs.readFileSync(__path + '/data/mobil.json'));
     const randMob = Mob[Math.floor(Math.random() * Mob.length)];
     data = await fetch(randMob).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/mobil.jpeg', data)
@@ -5372,7 +5372,7 @@ router.get('/wallpaper/boneka-chucky', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Bon = JSON.parse(fs.promises.readFile(__path + '/data/boneka.json'));
+    const Bon = JSON.parse(fs.readFileSync(__path + '/data/boneka.json'));
     const randBon = Bon[Math.floor(Math.random() * Bon.length)];
     data = await fetch(randBon).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/chucky.jpeg', data)
@@ -5395,7 +5395,7 @@ router.get('/wallpaper/anime', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Wai23 = JSON.parse(fs.promises.readFile(__path + '/data/wallhp2.json'));
+    const Wai23 = JSON.parse(fs.readFileSync(__path + '/data/wallhp2.json'));
     const randWai23 = Wai23[Math.floor(Math.random() * Wai23.length)];
     data = await fetch(randWai23).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wallhp2.jpeg', data)
@@ -5418,7 +5418,7 @@ router.get('/wallpaper/random/blackpink', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Black = JSON.parse(fs.promises.readFile(__path + '/data/blackpink.json'));
+    Black = JSON.parse(fs.readFileSync(__path + '/data/blackpink.json'));
     const randBlack = Black[Math.floor(Math.random() * Black.length)]
     data = await fetch(randBlack).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/blak.jpeg', data)
@@ -5441,7 +5441,7 @@ router.get('/wallpaper/wallhp', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Wai22 = JSON.parse(fs.promises.readFile(__path + '/data/wallhp.json'));
+    const Wai22 = JSON.parse(fs.readFileSync(__path + '/data/wallhp.json'));
     const randWai22 = Wai22[Math.floor(Math.random() * Wai22.length)];
     data = await fetch(randWai22).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wallhp.jpeg', data)
@@ -5464,7 +5464,7 @@ router.get('/wallpaper/waifu2', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Wai2 = JSON.parse(fs.promises.readFile(__path + '/data/waifu2.json'));
+    const Wai2 = JSON.parse(fs.readFileSync(__path + '/data/waifu2.json'));
     const randWai2 = Wai2[Math.floor(Math.random() * Wai2.length)];
     data = await fetch(randWai2).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wibu2.jpeg', data)
@@ -5487,7 +5487,7 @@ router.get('/wallpaper/waifu', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Wai = JSON.parse(fs.promises.readFile(__path + '/data/waifu.json'));
+    const Wai = JSON.parse(fs.readFileSync(__path + '/data/waifu.json'));
     const randWai = Wai[Math.floor(Math.random() * Wai.length)];
     data = await fetch(randWai).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/wibu.jpeg', data)
@@ -5510,7 +5510,7 @@ router.get('/wallpaper/kpop', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Kpop = JSON.parse(fs.promises.readFile(__path + '/data/kpop.json'));
+    Kpop = JSON.parse(fs.readFileSync(__path + '/data/kpop.json'));
     const randKpop = Kpop[Math.floor(Math.random() * Kpop.length)]
     data = await fetch(randKpop).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kpop.jpeg', data)
@@ -5533,7 +5533,7 @@ router.get('/wallpaper/hekel', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Hekel = JSON.parse(fs.promises.readFile(__path + '/data/hekel.json'));
+    Hekel = JSON.parse(fs.readFileSync(__path + '/data/hekel.json'));
     const randHekel = Hekel[Math.floor(Math.random() * Hekel.length)]
     data = await fetch(randHekel).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/hek.jpeg', data)
@@ -5556,7 +5556,7 @@ router.get('/wallpaper/kucing', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Kucing = JSON.parse(fs.promises.readFile(__path + '/data/kucing.json'));
+    Kucing = JSON.parse(fs.readFileSync(__path + '/data/kucing.json'));
     const randKucing = Kucing[Math.floor(Math.random() * Kucing.length)]
     data = await fetch(randKucing).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/kucing.jpeg', data)
@@ -5579,7 +5579,7 @@ router.get('/wallpaper/pubg', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Pubg = JSON.parse(fs.promises.readFile(__path + '/data/pubg.json'));
+    Pubg = JSON.parse(fs.readFileSync(__path + '/data/pubg.json'));
     const randPubg = Pubg[Math.floor(Math.random() * Pubg.length)]
     data = await fetch(randPubg).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pubg.jpeg', data)
@@ -5602,7 +5602,7 @@ router.get('/wallpaper/ppcouple', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Pp = JSON.parse(fs.promises.readFile(__path + '/data/profil.json'));
+    Pp = JSON.parse(fs.readFileSync(__path + '/data/profil.json'));
     const randPp = Pp[Math.floor(Math.random() * Pp.length)]
     data = await fetch(randPp).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/pp.jpeg', data)
@@ -5625,7 +5625,7 @@ router.get('/wallpaper/anjing', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Anjing = JSON.parse(fs.promises.readFile(__path + '/data/anjing.json'));
+    Anjing = JSON.parse(fs.readFileSync(__path + '/data/anjing.json'));
     const randAnjing = Anjing[Math.floor(Math.random() * Anjing.length)]
     data = await fetch(randAnjing).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/ajg.jpeg', data)
@@ -5648,7 +5648,7 @@ router.get('/wallpaper/doraemon', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Dora = JSON.parse(fs.promises.readFile(__path + '/data/doraemon.json'));
+    Dora = JSON.parse(fs.readFileSync(__path + '/data/doraemon.json'));
     const randDora = Dora[Math.floor(Math.random() * Dora.length)]
     data = await fetch(randDora).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/dora.jpeg', data)
@@ -5671,7 +5671,7 @@ router.get('/wallpaper/cogan', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    Cogan = JSON.parse(fs.promises.readFile(__path + '/data/cogan.json'));
+    Cogan = JSON.parse(fs.readFileSync(__path + '/data/cogan.json'));
     const randCogan = Cogan[Math.floor(Math.random() * Cogan.length)]
     data = await fetch(randCogan).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/cogan.jpeg', data)
@@ -5694,7 +5694,7 @@ router.get('/wallpaper/elaina', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Elaina = JSON.parse(fs.promises.readFile(__path + '/data/elaina.json'))
+    const Elaina = JSON.parse(fs.readFileSync(__path + '/data/elaina.json'))
     const randElaina = Elaina[Math.floor(Math.random() * Elaina.length)]
     //tansole.log(randLoli)
     data = await fetch(randElaina).then(v => v.buffer())
@@ -5718,7 +5718,7 @@ router.get('/wallpaper/loli', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Loli = JSON.parse(fs.promises.readFile(__path + '/data/loli.json'))
+    const Loli = JSON.parse(fs.readFileSync(__path + '/data/loli.json'))
     const randLoli = Loli[Math.floor(Math.random() * Loli.length)]
     //tansole.log(randLoli)
     data = await fetch(randLoli).then(v => v.buffer())
@@ -5742,7 +5742,7 @@ router.get('/wallpaper/yuri', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Yuri = JSON.parse(fs.promises.readFile(__path + '/data/yuri.json'))
+    const Yuri = JSON.parse(fs.readFileSync(__path + '/data/yuri.json'))
     const randYuri = Yuri[Math.floor(Math.random() * Yuri.length)]
     //tansole.log(randTech)
     data = await fetch(randYuri).then(v => v.buffer())
@@ -5767,7 +5767,7 @@ router.get('/wallpaper/cecan', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const cecan = JSON.parse(fs.promises.readFile(__path + '/data/cecan.json'));
+    const cecan = JSON.parse(fs.readFileSync(__path + '/data/cecan.json'));
     const randCecan = cecan[Math.floor(Math.random() * cecan.length)];
     data = await fetch(randCecan).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/cecan.jpeg', data)
@@ -5791,7 +5791,7 @@ router.get('/wallpaper/aesthetic', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Aesthetic = JSON.parse(fs.promises.readFile(__path + '/data/aesthetic.json'));
+    const Aesthetic = JSON.parse(fs.readFileSync(__path + '/data/aesthetic.json'));
     const randAesthetic = Aesthetic[Math.floor(Math.random() * Aesthetic.length)];
     data = await fetch(randAesthetic).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/aesthetic.jpeg', data)
@@ -5815,7 +5815,7 @@ router.get('/wallpaper/justina', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Justina = JSON.parse(fs.promises.readFile(__path + '/data/justina.json'));
+    const Justina = JSON.parse(fs.readFileSync(__path + '/data/justina.json'));
     const randJus = Justina[Math.floor(Math.random() * Justina.length)];
     data = await fetch(randJus).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/justina.jpeg', data)
@@ -5839,7 +5839,7 @@ router.get('/wallpaper/sagiri', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Sagiri = JSON.parse(fs.promises.readFile(__path + '/data/sagiri.json'));
+    const Sagiri = JSON.parse(fs.readFileSync(__path + '/data/sagiri.json'));
     const randSagiri = Sagiri[Math.floor(Math.random() * Sagiri.length)];
     data = await fetch(randSagiri).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/sagiri.jpeg', data)
@@ -5862,7 +5862,7 @@ router.get('/wallpaper/shota', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Shota = JSON.parse(fs.promises.readFile(__path + '/data/shota.json'));
+    const Shota = JSON.parse(fs.readFileSync(__path + '/data/shota.json'));
     const randShota = Shota[Math.floor(Math.random() * Shota.length)];
     data = await fetch(randShota).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/shota.jpeg', data)
@@ -5885,7 +5885,7 @@ router.get('/wallpaper/nsfwloli', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Lol = JSON.parse(fs.promises.readFile(__path + '/data/nsfwloli.json'));
+    const Lol = JSON.parse(fs.readFileSync(__path + '/data/nsfwloli.json'));
     const randLol = Lol[Math.floor(Math.random() * Lol.length)];
     data = await fetch(randLol).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/lol.jpeg', data)
@@ -5908,7 +5908,7 @@ router.get('/wallpaper/hinata', async (req, res, next) => {
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
 
-    const Hinata = JSON.parse(fs.promises.readFile(__path + '/data/hinata.json'));
+    const Hinata = JSON.parse(fs.readFileSync(__path + '/data/hinata.json'));
     const randHin = Hinata[Math.floor(Math.random() * Hinata.length)];
     data = await fetch(randHin).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/Hinata.jpeg', data)
@@ -8775,7 +8775,7 @@ router.get('/blackpink', async (req, res, next) => {
 
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
-    const pop = JSON.parse(fs.promises.readFile(__path + '/data/kpop.json'));
+    const pop = JSON.parse(fs.readFileSync(__path + '/data/kpop.json'));
     const Pop = pop[Math.floor(Math.random() * pop.length)];
     let hasil = Pop.pop;
     data = await fetch(hasil).then(v => v.buffer())
@@ -8798,7 +8798,7 @@ router.get('/asupan', async (req, res, next) => {
 
   if (!Apikey) return res.json(loghandler.notparam)
   if (listkey.includes(Apikey)) {
-    const Asupan = JSON.parse(fs.promises.readFile(__path + '/data/asupantiktok.json'));
+    const Asupan = JSON.parse(fs.readFileSync(__path + '/data/asupantiktok.json'));
     const randAsupan = Asupan[Math.floor(Math.random() * Asupan.length)];
     data = await fetch(randAsupan).then(v => v.buffer())
     await fs.promises.writeFile(__path + '/tmp/asupan.mp4', data)
