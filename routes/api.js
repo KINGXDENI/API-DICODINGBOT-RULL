@@ -135,7 +135,6 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 const multer = require('multer');
-const path = require('path');
 const {
   Aki
 } = require('aki-api');
@@ -143,7 +142,7 @@ const {
 // Define storage configuration for multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const uploadDir = path.join(__path, 'tmp', 'upload'); // Sesuaikan dengan path yang diinginkan
+    const uploadDir = __path + 'tmp/upload'; // Sesuaikan dengan path yang diinginkan
     cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
