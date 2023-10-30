@@ -3045,13 +3045,6 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
     data = await fetch(randahegao).then(v => v.buffer());
     await fs.promises.writeFile(__path + '/tmp/ahegao.jpeg', data);
     res.sendFile(__path + '/tmp/ahegao.jpeg');
-    (__path + '/tmp/ahegao.jpeg')
-      .then(() => {
-        console.log('File berhasil dihapus');
-      })
-      .catch((err) => {
-        console.error('Error saat menghapus file:', err);
-      });
   } else {
     res.json(loghandler.invalidKey);
   }
