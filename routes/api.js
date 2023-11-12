@@ -43,7 +43,6 @@ var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var request = require('request');
 var zrapi = require("zrapi");
-var dotenv = require("dotenv").config()
 var fs = require('fs');
 var {
   EmojiAPI
@@ -606,7 +605,7 @@ router.get('/music/spotify', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -631,7 +630,7 @@ router.get('/download/ytmp3', async (req, res, next) => {
         console.log(error)
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -657,7 +656,7 @@ router.get('/download/ytmp4', async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -678,7 +677,7 @@ router.get("/yt/playmp3", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl);
+        sendErrorEmail(error, currentUrl);
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -701,7 +700,7 @@ router.get("/yt/playmp4", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl);
+        sendErrorEmail(error, currentUrl);
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -728,7 +727,7 @@ router.get('/yt/search', async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl);
+        sendErrorEmail(error, currentUrl);
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -807,7 +806,7 @@ router.get('/download/igstory', async (req, res, next) => {
         console.error(err); // Menangani kesalahan dengan mencetaknya ke konsol
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl); // Anda dapat mengganti 'loghandler.error' sesuai dengan pesan kesalahan yang sesuai
+        sendErrorEmail(err, currentUrl); // Anda dapat mengganti 'loghandler.error' sesuai dengan pesan kesalahan yang sesuai
       });
   } else {
     res.json(loghandler.invalidKey);
@@ -835,7 +834,7 @@ router.get('/download/ig2', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -864,7 +863,7 @@ router.get('/download/stickerline', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -893,7 +892,7 @@ router.get('/download/smule', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -922,7 +921,7 @@ router.get('/download/joox3', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -951,7 +950,7 @@ router.get('/download/joox2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -980,7 +979,7 @@ router.get('/download/apkdl', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1009,7 +1008,7 @@ router.get('/download/apk', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1035,7 +1034,7 @@ router.get('/download/googleimg', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1061,7 +1060,7 @@ router.get('/download/mediafire', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1119,7 +1118,7 @@ router.get('/stalk/ig', async (req, res, next) => {
         .catch(error => {
           res.json(loghandler.error)
           const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+          sendErrorEmail(e, currentUrl)
         });
     } else {
       res.json(loghandler.invalidKey)
@@ -1152,7 +1151,7 @@ router.get('/downloader/wallpaperflare', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1181,7 +1180,7 @@ router.get('/download/ytmp32', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1210,7 +1209,7 @@ router.get('/download/ytmp42', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1239,7 +1238,7 @@ router.get('/download/shoppe', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1268,7 +1267,7 @@ router.get('/primbon/zodiak', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1297,7 +1296,7 @@ router.get('/primbon/artimimpi', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1326,7 +1325,7 @@ router.get('/primbon/artinama', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1355,7 +1354,7 @@ router.get('/download/unplash', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1384,7 +1383,7 @@ router.get('/download/sticker', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1410,7 +1409,7 @@ router.get('/downloader/xnxx', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1436,7 +1435,7 @@ router.get('/downloader/twittervid', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1465,7 +1464,7 @@ router.get('/downloader/twitterimg', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1494,7 +1493,7 @@ router.get('/downloader/xvideo', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1523,7 +1522,7 @@ router.get('/downloader/pornhub', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1578,7 +1577,7 @@ router.get('/downloader/igtv', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1607,7 +1606,7 @@ router.get('/download/tiktok3', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1625,7 +1624,7 @@ router.get('/download/tiktok2', async (req, res, next) => {
     const tiktok_url = url
 
     TiktokDL(tiktok_url, {
-      version: "v3" //  version: "v1" | "v2" | "v3"
+      version: "v2" //  version: "v1" | "v2" | "v3"
     }).then((result) => {
       data = result.result
       res.json({
@@ -1665,7 +1664,7 @@ router.get('/downloader/facebook2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1691,7 +1690,7 @@ router.get('/downloader/facebook', async (req, res, next) => {
       .catch(err => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1748,7 +1747,7 @@ router.get('/downloader/fb', async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -1830,7 +1829,7 @@ router.get('/stalk/npm', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1854,7 +1853,7 @@ router.get('/random/faktaunik', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1878,7 +1877,7 @@ router.get('/random/katabijak', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1902,7 +1901,7 @@ router.get('/random/pantun', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1929,7 +1928,7 @@ router.get('/random/fancytext', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -1954,7 +1953,7 @@ router.get('/random/quotes', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2149,7 +2148,7 @@ router.get('/info/gempa', async (req, res, next) => {
         console.log('Error :', color(e, 'red'))
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2174,7 +2173,7 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
         console.log('Error :', color(e, 'red'))
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2209,7 +2208,7 @@ router.get('/muslim/hadits', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2246,7 +2245,7 @@ router.get('/muslim/quran', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2270,7 +2269,7 @@ router.get('/muslim/tahlil', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2295,7 +2294,7 @@ router.get('/muslim/wirid', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2320,7 +2319,7 @@ router.get('/muslim/ayatkursi', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2345,7 +2344,7 @@ router.get('/muslim/doaharian', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2370,7 +2369,7 @@ router.get('/muslim/bacaanshalat', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2395,7 +2394,7 @@ router.get('/muslim/niatshalat', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2420,7 +2419,7 @@ router.get('/muslim/kisahnabi', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2459,7 +2458,7 @@ router.get('/muslim/niatshubuh', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2484,7 +2483,7 @@ router.get('/muslim/niatdzuhur', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2509,7 +2508,7 @@ router.get('/muslim/niatmaghrib', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2534,7 +2533,7 @@ router.get('/muslim/niatisya', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2559,7 +2558,7 @@ router.get('/muslim/niatashar', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -2588,7 +2587,7 @@ router.get('/muslim/jadwalshalat', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -3159,7 +3158,7 @@ router.get('/nsfw/xnxxsearch', async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.errorMessage)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey);
@@ -5207,7 +5206,7 @@ router.get('/random/quotes2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5239,7 +5238,7 @@ router.get('/fun/simisimi-ar2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5271,7 +5270,7 @@ router.get('/fun/simisimi-en2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5304,7 +5303,7 @@ router.get('/fun/simisimi-jp2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5336,7 +5335,7 @@ router.get('/fun/simisimi-ind2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5369,7 +5368,7 @@ router.get('/fun/simisimiall', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5401,7 +5400,7 @@ router.get('/fun/simisimi4', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5433,7 +5432,7 @@ router.get('/fun/simisimi3', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5465,7 +5464,7 @@ router.get('/fun/simisimi2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5497,7 +5496,7 @@ router.get('/fun/simisimi', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5521,7 +5520,7 @@ router.get('/random/asmaulhusna', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5551,7 +5550,7 @@ router.get('/info/wikipedia', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5582,7 +5581,7 @@ router.get('/info/drakorasia', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5612,7 +5611,7 @@ router.get('/fakedata', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5643,7 +5642,7 @@ router.get('/hilih', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5696,7 +5695,7 @@ router.get('/music/chordlagu', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5727,7 +5726,7 @@ router.get('/info/kbbi', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5752,7 +5751,7 @@ router.get('/info/covidindo', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5777,7 +5776,7 @@ router.get('/info/covidworld', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5801,7 +5800,7 @@ router.get('/random/meme', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5832,7 +5831,7 @@ router.get('/info/kodepos', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5862,7 +5861,7 @@ router.get('/translate', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5892,7 +5891,7 @@ router.get('/anime/kusonime', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5956,7 +5955,7 @@ router.get('/anime/manga', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -5979,7 +5978,7 @@ router.get('/kuis/caklontong', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -6037,7 +6036,7 @@ router.get("/photooxy/shadow", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6063,7 +6062,7 @@ router.get("/photooxy/romantic", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6091,7 +6090,7 @@ router.get("/photooxy/smoke", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6117,7 +6116,7 @@ router.get("/photooxy/burn-papper", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6143,7 +6142,7 @@ router.get("/photooxy/naruto", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6169,7 +6168,7 @@ router.get("/photooxy/love-message", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6195,7 +6194,7 @@ router.get("/photooxy/message-under-grass", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6223,7 +6222,7 @@ router.get("/photooxy/glitch", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6249,7 +6248,7 @@ router.get("/photooxy/double-heart", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6275,7 +6274,7 @@ router.get("/photooxy/coffe-cup", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6301,7 +6300,7 @@ router.get("/photooxy/love-text", async (req, res, next) => {
       .catch((error) => {
         res.json(error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+        sendErrorEmail(error, currentUrl)
       });
   } else {
     res.json(loghandler.invalidKey)
@@ -6327,7 +6326,7 @@ router.get("/photooxy/butterfly", async (req, res, next) => {
       .catch((error) => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -8514,7 +8513,7 @@ router.get('/maker/emoji2png', async (req, res, next) => {
       .catch((err) => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -8543,7 +8542,7 @@ router.get('/downloader/facebook2', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -8572,7 +8571,7 @@ router.get('/web2plain-text', async (req, res, next) => {
       .catch(e => {
         res.json(loghandler.error)
         const currentUrl = req.originalUrl;
-      sendErrorEmail(e, currentUrl)
+        sendErrorEmail(e, currentUrl)
       })
   } else {
     res.json(loghandler.invalidKey)
@@ -8656,7 +8655,7 @@ router.get('/ai/chatai', async (req, res, next) => {
       res.status(500).json({
         error
       });
-      
+
       const currentUrl = req.originalUrl;
       sendErrorEmail(error, currentUrl)
     }
@@ -8851,7 +8850,7 @@ router.get('/ai/chatai3', async (req, res, next) => {
             } catch (error) {
               console.error('Error parsing JSON:', error.message);
               const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+              sendErrorEmail(error, currentUrl)
             }
           }
         });
@@ -8953,6 +8952,45 @@ router.get('/ai/bard', async (req, res, next) => {
 
 });
 
+
+router.get('/ai/perplexity', async (req, res, next) => {
+  var apikey = req.query.apikey
+  var text = req.query.query
+  if (!apikey) return res.json(loghandler.notparam)
+  if (!text) return res.json({
+    status: false,
+    creator: `${creator}`,
+    message: "masukan parameter query"
+  })
+  if (listkey.includes(apikey)) {
+    try {
+      const perplexity = require("node_perplexityai");
+
+      (async () => {
+        // Ask the AI a question
+        const answer = await perplexity.send(text);
+        console.log(answer);
+      })();
+      // res.status(200).json({
+      //   status: true,
+      //   code: 200,
+      //   creator: `${creator}`,
+      //   result: response.content
+      // })
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        error
+      });
+      const currentUrl = req.originalUrl;
+      sendErrorEmail(error, currentUrl)
+    }
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+
+});
+
 router.get('/ai/herai', async (req, res) => {
   var apikey = req.query.apikey;
   var text = req.query.query;
@@ -9009,7 +9047,7 @@ router.get('/ai/herai', async (req, res) => {
               error
             });
             const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+            sendErrorEmail(error, currentUrl)
           }
         });
 
@@ -9230,7 +9268,7 @@ router.post('/uploadfile', upload.single('media'), async (req, res) => {
       message: 'Internal server error.'
     });
     const currentUrl = req.originalUrl;
-      sendErrorEmail(error, currentUrl)
+    sendErrorEmail(error, currentUrl)
   }
 });
 
